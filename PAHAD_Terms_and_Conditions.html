@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b3041">
+<title>PAHAD | Terms & Conditions</title>
+<style>
+:root{--navy:#0b3041;--teal:#168b8b;--orange:#e66d2e;--paper:#fbfaf7;--ink:#183441;--muted:#64747a;--line:#e4e8e5}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:28px 20px}.wrap{width:min(850px,calc(100% - 32px));margin:auto}
+.brand{font:700 27px Georgia,serif;letter-spacing:.12em;margin:0}.sub{font-size:11px;letter-spacing:.12em;color:#d6e1df;text-transform:uppercase}
+main{padding:34px 0 120px}h1{font:600 clamp(30px,5vw,42px)/1.15 Georgia,serif;color:var(--navy);margin:0 0 8px}
+.intro{color:var(--muted);margin:0 0 28px}section{padding:18px 0;border-bottom:1px solid var(--line)}
+h2{font:600 20px Georgia,serif;color:var(--navy);margin:0 0 8px}p{margin:7px 0}ul{padding-left:22px;margin:8px 0}li{padding:3px 0}
+.notice{background:#f1f3ef;border-left:4px solid var(--teal);padding:14px 16px;margin:22px 0;color:#40535b;font-size:13px}
+.agree{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 25px #08263412;padding:14px 16px;z-index:5}
+.agree-inner{width:min(850px,100%);margin:auto;display:flex;align-items:center;gap:14px}
+label{display:flex;align-items:flex-start;gap:11px;flex:1;font-weight:600;cursor:pointer}
+input{width:21px;height:21px;accent-color:var(--teal);flex:none;margin-top:2px}
+button{border:0;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;cursor:pointer;border-radius:2px}
+button:disabled{opacity:.45;cursor:not-allowed}.status{font-size:12px;color:var(--muted);margin-top:5px}
+@media(max-width:600px){.agree-inner{align-items:flex-start;flex-direction:column}.agree-inner button{width:100%}main{padding-top:26px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><p class="brand">PAHAD</p><div class="sub">Participatory Action for Holistic Advancement &amp; Development</div></div></header>
+<main class="wrap">
+<h1>Terms &amp; Conditions</h1>
+<p class="intro">Please read these terms before using the PAHAD website, submitting an enquiry or expressing interest in membership or participation.</p>
+<div class="notice">These are general website-use terms prepared as a practical draft. They should be checked against PAHAD's approved constitution, membership rules, privacy practices and applicable law before publication.</div>
+<section><h2>1. About PAHAD</h2><p>PAHAD (Participatory Action for Holistic Advancement &amp; Development) provides information about its institutional purpose, activities, programmes and opportunities for public participation. Website content is intended for general information and community engagement.</p></section>
+<section><h2>2. Acceptable use</h2><p>Visitors agree to use this website lawfully and respectfully. You must not:</p><ul><li>Submit information that is knowingly false, misleading, abusive or unlawful.</li><li>Attempt to disrupt, damage or gain unauthorised access to the website or its systems.</li><li>Use PAHAD's name, logo or materials in a way that falsely suggests endorsement or authorisation.</li><li>Use the website to harass, threaten, discriminate against or harm others.</li></ul></section>
+<section><h2>3. Membership and participation</h2><p>Submitting a membership or participation form is an expression of interest or an application. Submission does not automatically confirm membership, confer voting rights, appoint a person to an office or guarantee selection for a project or programme.</p><p>Applications, membership eligibility, rights, responsibilities and appointments are subject to PAHAD's applicable constitution, approved policies and procedures. PAHAD may contact applicants using the details they provide to clarify or process an application.</p></section>
+<section><h2>4. Accuracy of information</h2><p>You are responsible for ensuring that information you submit is accurate and up to date. Please do not submit another person's personal information without appropriate permission. PAHAD may request clarification where necessary.</p></section>
+<section><h2>5. Privacy and personal information</h2><p>Information submitted through website forms may be used to respond to enquiries, process membership applications, coordinate participation and communicate relevant institutional updates. Access should be limited to people who need the information for these purposes.</p><p>Do not submit passwords, payment-card details or unnecessary sensitive personal information through general enquiry forms. Any separate privacy notice provided with a form should also be read.</p></section>
+<section><h2>6. Intellectual property and submitted content</h2><p>Unless otherwise stated, PAHAD's original website text, branding, graphics and materials may not be copied, republished or used commercially without prior permission. If you submit text, photographs or other material, you confirm that you have the right to share it and permit PAHAD to review it for the purpose for which it was submitted. Separate permission should be obtained before using submitted material publicly.</p></section>
+<section><h2>7. External websites and services</h2><p>The website may link to third-party platforms, including registration forms and social media services. Those services operate under their own terms and privacy policies. PAHAD is not responsible for the content, availability or practices of external websites.</p></section>
+<section><h2>8. Information and availability</h2><p>Website information is provided in good faith and may be updated, corrected or withdrawn. PAHAD does not guarantee that the website will always be available, error-free or completely up to date. Important decisions should be confirmed through PAHAD's official communication channels.</p></section>
+<section><h2>9. Changes to these terms</h2><p>PAHAD may revise these terms when its website, activities or applicable requirements change. The updated version will be published on this page with a revised date.</p></section>
+<section><h2>10. Contact</h2><p>For questions about these terms, contact PAHAD at <a href="mailto:Pahad.org@gmail.com">Pahad.org@gmail.com</a>.</p></section>
+<p class="status">Last updated: 11 November 2026</p>
+</main>
+<div class="agree"><div class="agree-inner">
+<div style="flex:1"><label for="accept"><input id="accept" type="checkbox"><span>I have read and agree to the PAHAD Terms &amp; Conditions.</span></label><div id="status" class="status" aria-live="polite">Tick the box to enable the close option.</div></div>
+<button id="closeBtn" type="button" disabled>Agree &amp; Close</button>
+</div></div>
+<script>
+const checkbox=document.getElementById('accept');
+const closeBtn=document.getElementById('closeBtn');
+const statusText=document.getElementById('status');
+checkbox.addEventListener('change',()=>{
+ closeBtn.disabled=!checkbox.checked;
+ statusText.textContent=checkbox.checked?'You have indicated your agreement. Select “Agree & Close” to close this page.':'Tick the box to enable the close option.';
+});
+closeBtn.addEventListener('click',()=>{
+ if(!checkbox.checked)return;
+ window.close();
+ statusText.textContent='If this tab remains open, please close it using your browser controls.';
+});
+</script>
+</body></html>
