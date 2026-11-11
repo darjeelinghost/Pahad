@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Find your people, build your skills and help shape the future of our Himalayan communities with PAHAD.">
+<meta name="theme-color" content="#0b3041">
+<title>PAHAD | Building Stronger Communities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b3041;--deep:#082634;--teal:#168b8b;--orange:#e66d2e;--cream:#f3e5c8;--paper:#fbfaf7;--ink:#183441;--muted:#64747a;--line:#e4e8e5;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65}a{color:inherit;text-decoration:none}.container{width:min(1160px,calc(100% - 48px));margin:auto}.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:white;padding:10px;z-index:999}
+header{height:86px;position:sticky;top:0;z-index:10;background:#fbfaf7f5;backdrop-filter:blur(12px);border-bottom:1px solid #0b304114}.head{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{display:flex;align-items:center;gap:17px}.mark{width:48px;height:44px}.brand strong{display:block;font:700 25px var(--serif);letter-spacing:.08em;color:var(--navy);line-height:1}.brand small{display:block;margin-top:5px;color:#68777b;font-size:7px;letter-spacing:.08em;line-height:1.4;text-transform:uppercase}.nav{display:flex;align-items:center;gap:clamp(12px,1.7vw,24px);font-size:11px;font-weight:600;color:#40535b}.nav a:hover{color:var(--orange)}.nav .cta{border:1px solid var(--navy);padding:10px 15px}.toggle{display:none;background:none;border:0;font-size:25px;color:var(--navy)}
+.hero{min-height:690px;height:min(790px,calc(100vh - 86px));position:relative;display:flex;align-items:center;overflow:hidden;background:var(--navy);color:white}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#051f2bef 0%,#051f2bb8 48%,#051f2b20 100%),url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85") center/cover}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#051f2b75,transparent 30%)}.hero .container{position:relative;z-index:1;padding-top:20px}.eyebrow{margin:0 0 18px;color:var(--teal);font-size:10px;font-weight:700;letter-spacing:.19em}.light{color:#e6a078}.hero h1{margin:0;max-width:760px;font:600 clamp(46px,6.4vw,78px)/1.08 var(--serif);letter-spacing:-.035em}.hero em,h2 em{color:var(--orange);font-weight:500}.hero-intro{max-width:560px;margin:24px 0 28px;color:#ffffffd1;font-size:14px}.actions{display:flex;gap:12px;flex-wrap:wrap}.button{min-height:48px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:18px;font-size:11px;font-weight:700}.primary{background:var(--orange);color:white}.outline{border:1px solid #ffffff8c;color:white}.button:hover{filter:brightness(1.08);transform:translateY(-2px)}.hero-note{margin-top:54px;color:#ffffffb5;font-size:10px;letter-spacing:.08em}.hero-note:before{content:"";display:inline-block;width:34px;height:1px;background:var(--orange);vertical-align:middle;margin-right:12px}.hero-foot{position:absolute;z-index:2;bottom:20px;left:50%;transform:translateX(-50%);display:flex;justify-content:space-between;color:#ffffff91;font-size:8px;letter-spacing:.14em}
+section{padding:100px 0}.intro-grid,.two-col{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}.intro-copy{padding-top:24px;color:var(--muted);font-size:13px}.lead{font:500 19px/1.65 var(--serif);color:var(--ink)}h2{margin:0;color:var(--navy);font:600 clamp(34px,4.2vw,52px)/1.18 var(--serif);letter-spacing:-.025em}.text-link{display:inline-block;margin-top:16px;padding-bottom:5px;border-bottom:1px solid var(--orange);font-size:11px;font-weight:700;color:var(--navy)}.values{display:grid;grid-template-columns:repeat(4,1fr);margin-top:70px;border-block:1px solid var(--line)}.values div{padding:22px 12px 22px 0;display:grid;grid-template-columns:30px 1fr}.values span{grid-row:span 2;color:var(--orange);font-size:10px}.values b{font:600 16px var(--serif)}.values small{font-size:10px;color:var(--muted)}
+.work{background:#f1f3ef}.heading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:40px}.heading>p{max-width:390px;color:var(--muted);font-size:12px}.cards{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #dce3de;border-left:1px solid #dce3de}.card{min-height:245px;padding:24px;border-right:1px solid #dce3de;border-bottom:1px solid #dce3de;background:#ffffff55;transition:.2s}.card:hover{background:white;transform:translateY(-3px)}.card .num{color:#9aa9a3;font-size:10px}.card .symbol{float:right;color:var(--teal);font-size:23px}.card h3{margin:30px 0 8px;color:var(--navy);font:600 19px/1.35 var(--serif)}.card p{min-height:38px;color:var(--muted);font-size:11px}.card a{font-size:10px;font-weight:700}
+.dark{background:var(--navy);color:white}.dark h2{color:white}.dark p:not(.eyebrow){color:#ffffffb8;font-size:13px}.programmes{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}.programme-list div{display:grid;grid-template-columns:35px 1fr;gap:2px 12px;padding:16px 0;border-bottom:1px solid #ffffff28}.programme-list div:first-child{border-top:1px solid #ffffff28}.programme-list span{grid-row:span 2;color:#e6a078;font-size:10px}.programme-list b{font:600 17px var(--serif)}.programme-list small{color:#ffffff91;font-size:10px}
+.knowledge{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}.art{height:350px;background:var(--cream);position:relative;display:grid;place-items:center;overflow:hidden}.art:before{content:"";position:absolute;width:0;height:0;border-left:170px solid transparent;border-right:170px solid transparent;border-bottom:190px solid var(--teal);bottom:65px}.art:after{content:"";position:absolute;width:0;height:0;border-left:95px solid transparent;border-right:95px solid transparent;border-bottom:115px solid var(--navy);bottom:65px;left:calc(50% - 100px)}.art span{z-index:1;margin-top:205px;text-align:center;color:var(--navy);font-size:11px;font-weight:700;letter-spacing:.16em}.knowledge-copy p:not(.eyebrow){color:var(--muted);font-size:13px}.resources{list-style:none;padding:0;margin:25px 0;border-top:1px solid var(--line)}.resources li{padding:12px 0;border-bottom:1px solid var(--line);font-size:11px;display:flex;justify-content:space-between}.resources b{color:var(--orange)}
+.news{background:#f1f3ef}.notice{padding:28px;border:1px solid #dce3de;background:#ffffff80;display:flex;gap:20px;align-items:center}.notice .star{width:48px;height:48px;border-radius:50%;background:var(--cream);display:grid;place-items:center;color:var(--orange);font-size:22px;flex-shrink:0}.notice b{font:600 18px var(--serif);color:var(--navy)}.notice p{margin:4px 0 0;font-size:11px;color:var(--muted)}
+.governance{background:#123e4d}.governance .two-col{align-items:center}.points div{display:grid;grid-template-columns:35px 1fr;gap:2px 10px;padding:18px 0;border-bottom:1px solid #ffffff28}.points div:first-child{border-top:1px solid #ffffff28}.points span{grid-row:span 2;color:#e6a078;font-size:10px}.points b{font:600 16px var(--serif)}.points small{color:#ffffff91;font-size:10px}
+.involve{text-align:center;background:var(--cream)}.involve .container{max-width:760px}.involve p:not(.eyebrow){max-width:530px;margin:20px auto 25px;color:#667276;font-size:13px}.center{justify-content:center}.fine{display:block;margin-top:20px;color:#7c8584;font-size:9px}
+.transparency{background:white;padding:60px 0}.transparency-row{display:grid;grid-template-columns:1fr 1fr auto;gap:30px;align-items:center}.transparency h2{font-size:31px}.transparency p{color:var(--muted);font-size:11px}
+.contact{background:var(--deep)}.contact .two-col{align-items:center}.contact h2{color:white}.contact p:not(.eyebrow){color:#ffffffad;font-size:12px}.contact-box{padding:28px;border:1px solid #ffffff40}.contact-box small{color:#e6a078;letter-spacing:.15em;font-weight:700}.contact-box p{font:17px/1.6 var(--serif)!important}
+footer{background:#061f2b;color:white;padding:36px 0 18px}.foot-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:26px;border-bottom:1px solid #ffffff25}.foot-top p{font:17px/1.5 var(--serif);color:#ffffffb0;text-align:right}.foot-bottom{display:flex;justify-content:space-between;gap:18px;padding-top:16px;color:#ffffff80;font-size:9px}.foot-bottom div{display:flex;gap:18px}
+@media(max-width:900px){.nav{gap:10px;font-size:9px}.intro-grid,.programmes,.knowledge,.two-col{gap:45px}}
+@media(max-width:720px){.container{width:calc(100% - 36px)}header{height:74px}.brand{gap:14px}.brand strong{font-size:22px}.mark{width:42px}.toggle{display:block}.nav{display:none;position:absolute;top:74px;left:0;right:0;padding:15px 22px 22px;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;box-shadow:0 15px 20px #08263412}.nav.open{display:flex}.nav a{padding:11px 4px;border-bottom:1px solid var(--line);font-size:13px}.nav .cta{margin-top:10px;text-align:center}.hero{height:calc(100svh - 74px);min-height:630px;max-height:760px}.hero:before{background-image:linear-gradient(90deg,#051f2be8,#051f2b70),url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80");background-position:58% center}.hero h1{font-size:clamp(42px,11vw,64px)}.hero-intro{font-size:13px}.hero-foot{font-size:7px}section{padding:72px 0}.intro-grid,.programmes,.knowledge,.two-col{grid-template-columns:1fr;gap:28px}.intro-copy{padding:0}.values{grid-template-columns:repeat(2,1fr);margin-top:45px}.heading{display:block}.heading>p{margin-top:15px}.cards{grid-template-columns:repeat(2,1fr)}.card{padding:17px;min-height:230px}.card h3{font-size:17px}.programmes{gap:35px}.art{height:300px}.transparency-row{grid-template-columns:1fr;gap:10px}.notice{align-items:flex-start;padding:20px}.foot-top{align-items:flex-start;gap:15px}.foot-top p{font-size:14px}.foot-bottom{flex-direction:column;align-items:flex-start}.foot-bottom div{flex-wrap:wrap}}
+@media(max-width:430px){.cards{grid-template-columns:1fr}.card{min-height:0}.actions{flex-direction:column;align-items:stretch;max-width:250px}.hero-foot span:first-child{max-width:230px}.foot-top{flex-direction:column}.foot-top p{text-align:left}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* PAHAD motion system: subtle, purposeful and accessible */
+:root{--motion-ease:cubic-bezier(.22,.75,.25,1)}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+header{transition:box-shadow .35s ease,background .35s ease}
+header.is-scrolled{box-shadow:0 8px 28px #08263412;background:#fbfaf7f2}
+.nav a,.text-link,.button,.contact-box a,.brand{transition:color .25s ease,background .25s ease,border-color .25s ease,transform .25s ease,opacity .25s ease}
+.nav a:not(.cta):hover{transform:translateY(-2px)}
+.button{transition:transform .3s var(--motion-ease),box-shadow .3s ease,filter .3s ease}
+.button:hover{transform:translateY(-4px);box-shadow:0 12px 26px #061f2b35}
+.text-link{display:inline-block}
+.text-link:hover{transform:translateX(5px)}
+.hero .eyebrow,.hero h1,.hero-intro,.hero .actions,.hero-note{animation:hero-arrive .85s var(--motion-ease) both}
+.hero h1{animation-delay:.12s}.hero-intro{animation-delay:.24s}.hero .actions{animation-delay:.36s}.hero-note{animation-delay:.48s}
+.hero:before{animation:hero-image-in 1.6s ease-out both}
+@keyframes hero-arrive{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hero-image-in{from{transform:scale(1.06);opacity:.55}to{transform:scale(1);opacity:1}}
+/* Scroll reveal */
+.js-motion [data-reveal]{opacity:0;transform:translateY(28px);filter:blur(3px);transition:opacity .75s var(--motion-ease),transform .75s var(--motion-ease),filter .75s var(--motion-ease);transition-delay:var(--reveal-delay,0ms)}
+.js-motion [data-reveal].is-visible{opacity:1;transform:translateY(0);filter:blur(0)}
+.js-motion [data-reveal="left"]{transform:translateX(-30px);}.js-motion [data-reveal="right"]{transform:translateX(30px)}
+.js-motion [data-reveal="left"].is-visible,.js-motion [data-reveal="right"].is-visible{transform:translateX(0)}
+/* Cards and interactive surfaces */
+.programme-card,.directorate-card,.value-card,.knowledge-card,.contact-box,.transparency-row{transition:transform .35s var(--motion-ease),box-shadow .35s ease,border-color .35s ease}
+.programme-card:hover,.directorate-card:hover,.value-card:hover,.knowledge-card:hover{transform:translateY(-7px);box-shadow:0 18px 42px #0b304115}
+img{transition:transform .7s var(--motion-ease)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--orange);z-index:1000;transform-origin:left;pointer-events:none}
+.back-top{position:fixed;right:22px;bottom:22px;z-index:20;width:44px;height:44px;border:0;border-radius:50%;background:var(--navy);color:white;font-size:20px;box-shadow:0 8px 24px #061f2b30;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+.back-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.back-top:hover{background:var(--orange);transform:translateY(-3px)}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+ .js-motion [data-reveal]{opacity:1!important;transform:none!important;filter:none!important}
+}
+
+
+/* Official PAHAD contact and social links */
+.social-links{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 24px}
+.social-link{display:inline-flex;align-items:center;gap:5px;padding:9px 12px;border:1px solid #ffffff55;color:white;font-size:11px;font-weight:600;transition:background .25s ease,border-color .25s ease,transform .25s ease}
+.social-link:hover{background:var(--orange);border-color:var(--orange);transform:translateY(-3px)}
+.contact-box>p a:hover{text-decoration:underline;text-underline-offset:4px}
+.brand-mark-img{width:52px;height:52px;object-fit:contain;display:block;flex:0 0 auto}
+@media(max-width:520px){.social-links{gap:7px}.social-link{padding:8px 10px;font-size:10px}}
+
+.footer-social{display:flex;flex-wrap:wrap;gap:16px;padding-top:18px;border-top:1px solid #ffffff20;margin-top:18px}.footer-social a{color:#ffffffa8;font-size:10px}.footer-social a:hover{color:white}\n
+/* Member proposition: warm, confident and youth-friendly */
+#membership{background:#fbfaf7}
+#membership .heading{align-items:end}
+#membership .card{background:white;border-color:#e5e8e2}
+#membership .card h3{margin-top:22px}
+#membership .fine{max-width:760px;line-height:1.7}
+#opportunities{background:linear-gradient(135deg,#0b3041,#14505a)}
+#opportunities .programme-list b{font-size:18px}
+#opportunities .programme-list small{font-size:11px}
+@media(max-width:720px){#membership .heading{display:block}#membership .cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:430px){#membership .cards{grid-template-columns:1fr}}
+
+
+/* Accessible Explore PAHAD dropdown */
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-drop-trigger{appearance:none;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;padding:12px 0;cursor:pointer;display:flex;align-items:center;gap:7px}
+.nav-drop-trigger:hover,.nav-dropdown:focus-within .nav-drop-trigger{color:var(--orange)}
+.chevron{display:inline-block;transition:transform .25s ease;font-size:16px;line-height:1}
+.nav-dropdown.open .chevron{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:calc(100% + 12px);left:-18px;min-width:230px;padding:9px;background:#082d3b;border:1px solid #ffffff18;box-shadow:0 18px 38px #061f2b35;display:grid;gap:2px;opacity:0;visibility:hidden;transform:translateY(9px);transition:opacity .2s ease,transform .2s ease,visibility .2s;z-index:30}
+.nav-dropdown.open .dropdown-menu,.nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown-menu a{display:block;padding:12px 14px;color:#ffffffd9;font-size:12px;font-weight:500;white-space:nowrap}
+.dropdown-menu a:hover,.dropdown-menu a:focus-visible{background:#ffffff12;color:#f39a70}
+.nav-drop-trigger:focus-visible,.dropdown-menu a:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+@media(max-width:900px){.nav-drop-trigger{font-size:9px}}
+@media(max-width:720px){
+ .nav-dropdown{display:block;width:100%}
+ .nav-drop-trigger{width:100%;justify-content:space-between;padding:12px 4px;font-size:13px;border-bottom:1px solid var(--line);color:#40535b}
+ .dropdown-menu{position:static;min-width:0;padding:5px 0 8px 12px;background:transparent;border:0;box-shadow:none;display:none;opacity:1;visibility:visible;transform:none;transition:none}
+ .nav-dropdown.open .dropdown-menu{display:grid}
+ .dropdown-menu a{color:#40535b;padding:10px 12px;font-size:12px;border-bottom:1px solid #e4e8e5}
+ .dropdown-menu a:hover,.dropdown-menu a:focus-visible{background:#f1f3ef;color:var(--orange)}
+ .nav-dropdown:hover .dropdown-menu{display:none}
+ .nav-dropdown.open:hover .dropdown-menu{display:grid}
+}
+@media(prefers-reduced-motion:reduce){.dropdown-menu,.chevron{transition:none}}
+
+
+/* Clearer reading, stronger hierarchy and richer but accessible motion */
+:root{--body-size:17px}
+body{font-size:17px;line-height:1.75}
+.container{width:min(1200px,calc(100% - 56px))}
+section{padding:clamp(76px,8vw,116px) 0}
+.hero{min-height:720px}
+.hero h1{max-width:900px;font-size:clamp(54px,7.2vw,94px);line-height:1.02}
+.hero-intro{max-width:700px;font-size:clamp(17px,1.6vw,20px);line-height:1.75}
+.eyebrow{font-size:12px;letter-spacing:.16em}
+h2{font-size:clamp(40px,5vw,62px);line-height:1.12}
+.lead{font-size:clamp(21px,2vw,25px);line-height:1.55}
+.intro-copy,.knowledge-copy p:not(.eyebrow),.dark p:not(.eyebrow),.involve p:not(.eyebrow),.contact p:not(.eyebrow){font-size:17px;line-height:1.8}
+.heading>p{font-size:16px;line-height:1.75}
+.card{min-height:280px;padding:30px;transition:transform .4s cubic-bezier(.2,.75,.25,1),box-shadow .4s ease,background .3s ease}
+.card h3{font-size:clamp(20px,2vw,24px);line-height:1.3}
+.card p{font-size:15px;line-height:1.7;min-height:0}
+.card a,.text-link{font-size:14px}
+.card:hover{transform:translateY(-9px);box-shadow:0 22px 48px #0b30411b}
+.values b{font-size:19px}.values small{font-size:13px}
+.programme-list b,.points b{font-size:20px}
+.programme-list small,.points small{font-size:14px}
+.resources li{font-size:15px;padding:15px 0}
+.notice b{font-size:22px}.notice p{font-size:15px}
+.button{min-height:54px;padding:0 24px;font-size:14px}
+.nav{font-size:12px}
+.nav a,.nav-drop-trigger{font-size:12px}
+.contact-box{padding:34px}
+.contact-box>p{font-size:21px!important}
+.fine{font-size:12px;line-height:1.7}
+.art{border-radius:4px}
+.art:before{animation:mountain-float 7s ease-in-out infinite alternate}
+.art:after{animation:mountain-float 6s ease-in-out infinite alternate-reverse}
+@keyframes mountain-float{from{transform:translateY(0)}to{transform:translateY(-12px)}}
+.hero:before{animation:hero-image-in 1.5s ease-out both,hero-drift 24s ease-in-out infinite alternate}
+@keyframes hero-drift{from{background-position:50% 50%}to{background-position:55% 47%}}
+.hero h1 em{display:inline-block;animation:headline-rise .9s .2s both}
+@keyframes headline-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.button:active{transform:scale(.97)}
+.values div{transition:transform .3s ease}
+.values div:hover{transform:translateY(-5px)}
+.programme-list div,.points div{transition:padding-left .3s ease,background .3s ease}
+.programme-list div:hover,.points div:hover{padding-left:12px}
+.social-link{font-size:13px}
+@media(max-width:720px){
+ body{font-size:16px}
+ .container{width:calc(100% - 36px)}
+ section{padding:72px 0}
+ .hero{min-height:680px}
+ .hero h1{font-size:clamp(44px,11vw,66px)}
+ .hero-intro{font-size:16px;line-height:1.7}
+ h2{font-size:clamp(36px,9vw,48px)}
+ .lead{font-size:20px}
+ .intro-copy,.knowledge-copy p:not(.eyebrow),.dark p:not(.eyebrow),.involve p:not(.eyebrow),.contact p:not(.eyebrow){font-size:16px}
+ .heading>p{font-size:15px}
+ .card{padding:22px;min-height:240px}
+ .card h3{font-size:20px}.card p{font-size:14px}
+ .values b{font-size:17px}.values small{font-size:12px}
+ .programme-list b,.points b{font-size:18px}
+ .programme-list small,.points small{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero:before,.hero h1 em,.art:before,.art:after{animation:none!important}
+ .card,.values div,.programme-list div,.points div{transition:none!important}
+}
+
+
+/* Youth self-reliance and unity feature */
+.youth-power{position:relative;overflow:hidden;background:linear-gradient(125deg,#082634 0%,#0b4050 58%,#12666a 100%);color:#fff}
+.youth-power:before,.youth-power:after{content:"";position:absolute;border:1px solid #ffffff18;border-radius:50%;pointer-events:none}
+.youth-power:before{width:440px;height:440px;right:-120px;top:-170px}
+.youth-power:after{width:300px;height:300px;right:-50px;top:-100px}
+.youth-power-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.youth-power h2{color:#fff;max-width:700px}
+.youth-power h2 em{color:#f08a55}
+.youth-power-copy p:not(.eyebrow){max-width:650px;color:#ffffffd1;font-size:18px;line-height:1.8}
+.youth-power-copy .button{margin-top:18px;background:#f08a55;color:#082634}
+.youth-pillars{display:grid;gap:12px}
+.youth-pillars article{display:flex;align-items:flex-start;gap:18px;padding:21px;border:1px solid #ffffff30;background:#ffffff0b;backdrop-filter:blur(5px);transition:transform .35s ease,background .35s ease,border-color .35s ease}
+.youth-pillars article:hover{transform:translateX(8px);background:#ffffff18;border-color:#f08a55}
+.youth-pillars article>span{font:700 13px var(--sans);color:#f08a55;padding-top:3px}
+.youth-pillars b{display:block;font:600 21px var(--serif);color:#fff}
+.youth-pillars small{display:block;margin-top:5px;font-size:14px;line-height:1.6;color:#ffffffb8}
+@media(max-width:720px){.youth-power-grid{grid-template-columns:1fr;gap:34px}.youth-power-copy p:not(.eyebrow){font-size:16px}.youth-pillars article{padding:17px}.youth-pillars b{font-size:19px}}
+
+
+/* ── Visual direction adapted from PAHAD Founder Member Invitation ── */
+:root{--navy:#0b3041;--deep:#071f2b;--teal:#168b8b;--orange:#e66d2e;--cream:#f3e5c8;--paper:#fbfaf7;--ink:#183441;--muted:#68777b;--line:#e3e8e4}
+body{background:var(--paper);color:var(--ink)}
+.container{width:min(1080px,calc(100% - 40px))}
+header{height:76px;background:#fbfaf7ed;border-bottom:1px solid var(--line)}
+.head{gap:20px}
+.brand{gap:17px}
+.brand-mark-img{width:48px;height:48px;object-fit:contain}
+.brand strong{font:700 25px "Playfair Display",Georgia,serif;letter-spacing:.08em;color:var(--navy)}
+.brand small{font-size:7px;line-height:1.4;letter-spacing:.08em;color:var(--muted)}
+.nav{gap:clamp(10px,1.45vw,20px);font-size:10px;color:#40535b}
+.nav .cta{border:1px solid var(--navy);padding:9px 13px}
+.nav-dropdown .dropdown-menu{background:var(--navy);border:1px solid #ffffff20;box-shadow:0 18px 38px #061f2b30}
+.hero{height:auto;min-height:590px;max-height:none;padding:88px 0 68px;background:var(--navy)}
+.hero:before{inset:auto;width:510px;height:510px;left:auto;right:-130px;top:-205px;border:1px solid #ffffff25;border-radius:50%;background:none;box-shadow:0 0 0 55px #ffffff0d,0 0 0 110px #ffffff08;animation:none}
+.hero:after{inset:auto;width:340px;height:340px;right:-45px;top:-120px;border:1px solid #ffffff16;border-radius:50%;background:none}
+.hero .container{padding-top:0}
+.hero h1{max-width:850px;font-size:clamp(43px,6vw,70px);line-height:1.12}
+.hero-intro{max-width:650px;font-size:14px;color:#ffffffc9}
+.hero-note{margin-top:42px;color:#ffffff8a;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+section{padding:76px 0}
+h2{font-size:clamp(32px,4vw,47px);line-height:1.15}
+.eyebrow{font-size:10px;letter-spacing:.2em}
+.intro-grid,.two-col{grid-template-columns:.8fr 1.2fr;gap:70px}
+.intro-copy{padding-top:8px;font-size:13px}
+.lead{font:500 19px/1.6 "Playfair Display",Georgia,serif}
+.values{margin-top:48px}
+.values div{padding:18px 12px 18px 0}
+.values b{font:600 16px "Playfair Display",Georgia,serif}
+.work,.news{background:#f0f3ef}
+.heading{margin-bottom:32px}
+.heading>p{font-size:13px}
+.cards{grid-template-columns:repeat(3,1fr);gap:1px;background:#dce3de;border:1px solid #dce3de;border-top:1px solid #dce3de;border-left:1px solid #dce3de}
+.card{min-height:190px;padding:23px;background:#fafbf8;border:0;border-right:1px solid #dce3de;border-bottom:1px solid #dce3de;transition:transform .3s ease,background .3s ease,box-shadow .3s ease}
+.card:hover{background:white;transform:translateY(-4px);box-shadow:0 12px 25px #0b304110}
+.card h3{margin:20px 0 8px;font:600 19px "Playfair Display",Georgia,serif}
+.card p{min-height:0;font-size:11px}
+.dark{background:var(--navy)}
+.programmes{gap:70px}
+.programme-list b,.points b{font:600 18px "Playfair Display",Georgia,serif}
+.knowledge{gap:70px}
+.art{height:320px;background:var(--cream)}
+.notice{padding:22px;background:#fafbf8;border:1px solid #dce3de}
+.notice b{font:600 19px "Playfair Display",Georgia,serif}
+.governance{background:#123e4d}
+.youth-power{background:var(--navy)}
+.youth-power:before{width:500px;height:500px;right:-140px;top:-205px;border-color:#ffffff25;box-shadow:0 0 0 55px #ffffff0d,0 0 0 110px #ffffff08}
+.youth-power:after{display:none}
+.youth-power-grid{gap:60px}
+.youth-power-copy p:not(.eyebrow){font-size:14px;line-height:1.75}
+.youth-pillars{gap:0}
+.youth-pillars article{padding:17px 0;border:0;border-top:1px solid #ffffff45;background:transparent;backdrop-filter:none;border-radius:0}
+.youth-pillars article:last-child{border-bottom:1px solid #ffffff45}
+.youth-pillars article:hover{transform:translateX(5px);background:transparent;border-color:var(--orange)}
+.youth-pillars b{font:600 18px "Playfair Display",Georgia,serif}
+.youth-pillars small{font-size:11px}
+.involve{background:#f0f3ef}
+.involve p:not(.eyebrow){color:var(--muted)}
+.transparency{background:#fff;padding:52px 0}
+.transparency h2{font-size:31px}
+.contact{background:#071f2b}
+.contact-box{background:#0b3041;border-color:#ffffff35}
+footer{background:#071f2b;padding:28px 0 18px}
+.back-top{border-radius:0;background:var(--orange)}
+.button{border-radius:0}
+.button.primary{background:var(--orange)}
+.button.outline{border-color:#ffffff8c}
+@media(max-width:900px){
+ .container{width:min(1080px,calc(100% - 40px))}
+ .nav{gap:9px;font-size:9px}
+ .intro-grid,.programmes,.knowledge,.two-col{gap:38px}
+}
+@media(max-width:720px){
+ .container{width:calc(100% - 34px)}
+ header{height:74px}
+ .brand{gap:14px}
+ .brand-mark-img{width:43px;height:43px}
+ .nav{top:74px;background:var(--paper)}
+ .nav .cta{margin-top:8px}
+ .hero{height:auto;min-height:0;max-height:none;padding:72px 0 58px}
+ .hero:before{width:330px;height:330px;right:-155px;top:-120px;box-shadow:0 0 0 35px #ffffff0d,0 0 0 70px #ffffff08}
+ .hero:after{width:220px;height:220px;right:-95px;top:-65px}
+ .hero h1{font-size:clamp(42px,10vw,58px)}
+ section{padding:60px 0}
+ .intro-grid,.programmes,.knowledge,.two-col{grid-template-columns:1fr;gap:25px}
+ .values{margin-top:35px}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .card{padding:18px;min-height:160px}
+ .youth-power-grid{grid-template-columns:1fr;gap:28px}
+ .youth-pillars article{padding:14px 0}
+ .art{height:280px}
+ .transparency-row{grid-template-columns:1fr;gap:10px}
+}
+@media(max-width:430px){
+ .cards{grid-template-columns:1fr}
+ .card{min-height:0}
+ .hero h1{font-size:43px}
+}
+
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div><button class="back-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
+
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="container head">
+<a class="brand" href="#home" aria-label="PAHAD home">
+<img class="brand-mark-img" src="https://drive.google.com/uc?export=view&id=1EVrr5ctvcM2xQMp86U2lPOkBiprrZVRK" alt="PAHAD official logo" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+<span><strong>PAHAD</strong><small>Participatory Action for Holistic<br>Advancement &amp; Development</small></span></a>
+<button class="toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">☰</button>
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="#about">About PAHAD</a>
+  <a href="#work">Our Focus</a>
+  <div class="nav-dropdown">
+    <button class="nav-drop-trigger" type="button" aria-expanded="false" aria-controls="explore-menu">
+      Explore PAHAD <span class="chevron" aria-hidden="true">⌄</span>
+    </button>
+    <div class="dropdown-menu" id="explore-menu">
+      <a href="explore.html">Explore</a>
+      <a href="our-work.html">Our Work</a>
+      <a href="programmes.html">Programmes</a>
+      <a href="knowledge.html">Knowledge</a>
+      <a href="governance.html">Governance</a>
+      <a href="transparency.html">Transparency</a>
+      <a href="news.html">News &amp; Updates</a>
+    </div>
+  </div>
+  <a href="membership.html">Membership</a>
+  <a href="get-involved.html">Get Involved</a>
+  <a href="reconnect.html">Our Roots</a>
+  <a class="cta" href="https://form.jotform.com/263137085412049" target="_blank" rel="noopener noreferrer">Join PAHAD</a>
+</nav>
+</div></header>
+<main id="main">
+<section class="hero" id="home"><div class="container">
+<p class="eyebrow light">YOUTH POWER · SELF-RELIANCE · UNITY</p>
+<h1>Believe in yourself.<br><em>Stand together.</em><br>Shape our future.</h1>
+<p class="hero-intro">Our future should not be shaped for us while we stand aside. It should be shaped by us. PAHAD brings young people together to build skills, trust their abilities and turn shared ideas into action.</p>
+<div class="actions"><a class="button primary" href="https://form.jotform.com/263137085412049" target="_blank" rel="noopener noreferrer">Become a member →</a><a class="button outline" href="#membership">See what you gain</a></div>
+<div class="hero-note">Together, we can do more than we can alone.</div></div>
+<div class="container hero-foot"><span>ROOTED IN OUR COMMUNITIES · OPEN TO EVERYONE</span><span>PAHAD</span></div></section>
+<section id="about"><div class="container">
+<div class="intro-grid"><div><p class="eyebrow">WHO WE ARE</p><h2>Our strength is in<br><em>standing together.</em></h2></div>
+<div class="intro-copy"><p class="lead">Every young person has ability, ideas and a role to play. When we come together, our individual strengths become a shared force for progress.</p><p>We believe in helping people become confident, capable and self-reliant. That means learning practical skills, taking initiative, supporting one another and finding solutions together.</p><a class="text-link" href="#membership">See what members can do ↗</a></div></div>
+<div class="values"><div><span>01</span><b>Participation</b><small>Young people having a voice</small></div><div><span>02</span><b>Knowledge</b><small>Knowledge that builds confidence</small></div><div><span>03</span><b>Dignity</b><small>Respect and inclusion</small></div><div><span>04</span><b>Advancement</b><small>Moving forward together</small></div></div>
+</div></section>
+
+<section class="youth-power" id="youth-power">
+  <div class="container youth-power-grid">
+    <div class="youth-power-copy">
+      <p class="eyebrow light">OUR BELIEF · OUR STRENGTH</p>
+      <h2>We do not have to wait for change.<br><em>We can create it together.</em></h2>
+      <p>Self-reliance begins when we believe in what we can do. Unity grows when we respect one another and work towards a shared goal.</p>
+      <p>When young people learn, organise, support each other and take responsibility, they become a powerful force for positive change.</p>
+      <a class="button" href="#membership">Be part of the movement →</a>
+    </div>
+    <div class="youth-pillars">
+      <article><span>01</span><div><b>Believe in our abilities</b><small>Build confidence. Learn skills. Take initiative.</small></div></article>
+      <article><span>02</span><div><b>Stand together</b><small>Respect differences. Share ideas. Support each other.</small></div></article>
+      <article><span>03</span><div><b>Take responsibility</b><small>Turn plans into action and lead by example.</small></div></article>
+      <article><span>04</span><div><b>Build our future</b><small>Create opportunities through effort and cooperation.</small></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work"><div class="container"><div class="heading"><div><p class="eyebrow">WHAT WE CARE ABOUT</p><h2>Six ways to<br><em>make a difference.</em></h2></div><p>Choose an area that interests you. Share your ideas, meet others and help turn plans into action.</p></div>
+<div class="cards">
+<article class="card"><span class="num">01</span><span class="symbol">⌕</span><h3>Research &amp; Learning</h3><p>Study issues, collect information and share useful ideas.</p><a href="#knowledge">Explore area ↗</a></article>
+<article class="card"><span class="num">02</span><span class="symbol">◎</span><h3>Community Development</h3><p>Help people take part and improve local communities.</p><a href="#programmes">Explore area ↗</a></article>
+<article class="card"><span class="num">03</span><span class="symbol">↗</span><h3>Jobs &amp; Enterprise</h3><p>Support skills, small businesses and local livelihoods.</p><a href="#programmes">Explore area ↗</a></article>
+<article class="card"><span class="num">04</span><span class="symbol">▤</span><h3>Media &amp; Culture</h3><p>Share stories, celebrate culture and document our heritage.</p><a href="#news">Explore area ↗</a></article>
+<article class="card"><span class="num">05</span><span class="symbol">⌘</span><h3>Public Affairs</h3><p>Understand public issues, policies and how decisions are made.</p><a href="#governance">Explore area ↗</a></article>
+<article class="card"><span class="num">06</span><span class="symbol">＋</span><h3>Organisation &amp; Finance</h3><p>Help the organisation work well and use resources responsibly.</p><a href="#governance">Explore area ↗</a></article>
+</div></div></section>
+<section class="dark" id="programmes"><div class="container programmes"><div><p class="eyebrow light">WAYS TO TAKE PART</p><h2>Start with an idea.<br><em>Take the next step.</em></h2><p>Join a discussion, share a skill, help with an activity or suggest a project. You can take part in a way that suits your time and interests.</p><a class="button" style="background:var(--cream);color:var(--navy);margin-top:15px" href="#get-involved">Ways to participate →</a></div>
+<div class="programme-list"><div><span>01</span><b>Youth Development</b><small>Learning, skills, leadership and participation</small></div><div><span>02</span><b>Community Development</b><small>Local priorities and community-led action</small></div><div><span>03</span><b>Research &amp; Knowledge</b><small>Evidence, documentation and regional learning</small></div><div><span>04</span><b>Culture &amp; Heritage</b><small>Stories, identity and cultural documentation</small></div><div><span>05</span><b>Livelihoods &amp; Skills</b><small>Capabilities and local economic opportunity</small></div></div></div></section>
+<section id="knowledge"><div class="container knowledge"><div class="art"><span>KNOWLEDGE<br>INFORMS ACTION</span></div><div class="knowledge-copy"><p class="eyebrow">LEARN ABOUT OUR REGION</p><h2>Learn more.<br><em>Share what you know.</em></h2><p>Find useful information, local stories, research and resources. You can also help record and share knowledge about our region.</p><ul class="resources"><li>Research &amp; studies <b>↗</b></li><li>Policy papers &amp; reports <b>↗</b></li><li>Regional knowledge &amp; archive <b>↗</b></li><li>Data, maps &amp; documentation <b>↗</b></li></ul><a class="text-link" href="#contact">Enquire about research collaboration ↗</a></div></div></section>
+<section class="news" id="news"><div class="container"><div class="heading"><div><p class="eyebrow">FROM PAHAD</p><h2>News &amp; <em>updates.</em></h2></div><p>Institutional announcements, programme developments and stories from our work will be shared here.</p></div><div class="notice"><span class="star">✳</span><div><b>Updates will appear here.</b><p>As PAHAD's activities and programmes develop, this space will share verified news, notices and reports.</p></div></div></div></section>
+<section class="governance dark" id="governance"><div class="container two-col"><div><p class="eyebrow light">HOW PAHAD IS GUIDED</p><h2>Trust matters.<br><em>So does responsibility.</em></h2><p>PAHAD is an independent, non-partisan, non-profit institution. We aim to work responsibly, explain how the organisation is run and be open about our activities.</p><a class="button outline" href="#transparency">How we stay accountable</a></div><div class="points"><div><span>01</span><b>A clear purpose</b><small>A shared direction for our work</small></div><div><span>02</span><b>Clear responsibilities</b><small>People understand their roles</small></div><div><span>03</span><b>Openness and accountability</b><small>Sharing information and reporting our work</small></div></div></div></section>
+
+<section id="membership">
+  <div class="container">
+    <div class="heading">
+      <div><p class="eyebrow">WHY JOIN PAHAD</p><h2>Join a community.<br><em>Grow with it.</em></h2></div>
+      <p>Be part of a team where your voice is heard, your skills can grow and your contribution can help move our communities forward.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><span class="num">01</span><span class="symbol">◎</span><h3>Meet your community</h3><p>Meet people with different interests and ideas. Make connections and work together.</p></article>
+      <article class="card"><span class="num">02</span><span class="symbol">✦</span><h3>Build useful skills</h3><p>Improve your communication, teamwork, planning and problem-solving by taking part.</p></article>
+      <article class="card"><span class="num">03</span><span class="symbol">↗</span><h3>Share your talents</h3><p>Use your skills, share your ideas and show what you can do.</p></article>
+      <article class="card"><span class="num">04</span><span class="symbol">▤</span><h3>Learn with others</h3><p>Join learning sessions, discussions and training activities when they are available.</p></article>
+      <article class="card"><span class="num">05</span><span class="symbol">⌘</span><h3>Work on real projects</h3><p>Help plan and take part in projects for our communities.</p></article>
+      <article class="card"><span class="num">06</span><span class="symbol">＋</span><h3>Take responsibility</h3><p>With experience, you may have the chance to help organise activities or lead a project.</p></article>
+    </div>
+    <p class="fine">Opportunities depend on programme development, available resources, selection criteria and organisational policies. Membership does not guarantee employment, funding or a formal position.</p>
+  </div>
+</section>
+<section class="dark" id="opportunities">
+  <div class="container programmes">
+    <div><p class="eyebrow light">WAYS TO GET INVOLVED</p><h2>Join in.<br><em>Learn by doing.</em></h2>
+      <p>You can volunteer, learn a skill, help with research, support an event or work with a team. More opportunities can develop as our activities grow.</p>
+      <a class="button" style="background:var(--cream);color:var(--navy);margin-top:15px" href="https://form.jotform.com/263137085412049" target="_blank" rel="noopener noreferrer">Find your place at PAHAD →</a>
+    </div>
+    <div class="programme-list">
+      <div><span>01</span><b>Volunteer &amp; contribute</b><small>Support activities and community initiatives</small></div>
+      <div><span>02</span><b>Learn &amp; get trained</b><small>Build practical skills and confidence</small></div>
+      <div><span>03</span><b>Research &amp; create</b><small>Document stories, ideas and local knowledge</small></div>
+      <div><span>04</span><b>Connect &amp; collaborate</b><small>Meet peers, mentors and partner organisations</small></div>
+      <div><span>05</span><b>Lead &amp; represent</b><small>Take on responsibilities as opportunities arise</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="involve" id="get-involved"><div class="container"><p class="eyebrow">TAKE THE FIRST STEP</p><h2>Your community.<br><em>Your chance to contribute.</em></h2><p>You do not have to wait for someone else to make things better. Start with what you can do, join others who care and help build the future we want to see.</p><div class="actions center"><a class="button primary" href="https://form.jotform.com/263137085412049" target="_blank" rel="noopener noreferrer">Apply to join PAHAD →</a><a class="text-link" href="#membership">Explore membership first ↗</a></div><small class="fine">Membership is guided by PAHAD’s Constitution, membership rules and applicable policies.</small></div></section>
+<section class="transparency" id="transparency"><div class="container transparency-row"><div><p class="eyebrow">OUR COMMITMENT</p><h2>We believe in <em>being open.</em></h2></div><p>We will share important documents and public reports when they are ready to be published.</p><a class="text-link" href="#contact">Request institutional information ↗</a></div></section>
+<section class="contact dark" id="contact"><div class="container two-col"><div><p class="eyebrow light">CONTACT</p><h2>Have a question?<br><em>Talk to us.</em></h2><p>Want to know more, get involved or work with us? Contact PAHAD through our official channels.</p></div><div class="contact-box"><small>OFFICIAL ENQUIRIES</small>
+<p><a style="color:white" href="mailto:Pahad.org@gmail.com">Pahad.org@gmail.com</a></p>
+<div class="social-links" aria-label="PAHAD social media"><a class="social-link" href="https://www.facebook.com/share/1F25YtgKa4/" target="_blank" rel="noopener noreferrer" aria-label="PAHAD on Facebook">Facebook<span aria-hidden="true"> ↗</span></a>
+<a class="social-link" href="https://www.instagram.com/pahadofficial/" target="_blank" rel="noopener noreferrer" aria-label="PAHAD on Instagram">Instagram<span aria-hidden="true"> ↗</span></a>
+<a class="social-link" href="https://youtube.com/@pahad_org" target="_blank" rel="noopener noreferrer" aria-label="PAHAD on YouTube">YouTube<span aria-hidden="true"> ↗</span></a>
+<a class="social-link" href="https://x.com/PAHAD_official" target="_blank" rel="noopener noreferrer" aria-label="PAHAD on X">X<span aria-hidden="true"> ↗</span></a>
+<a class="social-link" href="https://www.linkedin.com/in/pahad-org-8a343244a/" target="_blank" rel="noopener noreferrer" aria-label="PAHAD on LinkedIn">LinkedIn<span aria-hidden="true"> ↗</span></a></div>
+<a class="text-link" style="color:white" href="#home">Return to top ↑</a></div></div></section>
+</main>
+<footer><div class="container"><div class="foot-top"><a class="brand" href="#home"><img class="brand-mark-img" src="https://drive.google.com/uc?export=view&id=1EVrr5ctvcM2xQMp86U2lPOkBiprrZVRK" alt="PAHAD official logo" referrerpolicy="no-referrer" onerror="this.style.display='none'"><span><strong style="color:white">PAHAD</strong><small style="color:#ffffff91">Participatory Action for Holistic<br>Advancement &amp; Development</small></span></a><p>A place to belong.<br>A platform to make a difference.</p></div><div class="foot-bottom"><span>© <span id="year"></span> PAHAD. All rights reserved.</span><span>Independent · Non-partisan · Non-profit</span><div><a href="#governance">Governance</a><a href="#transparency">Transparency</a><a href="#contact">Contact</a></div></div>
+<div class="footer-social" aria-label="Official PAHAD links"><a href="mailto:Pahad.org@gmail.com">Email</a><a class="social-link" href="https://www.facebook.com/share/1F25YtgKa4/" target="_blank" rel="noopener noreferrer" aria-label="PAHAD on Facebook">Facebook<span aria-hidden="true"> ↗</span></a>
+<a class="social-link" href="https://www.instagram.com/pahadofficial/" target="_blank" rel="noopener noreferrer" aria-label="PAHAD on Instagram">Instagram<span aria-hidden="true"> ↗</span></a>
+<a class="social-link" href="https://youtube.com/@pahad_org" target="_blank" rel="noopener noreferrer" aria-label="PAHAD on YouTube">YouTube<span aria-hidden="true"> ↗</span></a>
+<a class="social-link" href="https://x.com/PAHAD_official" target="_blank" rel="noopener noreferrer" aria-label="PAHAD on X">X<span aria-hidden="true"> ↗</span></a>
+<a class="social-link" href="https://www.linkedin.com/in/pahad-org-8a343244a/" target="_blank" rel="noopener noreferrer" aria-label="PAHAD on LinkedIn">LinkedIn<span aria-hidden="true"> ↗</span></a></div></div></footer>
+<script>
+const toggle=document.querySelector(".toggle"),nav=document.querySelector(".nav");
+toggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",String(open));toggle.setAttribute("aria-label",open?"Close menu":"Open menu");toggle.textContent=open?"×":"☰"});
+const dropdown=document.querySelector(".nav-dropdown");
+const dropTrigger=document.querySelector(".nav-drop-trigger");
+dropTrigger.addEventListener("click",()=>{const open=dropdown.classList.toggle("open");dropTrigger.setAttribute("aria-expanded",String(open));});
+document.addEventListener("click",event=>{if(!dropdown.contains(event.target)){dropdown.classList.remove("open");dropTrigger.setAttribute("aria-expanded","false");}});
+document.addEventListener("keydown",event=>{if(event.key==="Escape"){dropdown.classList.remove("open");dropTrigger.setAttribute("aria-expanded","false");dropTrigger.focus();}});
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");toggle.setAttribute("aria-expanded","false");toggle.textContent="☰";dropdown.classList.remove("open");dropTrigger.setAttribute("aria-expanded","false");}));
+document.getElementById("year").textContent=new Date().getFullYear();
+
+// Progressive enhancement: if JavaScript is unavailable, all content remains visible.
+document.documentElement.classList.add("js-motion");
+const revealTargets = document.querySelectorAll(
+  "main section:not(.hero) .heading, main section:not(.hero) .intro-grid > div, main section:not(.hero) .values, main section:not(.hero) .card, main section:not(.hero) .programme-list > div, main section:not(.hero) .points > div, main section:not(.hero) .knowledge-copy, main section:not(.hero) .notice, main section:not(.hero) .contact-box, main section:not(.hero) .transparency-row > *"
+);
+revealTargets.forEach((el, index) => {
+  if (el.closest("header")) return;
+  el.setAttribute("data-reveal", "up");
+  const group = el.parentElement;
+  if (group && group.children.length > 1) {
+    const siblings = Array.from(group.children).filter(node => node.matches("h2,h3,p,.text-link,.contact-box,.card,article,li,.eyebrow"));
+    const position = siblings.indexOf(el);
+    if (position >= 0) el.style.setProperty("--reveal-delay", Math.min(position * 75, 300) + "ms");
+  }
+});
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.12, rootMargin: "0px 0px -45px 0px"});
+document.querySelectorAll("[data-reveal]").forEach(el => revealObserver.observe(el));
+
+const progress = document.querySelector(".scroll-progress");
+const backTop = document.querySelector(".back-top");
+const header = document.querySelector("header");
+let scrollTicking = false;
+function updateScrollEffects(){
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const amount = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+  progress.style.width = amount + "%";
+  header.classList.toggle("is-scrolled", window.scrollY > 12);
+  backTop.classList.toggle("visible", window.scrollY > 500);
+  scrollTicking = false;
+}
+window.addEventListener("scroll", () => {
+  if (!scrollTicking) {
+    window.requestAnimationFrame(updateScrollEffects);
+    scrollTicking = true;
+  }
+}, {passive:true});
+updateScrollEffects();
+backTop.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+
+</script>
+<script src='https://cdn.jotfor.ms/agent/embedjs/01a1c8c20568700084ef412f4b069721dc93/embed.js'></script>
+</body></html>
