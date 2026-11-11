@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b3041">
+<meta name="description" content="A heartfelt invitation to everyone who was once part of DSSCOLONY to reconnect and help shape PAHAD's next chapter.">
+<title>Come Back to the Circle | DSSCOLONY to PAHAD</title>
+<style>
+:root{--navy:#0b3041;--rust:#e66d2e;--teal:#168b8b;--cream:#f3e5c8;--paper:#f8f5ee;--ink:#26383d;--muted:#657579;--serif:Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}.topbar{height:66px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;background:var(--navy);color:#fff}
+.brand{font-weight:900;letter-spacing:.18em;font-size:1rem}.brand small{display:block;font-size:.53rem;font-weight:500;letter-spacing:.12em;color:#c6d8d8}
+.top-note{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:#d4e1df}
+.hero{min-height:min(780px,calc(100vh - 66px));position:relative;display:flex;align-items:flex-end;overflow:hidden;background:var(--navy);color:#fff}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:.64;filter:saturate(.82)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,30,42,.91) 0%,rgba(5,30,42,.65) 48%,rgba(5,30,42,.1) 100%),linear-gradient(0deg,rgba(5,30,42,.68),transparent 55%)}
+.hero-content{position:relative;z-index:1;max-width:1100px;padding:clamp(55px,9vw,115px) 7vw 78px;animation:rise 1s ease both}
+.kicker{font-size:.7rem;text-transform:uppercase;letter-spacing:.22em;color:var(--cream);font-weight:750}
+.hero h1{font:normal clamp(3.4rem,8vw,7.7rem)/.96 var(--serif);letter-spacing:-.055em;max-width:900px;margin:22px 0}
+.hero h1 em{color:#f0a078;font-weight:normal}
+.hero-lead{font:clamp(1.15rem,2vw,1.45rem)/1.55 var(--serif);max-width:650px;color:#f0f0e9}
+.hero-date{margin-top:34px;color:#e7d7bc;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase}
+.opening{max-width:850px;margin:0 auto;padding:90px 25px 70px;text-align:center}
+.opening .small-label{color:var(--rust);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800}
+.opening h2{font:normal clamp(2.4rem,5vw,4.3rem)/1.12 var(--serif);color:var(--navy);margin:18px 0 25px}
+.opening p{font-size:1.02rem;color:#526367}
+.opening .emphasis{font:italic 1.55rem/1.45 var(--serif);color:var(--teal);margin-top:30px}
+.photo-story{max-width:1240px;margin:auto;padding:0 6vw 50px}
+.memory-row{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(30px,6vw,85px);align-items:center;margin:35px 0 105px}
+.memory-row.reverse{grid-template-columns:.92fr 1.08fr}
+.memory-row.reverse .memory-photo{order:2}.memory-row.reverse .memory-copy{order:1}
+.memory-photo{display:block;overflow:hidden;background:#d8d2c5;min-height:300px;box-shadow:0 18px 48px #0b30411c;position:relative}
+.memory-photo img{display:block;width:100%;height:clamp(300px,42vw,510px);object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .6s}
+.memory-photo:hover img{transform:scale(1.035);filter:saturate(1.08)}
+.memory-copy{max-width:430px}.eyebrow{color:var(--rust);font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+.memory-copy h2{font:normal clamp(2.1rem,4.2vw,3.6rem)/1.08 var(--serif);letter-spacing:-.035em;color:var(--navy);margin:17px 0}
+.memory-copy p{color:#536469}.photo-caption{padding-top:15px;border-top:1px solid #0b304122;font:italic 1.05rem/1.5 var(--serif);color:var(--teal)!important}
+.naksha-section{margin:15px 0 100px;background:#e9e1d3;padding:clamp(28px,5vw,60px)}
+.naksha-intro{max-width:700px;margin:0 auto 30px;text-align:center}
+.naksha-intro h2{font:normal clamp(2.3rem,5vw,4rem)/1.08 var(--serif);color:var(--navy);margin:10px 0}
+.naksha-intro p{color:#59696b}
+.naksha-images{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:13px;align-items:stretch}
+.naksha-photo{display:block;overflow:hidden;background:#d3cbbb;min-height:230px}
+.naksha-photo:nth-child(2){margin-top:34px;margin-bottom:34px}
+.naksha-photo img{width:100%;height:100%;min-height:250px;max-height:390px;display:block;object-fit:cover;transition:transform .7s}
+.naksha-photo:hover img{transform:scale(1.04)}
+.bridge{background:var(--navy);color:#fff;padding:clamp(65px,9vw,115px) 24px;text-align:center;position:relative;overflow:hidden}
+.bridge:before,.bridge:after{content:"";position:absolute;width:340px;height:340px;border:1px solid #ffffff1c;border-radius:50%}
+.bridge:before{left:-210px;top:-230px}.bridge:after{right:-210px;bottom:-250px}
+.bridge-inner{max-width:820px;margin:auto;position:relative;z-index:1}
+.bridge .eyebrow{color:#efad86}
+.bridge h2{font:normal clamp(2.8rem,6vw,5rem)/1.05 var(--serif);margin:18px 0 25px}
+.bridge p{max-width:680px;margin:0 auto 18px;color:#d9e4e2;font-size:1.02rem}
+.bridge .quote{font:italic clamp(1.45rem,3vw,2rem)/1.4 var(--serif);color:var(--cream);margin:35px auto}
+.bridge .button{display:inline-block;margin-top:20px;padding:14px 25px;background:var(--rust);color:white;text-decoration:none;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;transition:background .2s,transform .2s}
+.bridge .button:hover{background:#f07c45;transform:translateY(-2px)}
+.final{padding:85px 22px 90px;text-align:center;background:#f0e8d9}
+.final h2{font:normal clamp(2.3rem,5vw,4.3rem)/1.15 var(--serif);color:var(--navy);margin:0 0 20px}
+.final h2 em{color:var(--rust);font-weight:normal}.final p{color:var(--muted);letter-spacing:.04em}
+footer{background:#082b3a;color:#d3dfdd;padding:25px 6vw;display:flex;justify-content:space-between;gap:15px;align-items:center;font-size:.74rem}
+footer strong{letter-spacing:.18em;color:#fff}footer span{color:#b5c6c4}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation:none!important;transition:none!important}}
+@media(max-width:760px){
+ .topbar{height:60px;padding:0 5vw}.top-note{font-size:.58rem;max-width:135px;text-align:right}
+ .hero{min-height:700px;min-height:82svh}.hero-image{object-position:55% center}.hero:after{background:linear-gradient(0deg,rgba(5,30,42,.92),rgba(5,30,42,.18) 95%)}
+ .hero-content{padding:70px 7vw 60px}.hero h1{font-size:clamp(3.2rem,14vw,5.3rem)}
+ .opening{padding:65px 24px 50px}
+ .photo-story{padding:0 5vw 25px}.memory-row,.memory-row.reverse{grid-template-columns:1fr;gap:22px;margin:35px 0 72px}
+ .memory-row.reverse .memory-photo,.memory-row.reverse .memory-copy{order:initial}
+ .memory-photo{min-height:250px}.memory-photo img{height:clamp(260px,72vw,420px)}
+ .memory-copy{max-width:none;padding:0 3px}.memory-copy h2{max-width:520px}
+ .naksha-section{padding:30px 18px;margin-bottom:70px}.naksha-images{grid-template-columns:1fr 1fr;gap:9px}
+ .naksha-photo{min-height:160px}.naksha-photo:first-child{grid-column:1/-1}.naksha-photo:nth-child(2){margin:0}
+ .naksha-photo img{min-height:175px;max-height:280px}.naksha-photo:first-child img{height:270px}
+ footer{flex-direction:column;align-items:flex-start}
+}
+
+/* PAHAD reconnection actions */
+.join-panel{max-width:900px;margin:0 auto;padding:0 24px 85px;text-align:center}
+.join-panel-inner{background:#fff;border:1px solid #0b30411a;padding:clamp(30px,5vw,55px);box-shadow:0 18px 48px #0b30410d}
+.join-panel .eyebrow{display:block;margin-bottom:12px}
+.join-panel h2{font:normal clamp(2.2rem,5vw,3.7rem)/1.08 var(--serif);color:var(--navy);margin:12px 0 18px}
+.join-panel p{max-width:650px;margin:0 auto 25px;color:#59696b}
+.join-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.join-actions a{display:inline-block;padding:14px 22px;text-decoration:none;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;transition:transform .2s,background .2s}
+.join-actions a:hover{transform:translateY(-2px)}
+.join-primary{background:var(--rust);color:#fff}
+.join-primary:hover{background:#f07c45}
+.join-secondary{border:1px solid var(--navy);color:var(--navy)}
+.agent-fallback{position:fixed;right:18px;bottom:18px;z-index:9998;background:var(--teal);color:#fff;text-decoration:none;padding:12px 17px;border-radius:999px;font-size:.78rem;font-weight:800;box-shadow:0 8px 25px #061f2b40}
+@media(max-width:600px){.join-actions{flex-direction:column}.join-actions a{width:100%}.agent-fallback{right:12px;bottom:12px}}
+
+
+/* Refined motion system: cinematic, gentle and accessible */
+:root{--motion-ease:cubic-bezier(.2,.72,.2,1)}
+.hero{isolation:isolate}
+.hero-image{transform:scale(1.055);animation:heroDrift 22s var(--motion-ease) infinite alternate;will-change:transform}
+.hero:after{background:linear-gradient(105deg,rgba(5,30,42,.88) 0%,rgba(5,30,42,.54) 52%,rgba(5,30,42,.08) 100%),linear-gradient(0deg,rgba(5,30,42,.78),transparent 62%)}
+.hero-content{animation:heroEnter 1.15s .12s both var(--motion-ease)}
+.hero .kicker{animation:softRise .8s .2s both var(--motion-ease)}
+.hero h1{animation:softRise 1s .34s both var(--motion-ease)}
+.hero-lead{animation:softRise 1s .52s both var(--motion-ease)}
+.hero-date{animation:softRise 1s .7s both var(--motion-ease)}
+.hero h1 em{display:inline-block;text-shadow:0 0 28px #f0a07835;animation:wordGlow 5s 1.8s ease-in-out infinite alternate}
+.reveal{opacity:0;transform:translate3d(0,34px,0) scale(.99);filter:blur(2px);transition:opacity .9s var(--motion-ease),transform .9s var(--motion-ease),filter .9s var(--motion-ease)}
+.reveal.visible{opacity:1;transform:none;filter:blur(0)}
+.memory-row:nth-child(odd).reveal{transform:translate3d(-35px,24px,0)}
+.memory-row:nth-child(even).reveal{transform:translate3d(35px,24px,0)}
+.memory-row.reveal.visible{transform:translate3d(0,0,0)}
+.memory-photo{border-radius:2px;isolation:isolate}
+.memory-photo:after,.naksha-photo:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(125deg,transparent 25%,#fff4 48%,transparent 68%);transform:translateX(-130%);transition:transform 1s var(--motion-ease)}
+.memory-photo:hover:after,.naksha-photo:hover:after{transform:translateX(130%)}
+.memory-photo img,.naksha-photo img{transition:transform 1.15s var(--motion-ease),filter .8s var(--motion-ease)}
+.memory-photo:hover img,.naksha-photo:hover img{transform:scale(1.055);filter:saturate(1.12) contrast(1.025)}
+.naksha-section{position:relative;overflow:hidden}
+.naksha-section:before{content:"";position:absolute;width:360px;height:360px;border:1px solid #168b8b25;border-radius:50%;top:-220px;right:-110px;pointer-events:none}
+.bridge{isolation:isolate}
+.bridge:before,.bridge:after{animation:ringFloat 13s ease-in-out infinite alternate}
+.bridge:after{animation-delay:-6s}
+.bridge .quote{transition:letter-spacing .5s ease,text-shadow .5s ease}
+.bridge .quote:hover{letter-spacing:.015em;text-shadow:0 0 22px #f3e5c855}
+.button,.join-actions a{position:relative;overflow:hidden}
+.button:after,.join-actions a:after{content:"";position:absolute;top:-60%;left:-45%;width:30%;height:220%;background:#ffffff38;transform:rotate(25deg) translateX(-220%);transition:transform .75s var(--motion-ease)}
+.button:hover:after,.join-actions a:hover:after{transform:rotate(25deg) translateX(650%)}
+.join-panel-inner{transition:transform .5s var(--motion-ease),box-shadow .5s var(--motion-ease)}
+.join-panel-inner:hover{transform:translateY(-5px);box-shadow:0 24px 55px #0b304118}
+.agent-fallback{animation:agentPulse 3.8s 2s ease-in-out infinite}
+@keyframes heroDrift{from{transform:scale(1.055) translate3d(-.5%,0,0)}to{transform:scale(1.14) translate3d(.6%,-.4%,0)}}
+@keyframes heroEnter{from{opacity:0;transform:translate3d(0,32px,0)}to{opacity:1;transform:none}}
+@keyframes softRise{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
+@keyframes wordGlow{from{text-shadow:0 0 0 #f0a07800}to{text-shadow:0 0 25px #f0a07855}}
+@keyframes ringFloat{from{transform:translate3d(0,0,0) scale(.96)}to{transform:translate3d(18px,-15px,0) scale(1.06)}}
+@keyframes agentPulse{0%,86%,100%{box-shadow:0 8px 25px #061f2b40}92%{box-shadow:0 8px 25px #168b8b55,0 0 0 9px #168b8b16}}
+@media(max-width:760px){.memory-row:nth-child(odd).reveal,.memory-row:nth-child(even).reveal{transform:translate3d(0,28px,0)}.hero-image{animation-duration:28s}}
+@media(prefers-reduced-motion:reduce){.hero-image,.hero-content,.hero .kicker,.hero h1,.hero-lead,.hero-date,.hero h1 em,.bridge:before,.bridge:after,.agent-fallback{animation:none!important}.reveal,.memory-row:nth-child(odd).reveal,.memory-row:nth-child(even).reveal{opacity:1;transform:none;filter:none;transition:none}.memory-photo:after,.naksha-photo:after,.button:after,.join-actions a:after{display:none}}
+
+
+/* Expanded DSSCOLONY photo archive */
+.archive-section{padding:clamp(65px,8vw,105px) 6vw;background:#f8f5ee}
+.archive-heading{max-width:800px;margin:0 auto 48px;text-align:center}
+.archive-heading .eyebrow{display:block}
+.archive-heading h2{font:normal clamp(2.5rem,5.5vw,4.6rem)/1.06 var(--serif);color:var(--navy);margin:14px 0}
+.archive-heading p{color:#59696b;max-width:650px;margin:auto}
+.archive-group{max-width:1240px;margin:0 auto 65px}
+.archive-group:last-child{margin-bottom:0}
+.archive-group-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px;padding-bottom:13px;border-bottom:1px solid #0b304122}
+.archive-group-head h3{font:normal clamp(1.65rem,3vw,2.45rem)/1.1 var(--serif);color:var(--navy);margin:0}
+.archive-group-head p{margin:0;color:var(--muted);font-size:.82rem}
+.archive-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.archive-card{position:relative;display:block;overflow:hidden;min-height:230px;background:#ded7ca;color:white;text-decoration:none;isolation:isolate}
+.archive-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1),filter .7s}
+.archive-card:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(5,30,42,.82));z-index:0}
+.archive-card:hover img{transform:scale(1.075);filter:saturate(1.12)}
+.archive-card figcaption{position:absolute;z-index:1;left:18px;right:18px;bottom:15px;font:normal 1.12rem/1.2 var(--serif);text-shadow:0 2px 12px #0008}
+.archive-card figcaption small{display:block;font:600 .62rem/1.4 system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#f0d9bc;margin-bottom:6px}
+.archive-card:first-child:nth-last-child(1){min-height:360px}
+.archive-group[data-count="1"] .archive-grid{grid-template-columns:minmax(0,1fr)}
+.archive-group[data-count="1"] .archive-card{min-height:390px}
+.archive-group[data-count="2"] .archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.archive-group[data-count="2"] .archive-card{min-height:300px}
+@media(max-width:760px){
+ .archive-section{padding:60px 5vw}
+ .archive-group{margin-bottom:48px}
+ .archive-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .archive-card{min-height:190px}
+ .archive-group[data-count="1"] .archive-grid{grid-template-columns:1fr}
+ .archive-group[data-count="1"] .archive-card{min-height:280px}
+ .archive-group[data-count="2"] .archive-card{min-height:220px}
+ .archive-group-head{display:block}
+ .archive-group-head p{margin-top:7px}
+}
+@media(max-width:430px){
+ .archive-grid,.archive-group[data-count="2"] .archive-grid{grid-template-columns:1fr}
+ .archive-card,.archive-group[data-count="2"] .archive-card{min-height:250px}
+}
+
+
+/* Responsive navigation and text motion */
+html{scroll-padding-top:90px}
+.topbar{position:sticky;top:0;z-index:1000;height:74px;gap:24px;backdrop-filter:blur(14px);box-shadow:0 5px 24px #061f2b16}
+.brand{text-decoration:none;flex:0 0 auto;line-height:1.2}
+.main-navigation{display:flex;align-items:center;justify-content:center;gap:clamp(12px,2.2vw,30px);margin-left:auto}
+.nav-link{position:relative;color:#d7e3e1;text-decoration:none;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;font-weight:750;padding:10px 0;white-space:nowrap;transition:color .25s,opacity .25s}
+.nav-link:after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:2px;background:var(--rust);transition:right .32s cubic-bezier(.2,.7,.2,1)}
+.nav-link:hover,.nav-link.active{color:#fff}
+.nav-link:hover:after,.nav-link.active:after{right:0}
+.nav-link.nav-join{padding:10px 15px;background:var(--rust);color:#fff}
+.nav-link.nav-join:after{display:none}
+.nav-link.nav-join:hover{background:#f07c45;transform:translateY(-2px)}
+.nav-toggle{display:none;border:1px solid #ffffff40;background:transparent;width:43px;height:40px;border-radius:3px;padding:10px;cursor:pointer}
+.nav-toggle span{display:block;height:2px;background:white;margin:4px 0;transition:transform .28s,opacity .2s}
+.scroll-progress{height:3px;position:fixed;top:74px;left:0;right:0;z-index:999;background:#ffffff22;pointer-events:none}
+.scroll-progress span{display:block;height:100%;width:0;background:var(--rust);transform-origin:left;transition:width .08s linear}
+.text-reveal{opacity:0;transform:translateY(22px);filter:blur(3px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1),filter .75s ease;transition-delay:var(--text-delay,0ms)}
+.text-reveal.text-visible{opacity:1;transform:none;filter:none}
+.hero-content .kicker,.hero-content h1,.hero-content .hero-lead,.hero-content .hero-date{animation:heroTextIn .85s cubic-bezier(.2,.7,.2,1) both}
+.hero-content h1{animation-delay:.12s}.hero-content .hero-lead{animation-delay:.25s}.hero-content .hero-date{animation-delay:.38s}
+@keyframes heroTextIn{from{opacity:0;transform:translateY(26px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@media(max-width:900px){
+ .topbar{padding:0 5vw;gap:14px}
+ .top-note{display:none}
+ .nav-toggle{display:block;margin-left:auto;z-index:1002}
+ .main-navigation{position:absolute;top:74px;left:0;right:0;display:flex;flex-direction:column;align-items:stretch;gap:0;padding:10px 5vw 20px;background:rgba(8,43,58,.98);border-top:1px solid #ffffff18;box-shadow:0 18px 28px #061f2b30;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .28s,transform .28s,visibility .28s}
+ .main-navigation.open{opacity:1;visibility:visible;transform:translateY(0)}
+ .nav-link{padding:14px 4px;border-bottom:1px solid #ffffff17;font-size:.74rem}
+ .nav-link:after{bottom:6px;right:100%;max-width:65px}
+ .nav-link.nav-join{margin-top:12px;text-align:center;border:0;padding:13px}
+ .topbar.menu-open .nav-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+ .topbar.menu-open .nav-toggle span:nth-child(2){opacity:0}
+ .topbar.menu-open .nav-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+}
+@media(prefers-reduced-motion:reduce){
+ .text-reveal{opacity:1;transform:none;filter:none;transition:none}
+ .nav-link,.nav-link:after,.main-navigation,.nav-toggle span{transition:none}
+}
+
+</style>
+</head>
+<body>
+<header class="topbar" id="home">
+  <a class="brand" href="#home" aria-label="PAHAD home">PAHAD<small>A HOLISTIC DEVELOPMENT INSTITUTION</small></a>
+  <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="main-navigation" id="main-navigation" aria-label="Main navigation">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#story" class="nav-link">Our Story</a>
+    <a href="#archive" class="nav-link">Memories</a>
+    <a href="#journey" class="nav-link">PAHAD</a>
+    <a href="#membership" class="nav-link nav-join">Become a Member</a>
+  </nav>
+  <div class="top-note">A new chapter, together</div>
+</header>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+<section class="hero">
+  <img class="hero-image" src="https://drive.google.com/thumbnail?id=1FLqZa3QMR8KqzccI42CBgL7n9ngFwf9h&amp;sz=w1600" alt="General Meeting">
+  <div class="hero-content">
+    <div class="kicker">To everyone who was once part of us</div>
+    <h1>We started<br>this <em>together.</em><br>Come back.</h1>
+    <p class="hero-lead">Dear DSSCOLONY family, wherever life has taken you, there is still a place for you in the story we began together.</p>
+    <div class="hero-date">24 June 2018 · The beginning of DSSCOLONY</div>
+  </div>
+</section>
+
+<section class="opening reveal">
+  <div class="small-label">A message from the heart</div>
+  <h2>Do you remember<br>those days?</h2>
+  <p>The conversations, the meetings, the ideas that seemed too ambitious at times, the events we organised, the videos we created, the people we met and the little things we did together with whatever resources we had.</p>
+  <p>We were students. We had limited resources, no dedicated funding and plenty of challenges. Yet, we found ways to make things happen.</p>
+  <p class="emphasis">We may have moved in different directions. But what we built together still matters.</p>
+</section>
+
+<section class="photo-story" id="story">
+
+      <section class="memory-row reveal ">
+        <a class="memory-photo" href="https://drive.google.com/file/d/1dtlrKocAigidkUBmQwTtASBO8hK-ts9C/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <img src="https://drive.google.com/thumbnail?id=1dtlrKocAigidkUBmQwTtASBO8hK-ts9C&amp;sz=w1600" alt="Cloth Donation Drive" loading="lazy">
+        </a>
+        <div class="memory-copy">
+          <span class="eyebrow">A moment we shared</span>
+          <h2>We began by coming together</h2>
+          <p>Before there were plans, projects or expectations, there were people willing to sit together, share ideas and imagine what might be possible.</p>
+          <p class="photo-caption">Beyond friendship and creativity, we came together to support people in need.</p>
+        </div>
+      </section>
+      <section class="memory-row reveal reverse">
+        <a class="memory-photo" href="https://drive.google.com/file/d/1NsPgd--lfGscK_Me2EBf9Jvwbi8v6Gnd/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <img src="https://drive.google.com/thumbnail?id=1NsPgd--lfGscK_Me2EBf9Jvwbi8v6Gnd&amp;sz=w1600" alt="Busking for an Old Age Home" loading="lazy">
+        </a>
+        <div class="memory-copy">
+          <span class="eyebrow">A moment we shared</span>
+          <h2>We tried to make a difference</h2>
+          <p>Our work was never only about activities. It was also about care: showing up, sharing what we could and remembering that a community is strengthened when people look after one another.</p>
+          <p class="photo-caption">We used our creativity and music not only to express ourselves, but also to bring joy and support to elders.</p>
+        </div>
+      </section>
+      <section class="memory-row reveal ">
+        <a class="memory-photo" href="https://drive.google.com/file/d/1kWoD4owwe4cEWebbPItNatMFwACBthEV/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <img src="https://drive.google.com/thumbnail?id=1kWoD4owwe4cEWebbPItNatMFwACBthEV&amp;sz=w1600" alt="First-Ever Meet at GDNS" loading="lazy">
+        </a>
+        <div class="memory-copy">
+          <span class="eyebrow">A moment we shared</span>
+          <h2>We gave what we had</h2>
+          <p>Sometimes that meant using our creativity, our music and our time to bring a little joy to others. We did not have abundant resources, but we had the willingness to contribute.</p>
+          <p class="photo-caption">Every journey has a beginning. This was one of our earliest moments of coming together.</p>
+        </div>
+      </section>
+      <section class="memory-row reveal reverse">
+        <a class="memory-photo" href="https://drive.google.com/file/d/12Wed_BHNbmgkdoafwhnfTZCa7BGeIWmX/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <img src="https://drive.google.com/thumbnail?id=12Wed_BHNbmgkdoafwhnfTZCa7BGeIWmX&amp;sz=w1600" alt="Training Meeting" loading="lazy">
+        </a>
+        <div class="memory-copy">
+          <span class="eyebrow">A moment we shared</span>
+          <h2>Every journey has an early moment</h2>
+          <p>There were first meetings, new faces and the excitement of discovering that an idea could bring people together. Those beginnings deserve to be remembered with gratitude.</p>
+          <p class="photo-caption">A moment dedicated to learning, sharing knowledge and strengthening the team.</p>
+        </div>
+      </section>
+      <section class="memory-row reveal ">
+        <a class="memory-photo" href="https://drive.google.com/file/d/1VKzGqZXEVW0Oyz4X4xwBJqDWiQIKrflq/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <img src="https://drive.google.com/thumbnail?id=1VKzGqZXEVW0Oyz4X4xwBJqDWiQIKrflq&amp;sz=w1600" alt="Meeting at Strawberry" loading="lazy">
+        </a>
+        <div class="memory-copy">
+          <span class="eyebrow">A moment we shared</span>
+          <h2>We learned as we worked</h2>
+          <p>We learned from one another, developed skills and discovered that teamwork grows stronger when people share knowledge and take responsibility.</p>
+          <p class="photo-caption">A gathering that became part of the shared story of DSSCOLONY.</p>
+        </div>
+      </section>
+      <section class="memory-row reveal reverse">
+        <a class="memory-photo" href="https://drive.google.com/file/d/1dPlgF6vKBVk2Pf6svoKvsybPkCDreeTP/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <img src="https://drive.google.com/thumbnail?id=1dPlgF6vKBVk2Pf6svoKvsybPkCDreeTP&amp;sz=w1600" alt="Naksha event photograph 007" loading="lazy">
+        </a>
+        <div class="memory-copy">
+          <span class="eyebrow">A moment we shared</span>
+          <h2>And we made time for one another</h2>
+          <p>Not every meaningful moment was a formal event. Some were simply gatherings, conversations and friendships that made the journey worth taking.</p>
+          <p class="photo-caption">A glimpse from the Naksha event and a moment in our shared journey.</p>
+        </div>
+      </section>
+  <section class="naksha-section reveal">
+    <div class="naksha-intro">
+      <span class="eyebrow">A creative idea brought to life</span>
+      <h2>Naksa — and the people behind it</h2>
+      <p>Moments from an initiative shaped by people who wanted to explore, create and share what they loved.</p>
+    </div>
+    <div class="naksha-images"><a class="naksha-photo" href="https://drive.google.com/file/d/1dPlgF6vKBVk2Pf6svoKvsybPkCDreeTP/view?usp=sharing" target="_blank" rel="noopener noreferrer"><img src="https://drive.google.com/thumbnail?id=1dPlgF6vKBVk2Pf6svoKvsybPkCDreeTP&amp;sz=w1600" alt="Naksha event photograph 007" loading="lazy"></a>
+<a class="naksha-photo" href="https://drive.google.com/file/d/11H40ROkOXe78orJ0wl__PVZu0Jb_62UZ/view?usp=sharing" target="_blank" rel="noopener noreferrer"><img src="https://drive.google.com/thumbnail?id=11H40ROkOXe78orJ0wl__PVZu0Jb_62UZ&amp;sz=w1600" alt="Naksha event photograph 008" loading="lazy"></a>
+<a class="naksha-photo" href="https://drive.google.com/file/d/1x8nL8wl8m2T8JMLZhMXBG-7kolNmO6_F/view?usp=sharing" target="_blank" rel="noopener noreferrer"><img src="https://drive.google.com/thumbnail?id=1x8nL8wl8m2T8JMLZhMXBG-7kolNmO6_F&amp;sz=w1600" alt="Naksha event photograph 009" loading="lazy"></a>
+<a class="naksha-photo" href="https://drive.google.com/file/d/16ZExNdauueFAw6BQcwwtI8CU6fOnD3ln/view?usp=sharing" target="_blank" rel="noopener noreferrer"><img src="https://drive.google.com/thumbnail?id=16ZExNdauueFAw6BQcwwtI8CU6fOnD3ln&amp;sz=w1600" alt="Naksha event photograph 010" loading="lazy"></a></div>
+  </section>
+</section>
+
+
+<section class="archive-section" id="archive">
+  <div class="archive-heading reveal">
+    <span class="eyebrow">DSSCOLONY · Our shared archive</span>
+    <h2>Memories that brought us here</h2>
+    <p>A collection of meetings, creative initiatives, community work and milestones from our journey. Each photograph is a reminder of the people and experiences that shaped us.</p>
+  </div>
+
+
+  <section class="archive-group reveal" data-count="1">
+    <div class="archive-group-head">
+      <h3>First meeting at GDNS</h3>
+      <p>The first meeting</p>
+    </div>
+    <div class="archive-grid">
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1kWoD4owwe4cEWebbPItNatMFwACBthEV/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: First meeting at GDNS">
+        <img src="https://drive.google.com/thumbnail?id=1kWoD4owwe4cEWebbPItNatMFwACBthEV&sz=w1400" alt="First meeting at GDNS" loading="lazy">
+        <figcaption><small>First meeting at GDNS</small>First meeting at GDNS</figcaption>
+      </a>
+
+    </div>
+  </section>
+
+
+  <section class="archive-group reveal" data-count="7">
+    <div class="archive-group-head">
+      <h3>NAKSA event</h3>
+      <p>Creativity, ideas and community</p>
+    </div>
+    <div class="archive-grid">
+
+      <a class="archive-card" href="https://drive.google.com/file/d/11H40ROkOXe78orJ0wl__PVZu0Jb_62UZ/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: NAKSA event · 01">
+        <img src="https://drive.google.com/thumbnail?id=11H40ROkOXe78orJ0wl__PVZu0Jb_62UZ&sz=w1400" alt="NAKSA event · 01" loading="lazy">
+        <figcaption><small>NAKSA event</small>Moment 01</figcaption>
+      </a>
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1NVQQ5kuUwayIRcexxJq-jdpOEk-_zz17/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: NAKSA event · 02">
+        <img src="https://drive.google.com/thumbnail?id=1NVQQ5kuUwayIRcexxJq-jdpOEk-_zz17&sz=w1400" alt="NAKSA event · 02" loading="lazy">
+        <figcaption><small>NAKSA event</small>Moment 02</figcaption>
+      </a>
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1A9hr02_S3Gx5vIr1XhvGo4DsioxxSSQI/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: NAKSA event · 03">
+        <img src="https://drive.google.com/thumbnail?id=1A9hr02_S3Gx5vIr1XhvGo4DsioxxSSQI&sz=w1400" alt="NAKSA event · 03" loading="lazy">
+        <figcaption><small>NAKSA event</small>Moment 03</figcaption>
+      </a>
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1bVon5ON0JnqcPa3ogwUzpqqq1DmoycEQ/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: NAKSA event · 04">
+        <img src="https://drive.google.com/thumbnail?id=1bVon5ON0JnqcPa3ogwUzpqqq1DmoycEQ&sz=w1400" alt="NAKSA event · 04" loading="lazy">
+        <figcaption><small>NAKSA event</small>Moment 04</figcaption>
+      </a>
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1K9SyOI9chteCjlVglic6FJeNpzPicJUv/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: NAKSA event · 05">
+        <img src="https://drive.google.com/thumbnail?id=1K9SyOI9chteCjlVglic6FJeNpzPicJUv&sz=w1400" alt="NAKSA event · 05" loading="lazy">
+        <figcaption><small>NAKSA event</small>Moment 05</figcaption>
+      </a>
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1rWwWplyji5NzfcYl2JKrNRUlUIMCLpwy/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: NAKSA event · 06">
+        <img src="https://drive.google.com/thumbnail?id=1rWwWplyji5NzfcYl2JKrNRUlUIMCLpwy&sz=w1400" alt="NAKSA event · 06" loading="lazy">
+        <figcaption><small>NAKSA event</small>Moment 06</figcaption>
+      </a>
+
+      <a class="archive-card" href="https://drive.google.com/file/d/143WPzqSZ0402wLg4d_Kk5qc4B1Cf7E4X/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: NAKSA event · 07">
+        <img src="https://drive.google.com/thumbnail?id=143WPzqSZ0402wLg4d_Kk5qc4B1Cf7E4X&sz=w1400" alt="NAKSA event · 07" loading="lazy">
+        <figcaption><small>NAKSA event</small>Moment 07</figcaption>
+      </a>
+
+    </div>
+  </section>
+
+
+  <section class="archive-group reveal" data-count="4">
+    <div class="archive-group-head">
+      <h3>Drawing competition at SVDA School</h3>
+      <p>A space for young creativity</p>
+    </div>
+    <div class="archive-grid">
+
+      <a class="archive-card" href="https://drive.google.com/file/d/12oI4tgdcnQWaVM7ALhJSZxGmtJOLwVpA/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: Drawing competition at SVDA School · 01">
+        <img src="https://drive.google.com/thumbnail?id=12oI4tgdcnQWaVM7ALhJSZxGmtJOLwVpA&sz=w1400" alt="Drawing competition at SVDA School · 01" loading="lazy">
+        <figcaption><small>Drawing competition at SVDA School</small>Moment 01</figcaption>
+      </a>
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1NB0wygwsa8moE8dwllMHOsg9HVoGGtST/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: Drawing competition at SVDA School · 02">
+        <img src="https://drive.google.com/thumbnail?id=1NB0wygwsa8moE8dwllMHOsg9HVoGGtST&sz=w1400" alt="Drawing competition at SVDA School · 02" loading="lazy">
+        <figcaption><small>Drawing competition at SVDA School</small>Moment 02</figcaption>
+      </a>
+
+      <a class="archive-card" href="https://drive.google.com/file/d/172srrjMfbga3S609Q6GHG8w3H9P8Cg3q/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: Drawing competition at SVDA School · 03">
+        <img src="https://drive.google.com/thumbnail?id=172srrjMfbga3S609Q6GHG8w3H9P8Cg3q&sz=w1400" alt="Drawing competition at SVDA School · 03" loading="lazy">
+        <figcaption><small>Drawing competition at SVDA School</small>Moment 03</figcaption>
+      </a>
+
+      <a class="archive-card" href="https://drive.google.com/file/d/18a6wCQb8udm59bD-znK1h5MTRrmFsbDm/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: Drawing competition at SVDA School · 04">
+        <img src="https://drive.google.com/thumbnail?id=18a6wCQb8udm59bD-znK1h5MTRrmFsbDm&sz=w1400" alt="Drawing competition at SVDA School · 04" loading="lazy">
+        <figcaption><small>Drawing competition at SVDA School</small>Moment 04</figcaption>
+      </a>
+
+    </div>
+  </section>
+
+
+  <section class="archive-group reveal" data-count="1">
+    <div class="archive-group-head">
+      <h3>Installation meet</h3>
+      <p>A milestone in our journey</p>
+    </div>
+    <div class="archive-grid">
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1FLqZa3QMR8KqzccI42CBgL7n9ngFwf9h/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: Installation meet">
+        <img src="https://drive.google.com/thumbnail?id=1FLqZa3QMR8KqzccI42CBgL7n9ngFwf9h&sz=w1400" alt="Installation meet" loading="lazy">
+        <figcaption><small>Installation meet</small>Installation meet</figcaption>
+      </a>
+
+    </div>
+  </section>
+
+
+  <section class="archive-group reveal" data-count="1">
+    <div class="archive-group-head">
+      <h3>Interview at Radio Salesian</h3>
+      <p>Sharing our voice beyond the community</p>
+    </div>
+    <div class="archive-grid">
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1BYpBqYS6pkdaNe4WaT_e3Hc5i1oj3Ot8/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: Interview at Radio Salesian">
+        <img src="https://drive.google.com/thumbnail?id=1BYpBqYS6pkdaNe4WaT_e3Hc5i1oj3Ot8&sz=w1400" alt="Interview at Radio Salesian" loading="lazy">
+        <figcaption><small>Interview at Radio Salesian</small>Interview at Radio Salesian</figcaption>
+      </a>
+
+    </div>
+  </section>
+
+
+  <section class="archive-group reveal" data-count="1">
+    <div class="archive-group-head">
+      <h3>Kanchenjunga Gaurav — Chowrasta</h3>
+      <p>A moment at the heart of Darjeeling</p>
+    </div>
+    <div class="archive-grid">
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1EAAFzkKcP7LM7nMDAMSKEDX15kXKpq7V/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: Kanchenjunga Gaurav — Chowrasta">
+        <img src="https://drive.google.com/thumbnail?id=1EAAFzkKcP7LM7nMDAMSKEDX15kXKpq7V&sz=w1400" alt="Kanchenjunga Gaurav — Chowrasta" loading="lazy">
+        <figcaption><small>Kanchenjunga Gaurav — Chowrasta</small>Kanchenjunga Gaurav — Chowrasta</figcaption>
+      </a>
+
+    </div>
+  </section>
+
+
+  <section class="archive-group reveal" data-count="2">
+    <div class="archive-group-head">
+      <h3>Cloth donation drive</h3>
+      <p>Community care in action</p>
+    </div>
+    <div class="archive-grid">
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1zWrlv3oN5adXpFfzOVmLQouNmn_ZvIEh/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: Cloth donation drive · 01">
+        <img src="https://drive.google.com/thumbnail?id=1zWrlv3oN5adXpFfzOVmLQouNmn_ZvIEh&sz=w1400" alt="Cloth donation drive · 01" loading="lazy">
+        <figcaption><small>Cloth donation drive</small>Moment 01</figcaption>
+      </a>
+
+      <a class="archive-card" href="https://drive.google.com/file/d/1WYZqcDFYHGDzQnl9X55inteDr0-q3cb8/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: Cloth donation drive · 02">
+        <img src="https://drive.google.com/thumbnail?id=1WYZqcDFYHGDzQnl9X55inteDr0-q3cb8&sz=w1400" alt="Cloth donation drive · 02" loading="lazy">
+        <figcaption><small>Cloth donation drive</small>Moment 02</figcaption>
+      </a>
+
+    </div>
+  </section>
+
+</section>
+
+<section class="bridge" id="journey">
+  <div class="bridge-inner reveal">
+    <div class="eyebrow">From DSSCOLONY to PAHAD</div>
+    <h2>The name has changed.<br>The spirit has not.</h2>
+    <p>DSSCOLONY was more than a name. It was a spirit of togetherness: our willingness to begin, experiment, collaborate and believe that ordinary people could create something meaningful for their community.</p>
+    <p>Those years taught us that enthusiasm can bring people together, but a lasting institution needs a stronger foundation, responsible leadership and a purpose that can continue beyond any one person.</p>
+    <p>That is why we are beginning a new chapter through <strong>PAHAD — A Holistic Development Institution.</strong> Our work now looks towards education, research, skill development, livelihoods, culture, community institutions, enterprise and opportunities for people to realise their potential.</p>
+    <div class="quote">“PAHAD is not asking you to forget DSSCOLONY. It is inviting you to be part of what DSSCOLONY helped inspire.”</div>
+  </div>
+</section>
+
+<section class="opening reveal">
+  <div class="small-label">There is room for you</div>
+  <h2>You don't have to<br>start where you left off.</h2>
+  <p>You do not need to explain why you stepped away. You do not need to be the same person you were in 2018. We have all grown, learned different things and followed different paths.</p>
+  <p>Whether you were a founding member, volunteer, creative contributor, event participant, collaborator or someone who simply believed in the idea, we would love to reconnect.</p>
+  <p>Bring your experience, your skills, your ideas—or simply your willingness to be part of something meaningful again. There is no expectation that everyone must contribute in the same way.</p>
+  <p class="emphasis">We are not trying to recreate 2018. We are inviting you to help build what comes next.</p>
+</section>
+
+<section class="bridge">
+  <div class="bridge-inner reveal">
+    <div class="eyebrow">An open invitation to every former member</div>
+    <h2>The door is open.<br>Come, let's begin again.</h2>
+    <p>Let us reconnect, rediscover our collective strength and build something more enduring together. The friendships, the courage and the shared purpose that brought us together still have a place in this journey.</p>
+    <p class="quote">The best part of our journey may still be ahead of us.</p>
+    <a class="button" href="https://form.jotform.com/263137085412049" target="_blank" rel="noopener noreferrer">Reconnect &amp; Join PAHAD</a>
+    <div style="margin-top:35px;color:#e5d8c4;font:italic 1.05rem Georgia,serif">With gratitude for everything we built together,<br><strong style="font-style:normal;color:white">The PAHAD Founding Team</strong></div>
+  </div>
+</section>
+
+
+<section class="join-panel reveal" id="membership">
+  <div class="join-panel-inner">
+    <span class="eyebrow">Your next chapter with PAHAD</span>
+    <h2>Reconnect. Become a member.</h2>
+    <p>If you were part of DSSCOLONY or would like to contribute to PAHAD's work, take the next step by completing the membership form. You can also speak with the PAHAD AI assistant if you have questions before joining.</p>
+    <div class="join-actions">
+      <a class="join-primary" href="https://form.jotform.com/263137085412049" target="_blank" rel="noopener noreferrer">Become a PAHAD Member</a>
+      <a class="join-secondary" href="https://agent.jotform.com/01a1c8c20568700084ef412f4b069721dc93" target="_blank" rel="noopener noreferrer">Ask the PAHAD AI Assistant</a>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <h2>One journey.<br><em>A wider purpose.</em><br>A future to build together.</h2>
+  <p>PAHAD — A Holistic Development Institution</p>
+  <p>Building stronger communities. Advancing together.</p>
+</section>
+<footer><div><strong>PAHAD</strong><br><span>A Holistic Development Institution</span></div><span>From DSSCOLONY to PAHAD · The story continues</span></footer>
+<script>
+const revealEls=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.10,rootMargin:'0px 0px -45px 0px'});
+ revealEls.forEach((el,index)=>{el.style.transitionDelay=(Math.min(index%3,2)*90)+'ms';observer.observe(el);});
+}else{revealEls.forEach(el=>el.classList.add('visible'));}
+</script>
+<script>
+
+// Accessible responsive navigation, active-section feedback and subtle text reveals.
+(function(){
+  const header=document.querySelector('.topbar');
+  const toggle=document.querySelector('.nav-toggle');
+  const nav=document.querySelector('.main-navigation');
+  const links=[...document.querySelectorAll('.nav-link')];
+  const progress=document.querySelector('.scroll-progress span');
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function closeMenu(){
+    if(!header||!toggle||!nav)return;
+    header.classList.remove('menu-open');
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open navigation');
+  }
+  if(toggle&&nav){
+    toggle.addEventListener('click',()=>{
+      const isOpen=toggle.getAttribute('aria-expanded')==='true';
+      toggle.setAttribute('aria-expanded',String(!isOpen));
+      toggle.setAttribute('aria-label',isOpen?'Open navigation':'Close navigation');
+      header.classList.toggle('menu-open',!isOpen);
+      nav.classList.toggle('open',!isOpen);
+    });
+    links.forEach(link=>link.addEventListener('click',closeMenu));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+    document.addEventListener('click',e=>{
+      if(nav.classList.contains('open')&&!header.contains(e.target))closeMenu();
+    });
+  }
+
+  const destinations=['home','story','archive','journey','membership']
+    .map(id=>document.getElementById(id)).filter(Boolean);
+  if('IntersectionObserver' in window){
+    const spy=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          links.forEach(link=>{
+            const active=link.getAttribute('href')==='#'+entry.target.id;
+            link.classList.toggle('active',active);
+            if(active)link.setAttribute('aria-current','location');
+            else link.removeAttribute('aria-current');
+          });
+        }
+      });
+    },{rootMargin:'-25% 0px -60% 0px',threshold:0});
+    destinations.forEach(section=>spy.observe(section));
+  }
+
+  function updateProgress(){
+    if(!progress)return;
+    const max=document.documentElement.scrollHeight-window.innerHeight;
+    const value=max>0?(window.scrollY/max)*100:0;
+    progress.style.width=Math.min(100,Math.max(0,value))+'%';
+  }
+  window.addEventListener('scroll',updateProgress,{passive:true});
+  updateProgress();
+
+  if(!reduceMotion&&'IntersectionObserver' in window){
+    const targets=document.querySelectorAll(
+      '.opening h2,.opening p,.memory-copy .eyebrow,.memory-copy h2,.memory-copy p,'+
+      '.naksha-intro h2,.naksha-intro p,.archive-heading h2,.archive-heading p,'+
+      '.archive-group-head h3,.archive-group-head p,.bridge-inner .eyebrow,'+
+      '.bridge-inner h2,.bridge-inner p,.bridge-inner .quote,.join-panel h2,.join-panel p,.final h2,.final p'
+    );
+    targets.forEach((el,index)=>{
+      el.classList.add('text-reveal');
+      el.style.setProperty('--text-delay',(index%4)*85+'ms');
+    });
+    const textObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('text-visible');
+          textObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+    targets.forEach(el=>textObserver.observe(el));
+  }
+})();
+
+</script>
+</body></html>
