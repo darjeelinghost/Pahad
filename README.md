@@ -1,23 +1,24 @@
-# PAHAD Website — Multi-page package
+# PAHAD Website — GitHub-ready HTML pages
 
-This package contains the PAHAD homepage and nine linked institutional pages.
+## Included
+- 13 standalone HTML pages, including lowercase `index.html`
+- Shared responsive stylesheet and navigation script in `assets/`
+- Simple SVG favicon
+- This README with deployment and publishing notes
 
-## Files
-- `index.html` — Homepage
-- `explore.html` — Institutional identity, vision, mission and values
-- `our-work.html` — Six institutional areas of work
-- `programmes.html` — Programme themes and programme-development approach
-- `knowledge.html` — Knowledge Centre structure and publication approach
-- `news.html` — Official news and verified updates (empty state until items are approved)
-- `governance.html` — Governance framework and accountability
-- `membership.html` — Membership categories, rights, responsibilities and proposed rules
-- `transparency.html` — Public information and disclosure framework
-- `get-involved.html` — Participation, volunteering, collaboration and contact
+## Deploy
+1. Upload the contents of this folder to the root of your GitHub repository.
+2. Keep `index.html` lowercase and at the repository root.
+3. Deploy the repository through Vercel or GitHub Pages.
+4. Test the navigation on mobile and desktop.
 
-## Deployment
-Upload all ten HTML files together into the same root folder of the GitHub repository. Keep filenames exactly as written. The shared navigation uses relative links, so the pages must remain in the same directory.
+## Before publishing
+- Replace the temporary `P` mark with the approved PAHAD logo.
+- Add only verified official contact details and social links.
+- Connect the membership application to the approved form URL.
+- Connect any contact form to a secure form service/backend before claiming it sends messages.
+- Publish only adopted, signed and legally reviewed Constitution, Rules and Regulations, policies and reports.
+- Publish the privacy notice before collecting membership information.
+- Programme themes are described as potential areas, not as active programmes unless formally confirmed.
 
-The existing `assets` directory is not required for these HTML files to render; the current logo and font/image references are externally hosted in the existing site source.
-
-## Content discipline
-Programme themes, future resource collections, and proposed membership/governance provisions are clearly described as intended or proposed where they are not confirmed as operational or formally adopted. No fabricated news items or document downloads have been added.
+The pages use a shared dark-green visual identity and responsive navigation. All links are relative so the folder can be deployed as a static website.
