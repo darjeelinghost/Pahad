@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#164f5b">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="pahad-app-icon.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="PAHAD">
+<meta name="description" content="Explore PAHAD Knowledge — research, publications, learning resources and community knowledge.">
+<title>Knowledge &amp; Research | PAHAD</title>
+<style>
+
+:root{--teal:#164f5b;--teal2:#286d70;--coral:#f07855;--cream:#f7d9b8;--paper:#fbf4e9;--sage:#4f8f89;--ink:#183941;--muted:#62777a;--white:#fff;--serif:Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}
+.topbar{position:sticky;top:0;z-index:1000;min-height:78px;padding:10px clamp(16px,4vw,58px);display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(22,79,91,.98);color:white;box-shadow:0 7px 25px #102f3430}
+.brand{display:flex;align-items:center;gap:12px;flex:0 0 auto;text-decoration:none;min-width:190px;background:transparent}.brand-logo{width:68px;height:68px;object-fit:contain;object-position:center;flex:0 0 auto;display:block;background:transparent;border:0;border-radius:0;padding:0;mix-blend-mode:normal;filter:none}.live-events-link{display:inline-flex!important;align-items:center;gap:6px}.live-dot{width:7px;height:7px;border-radius:50%;background:#ff5148;display:inline-block;box-shadow:0 0 0 0 #ff514880;animation:livePulse 1.35s infinite}@keyframes livePulse{0%{box-shadow:0 0 0 0 #ff514880;opacity:1}70%{box-shadow:0 0 0 6px #ff514800;opacity:.8}100%{box-shadow:0 0 0 0 #ff514800;opacity:1}}.brand-logo-fallback{width:68px;height:68px;display:grid;place-items:center;flex:0 0 auto;border:2px solid #f7d9b8;border-radius:50%;color:#f7d9b8;font-family:Georgia,serif;font-size:2.5rem;font-weight:bold;background:transparent}.brand-wording{font-weight:950;letter-spacing:.18em;font-size:1.15rem;line-height:1.1}.brand small{display:block;max-width:230px;margin-top:5px;color:#f7d9b8;font-size:.43rem;letter-spacing:.09em;font-weight:650;line-height:1.35}
+.main-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(9px,1.35vw,20px);flex:1}.main-nav>a,.main-nav summary{font-size:.66rem;letter-spacing:.075em;text-transform:uppercase;font-weight:800;text-decoration:none;color:#fff;white-space:nowrap;padding:10px 0;cursor:pointer;list-style:none}.main-nav summary::-webkit-details-marker{display:none}.main-nav summary:after{content:"⌄";color:var(--cream);margin-left:5px}.main-nav>a:hover,.main-nav summary:hover{color:var(--cream)}.nav-dropdown{position:relative}.dropdown-panel{position:absolute;top:100%;left:-15px;min-width:205px;background:#103d47;padding:9px;box-shadow:0 16px 35px #071f2b55;border:1px solid #ffffff25;display:grid;gap:2px}.dropdown-panel a{padding:9px 11px;color:white;text-decoration:none;font-size:.76rem}.dropdown-panel a:hover{background:#ffffff17;color:var(--cream)}.join-link{background:var(--coral);padding:10px 14px!important;color:#fff!important}.join-link:hover{background:#e76645;color:white!important}
+.mobile-nav{display:none;position:relative}.mobile-nav summary{list-style:none;cursor:pointer;border:1px solid #ffffff80;padding:8px 12px;font-size:.72rem;font-weight:800;letter-spacing:.1em}.mobile-nav summary::-webkit-details-marker{display:none}.mobile-nav .mobile-panel{position:absolute;right:0;top:calc(100% + 13px);width:min(310px,90vw);max-height:80vh;overflow:auto;background:#103d47;padding:12px;box-shadow:0 18px 35px #071f2b66;display:grid;gap:2px}.mobile-panel a,.mobile-panel summary{display:block;color:#fff;text-decoration:none;padding:10px 12px;font-size:.78rem;border-bottom:1px solid #ffffff20}.mobile-panel details .dropdown-panel{position:static;box-shadow:none;border:0;padding:3px 8px;background:#0c333d}
+.hero{min-height:clamp(560px,82vh,850px);position:relative;display:flex;align-items:center;overflow:hidden;background:var(--teal);color:white}.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;opacity:.83;animation:heroZoom 14s ease-in-out infinite alternate}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,43,51,.84),rgba(8,43,51,.45) 56%,rgba(8,43,51,.12)),linear-gradient(0deg,rgba(8,43,51,.48),transparent 55%)}.hero-content{position:relative;z-index:1;width:min(1100px,100%);padding:90px clamp(24px,8vw,120px);animation:rise .9s ease both}.kicker,.eyebrow{color:var(--coral);font-size:.68rem;font-weight:900;letter-spacing:.19em;text-transform:uppercase}.hero .kicker{color:var(--cream)}.hero h1{font:normal clamp(3.4rem,8vw,7.5rem)/.96 var(--serif);letter-spacing:-.055em;max-width:850px;margin:19px 0 22px}.hero h1 em{color:var(--cream);font-weight:normal}.hero-lead{font:clamp(1.05rem,2vw,1.3rem)/1.55 var(--serif);max-width:620px;color:#fff;margin:0}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 19px;text-decoration:none;text-transform:uppercase;letter-spacing:.09em;font-size:.68rem;font-weight:900;transition:transform .25s,background .25s,box-shadow .25s}.button:hover{transform:translateY(-3px);box-shadow:0 9px 22px #071f2b30}.button-primary{background:var(--coral);color:#fff}.button-outline{border:1px solid #fff;color:#fff}.button-dark{border:1px solid var(--teal);color:var(--teal)}.hero-note{margin-top:30px;color:var(--cream);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase}
+.intro{max-width:900px;margin:auto;padding:76px 24px 68px;text-align:center}.intro h2,.section-heading h2{font:normal clamp(2.5rem,5vw,4.3rem)/1.08 var(--serif);letter-spacing:-.04em;color:var(--teal);margin:12px 0 16px}.intro p,.section-heading p{max-width:700px;margin:0 auto;color:var(--muted)}.section{padding:76px clamp(20px,6vw,80px)}.section-heading{text-align:center;max-width:800px;margin:0 auto 35px}.section-heading h2{margin-bottom:13px}.focus-section{background:#efe2d2}.focus-grid,.directorate-grid{max-width:1160px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.focus-card,.directorate{background:#fffaf3;padding:24px;border:1px solid #164f5b1a;transition:transform .3s,box-shadow .3s}.focus-card:hover,.directorate:hover{transform:translateY(-5px);box-shadow:0 16px 36px #164f5b18}.number,.directorate span{font-size:.65rem;letter-spacing:.15em;color:var(--coral);font-weight:900}.focus-card h3,.directorate h3{font:normal 1.55rem/1.2 var(--serif);color:var(--teal);margin:12px 0 8px}.focus-card p,.directorate p{font-size:.88rem;color:var(--muted);margin:0 0 15px}.card-link,.text-link{display:inline-block;color:var(--teal2);font-size:.7rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--coral);padding-bottom:4px}
+.vision-band{background:var(--teal);color:white;padding:72px clamp(22px,7vw,90px)}.vision-inner{max-width:1050px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:55px}.vision-label{color:var(--cream);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:900}.vision-inner h2{font:normal clamp(2.6rem,5vw,4.8rem)/1.05 var(--serif);margin:14px 0}.vision-copy{border-left:1px solid #ffffff55;padding-left:32px}.vision-copy h3{font:normal 1.45rem var(--serif);color:var(--cream);margin:0 0 6px}.vision-copy p{color:#f2f3ed;margin:0 0 22px}.values{background:#f4e9dc}.value-grid{max-width:1050px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.value-card{background:#fffaf3;padding:22px 15px;text-align:center}.value-card span{font:normal 2.4rem var(--serif);color:var(--coral)}.value-card h3{font:normal 1.3rem var(--serif);color:var(--teal);margin:5px 0}.value-card p{font-size:.8rem;color:var(--muted);margin:0}
+.directorates{background:#fffaf3}.directorate-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.directorate{background:var(--paper)}.community-banner{position:relative;min-height:370px;display:grid;place-items:center;text-align:center;overflow:hidden;background:var(--teal);color:white;padding:65px 24px}.community-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}.community-banner:after{content:"";position:absolute;inset:0;background:#0b424bb8}.community-content{position:relative;z-index:1;max-width:750px}.community-content .eyebrow{color:var(--cream)}.community-content h2{font:normal clamp(2.6rem,5.8vw,5rem)/1.05 var(--serif);margin:12px 0}.community-content p{color:#f4f4ef;margin:0 auto 23px;max-width:630px}
+.join-section{padding:70px 22px;background:var(--paper)}.join-card{max-width:900px;margin:auto;text-align:center;padding:clamp(28px,5vw,55px);background:#fff;border:1px solid #164f5b1a;box-shadow:0 18px 48px #164f5b0d}.join-card h2{font:normal clamp(2.4rem,5vw,4rem)/1.08 var(--serif);color:var(--teal);margin:12px 0}.join-card p{max-width:650px;margin:0 auto 24px;color:var(--muted)}.join-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.social-section{background:#164f5b;color:white;padding:35px 22px}.social-inner{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.social-inner strong{font:normal 1.4rem var(--serif);color:var(--cream)}.social-links{display:flex;gap:9px;flex-wrap:wrap}.social-links a{color:white;text-decoration:none;border:1px solid #ffffff55;padding:8px 12px;font-size:.68rem;font-weight:800;transition:background .2s,color .2s}.social-links a:hover{background:var(--cream);color:var(--teal)}
+.closing{padding:66px 20px;text-align:center;background:#f2e3d2}.closing h2{font:normal clamp(2.4rem,5vw,4.5rem)/1.1 var(--serif);color:var(--teal);margin:0 0 12px}.closing h2 em{color:var(--coral);font-weight:normal}.closing p{margin:3px;color:var(--muted);font-size:.83rem}
+footer{background:#103d47;color:#dce9e5;padding:30px clamp(20px,6vw,80px);display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer-brand{font-weight:900;letter-spacing:.16em;color:white}.footer-brand small{display:block;font-size:.62rem;letter-spacing:.03em;font-weight:500;color:#c4d5d1}.footer-links{display:flex;gap:9px 17px;flex-wrap:wrap}.footer-links a{color:#e0eae7;text-decoration:none;font-size:.72rem}.footer-links a:hover{color:var(--cream)}.footer-note{font-size:.68rem;color:#c4d5d1}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}@keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.08)}}
+@media(max-width:1180px){.main-nav{display:none}.mobile-nav{display:block}.topbar{min-height:72px}.brand-logo{width:48px;height:48px}}
+@media(max-width:760px){.hero{min-height:78svh;min-height:620px}.hero-content{padding:75px 7vw}.hero h1{font-size:clamp(3.2rem,12vw,5.5rem)}.focus-grid,.directorate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vision-inner{grid-template-columns:1fr;gap:22px}.vision-copy{padding-left:22px}.value-grid{grid-template-columns:repeat(2,1fr)}.social-inner{display:block}.social-links{margin-top:16px}}
+@media(max-width:480px){.topbar{padding:8px 13px}.brand{min-width:0;gap:8px}.brand-logo{width:42px;height:42px}.brand-wording{font-size:1rem}.brand small{font-size:.36rem;max-width:195px}.hero{min-height:590px}.hero-content{padding:65px 23px}.hero-actions{align-items:stretch;flex-direction:column;max-width:280px}.section{padding:58px 17px}.focus-grid,.directorate-grid{grid-template-columns:1fr}.focus-card,.directorate{padding:21px}.value-grid{gap:8px}.value-card{padding:19px 10px}.join-actions{flex-direction:column}.join-actions .button{width:100%}.community-banner{min-height:420px}footer{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+
+@media (min-width:761px){.focus-card,.directorate,.value-card{animation:rise .65s ease both}}
+
+/* ===== Responsive layout refinement: desktop, tablet and mobile ===== */
+.topbar{width:100%;gap:clamp(12px,1.6vw,24px)}
+.brand{min-width:clamp(180px,19vw,260px)}
+.brand small{max-width:clamp(150px,18vw,230px)}
+.main-nav{min-width:0;gap:clamp(7px,.95vw,15px)}
+.main-nav>a,.main-nav summary{font-size:clamp(.58rem,.68vw,.72rem);letter-spacing:.045em}
+.main-nav .join-link{padding:9px 11px!important}
+.hero{width:100%;min-height:clamp(560px,78vh,900px)}
+.hero-image{object-fit:cover;object-position:center center}
+.hero-content{width:min(100%,1440px);margin-inline:auto}
+.focus-grid,.directorate-grid{width:min(100%,1240px)}
+.two-column{width:min(100%,1240px)}
+.section-heading{padding-inline:12px}
+.intro,.section,.vision-band,.join-section,.closing{overflow:hidden}
+img{max-width:100%}
+
+/* Every text-bearing element gets a deliberate hover response.
+   Text remains selectable; only links/buttons are navigation controls. */
+h1,h2,h3,h4,p,small,strong,em,span,li,label,.eyebrow,.kicker,
+.focus-card,.directorate,.value-card,.vision-copy,.community-content,
+.join-card,.footer-note,.footer-brand{
+  transition:color .24s ease, text-shadow .24s ease, transform .24s ease, letter-spacing .24s ease;
+}
+h1:hover,h2:hover,h3:hover,h4:hover{
+  color:var(--coral);
+  text-shadow:0 5px 22px rgba(240,120,85,.16);
+  transform:translateY(-2px);
+}
+p:hover,li:hover,.focus-card p:hover,.directorate p:hover,.value-card p:hover{
+  color:var(--teal2);
+}
+.eyebrow:hover,.kicker:hover,.number:hover,.directorate span:hover{
+  color:var(--coral);
+  letter-spacing:.24em;
+  transform:translateX(3px);
+}
+.brand:hover .brand-wording{color:var(--cream);transform:translateX(2px)}
+.brand-logo{transition:transform .35s ease,filter .35s ease}
+.brand:hover .brand-logo{transform:rotate(-5deg) scale(1.07);filter:drop-shadow(0 5px 9px #071f2b55)}
+.main-nav>a,.main-nav summary,.dropdown-panel a,.mobile-panel a,
+.footer-links a,.social-links a,.button,.card-link,.text-link{
+  transition:color .22s ease,background .22s ease,transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.main-nav>a:hover,.main-nav summary:hover,.dropdown-panel a:hover,.mobile-panel a:hover,
+.footer-links a:hover{transform:translateY(-2px);color:var(--cream)}
+.focus-card:hover h3,.directorate:hover h3,.value-card:hover h3{color:var(--coral);transform:translateX(3px)}
+.focus-card:hover .number,.directorate:hover span{letter-spacing:.22em}
+.value-card:hover span{transform:scale(1.12);display:block}
+.community-content h2:hover,.join-card h2:hover{color:var(--cream)}
+.closing h2:hover{letter-spacing:.005em}
+.footer-brand:hover{color:var(--cream);transform:translateY(-2px)}
+a:focus-visible,summary:focus-visible,button:focus-visible{
+  outline:3px solid var(--cream);outline-offset:4px;border-radius:2px
+}
+
+/* Large desktop: use the full horizontal navigation and spacious grids. */
+@media (min-width:1440px){
+  .topbar{padding-inline:max(4vw,60px)}
+  .main-nav{gap:18px}
+  .main-nav>a,.main-nav summary{font-size:.72rem}
+  .hero{min-height:820px}
+  .hero h1{font-size:clamp(7rem,7.5vw,9rem)}
+  .section{padding-block:100px}
+  .focus-grid,.directorate-grid{gap:20px}
+}
+
+/* Standard desktop and compact laptops: keep all main tabs visible.
+   Dropdown navigation groups secondary pages, not the primary links. */
+@media (min-width:1101px) and (max-width:1439px){
+  .topbar{padding-inline:22px;gap:12px}
+  .brand{min-width:180px;gap:8px}
+  .brand-logo{width:46px;height:46px}
+  .brand-wording{font-size:1.02rem}
+  .brand small{font-size:.38rem;max-width:175px}
+  .main-nav{gap:9px}
+  .main-nav>a,.main-nav summary{font-size:.59rem;letter-spacing:.025em}
+  .main-nav .join-link{padding:8px 9px!important}
+  .focus-grid,.directorate-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* Tablet landscape / portrait: a compact menu prevents clipped navigation. */
+@media (min-width:701px) and (max-width:1100px){
+  .topbar{min-height:76px;padding:10px 28px}
+  .brand{min-width:0}
+  .brand-logo{width:52px;height:52px}
+  .brand-wording{font-size:1.15rem}
+  .brand small{font-size:.43rem;max-width:250px}
+  .main-nav{display:none}
+  .mobile-nav{display:block;margin-left:auto;flex:0 0 auto}
+  .mobile-nav summary{padding:11px 16px;font-size:.76rem}
+  .hero{min-height:clamp(570px,72vh,760px)}
+  .hero-content{padding:80px clamp(36px,7vw,85px)}
+  .hero h1{font-size:clamp(4.2rem,8vw,6.2rem)}
+  .focus-grid,.directorate-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .vision-inner{grid-template-columns:.85fr 1.15fr;gap:30px}
+  .value-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .section{padding:76px 5vw}
+  .join-card{max-width:850px}
+}
+
+/* Tablet portrait and larger phones */
+@media (min-width:481px) and (max-width:700px){
+  .topbar{min-height:72px;padding:9px 20px}
+  .brand-logo{width:46px;height:46px}
+  .brand-wording{font-size:1.05rem}
+  .brand small{font-size:.38rem;max-width:210px}
+  .main-nav{display:none}
+  .mobile-nav{display:block}
+  .hero{min-height:650px;min-height:78svh}
+  .hero-content{padding:72px 7vw}
+  .hero h1{font-size:clamp(3.5rem,10vw,5.2rem)}
+  .focus-grid,.directorate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vision-inner{grid-template-columns:1fr;gap:20px}
+  .vision-copy{padding-left:22px}
+  .value-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .section{padding:64px 22px}
+}
+
+/* Phones */
+@media (max-width:480px){
+  .topbar{min-height:66px;padding:8px 13px;gap:8px}
+  .brand{gap:7px;min-width:0}
+  .brand-logo{width:40px;height:40px}
+  .brand-wording{font-size:.95rem;letter-spacing:.14em}
+  .brand small{font-size:.34rem;max-width:175px;letter-spacing:.055em}
+  .mobile-nav summary{font-size:.66rem;padding:9px 10px}
+  .mobile-nav .mobile-panel{right:0;width:min(300px,calc(100vw - 24px))}
+  .hero{min-height:590px;min-height:82svh}
+  .hero-image{object-position:55% center}
+  .hero-content{padding:60px 22px}
+  .hero h1{font-size:clamp(3rem,13vw,4.2rem)}
+  .hero-lead{font-size:1.04rem}
+  .hero-actions{max-width:100%;flex-direction:column;align-items:stretch}
+  .hero-actions .button{width:100%}
+  .focus-grid,.directorate-grid{grid-template-columns:1fr}
+  .value-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vision-inner{grid-template-columns:1fr;gap:18px}
+  .vision-copy{padding-left:18px}
+  .section{padding:55px 16px}
+  .intro{padding:62px 20px}
+  .community-banner{min-height:400px}
+  .join-actions{flex-direction:column}
+  .join-actions .button{width:100%}
+  .social-links{gap:7px}
+  .social-links a{padding:8px 10px}
+  footer{padding:27px 18px;align-items:flex-start;flex-direction:column}
+}
+
+/* Reduce motion when requested by the visitor's operating system. */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+
+/* ===== Final homepage polish ===== */
+.story-section{padding-block:clamp(58px,7vw,96px)}
+.two-column{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(28px,6vw,82px);max-width:1200px;margin:0 auto}
+.story-image{position:relative;min-height:clamp(300px,40vw,520px);overflow:hidden;background:#d9e4df;border-radius:2px;box-shadow:0 18px 45px #164f5b20}
+.story-image img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s}
+.story-image:hover img{transform:scale(1.055);filter:saturate(1.08)}
+.story-image:after{content:"";position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#103d4788);pointer-events:none}
+.image-label{position:absolute;z-index:1;left:22px;bottom:18px;color:#fff;font:italic 1.2rem Georgia,serif}
+.story-copy h2{font:normal clamp(2.3rem,4.3vw,3.9rem)/1.08 Georgia,serif;color:var(--teal);letter-spacing:-.04em;margin:13px 0 16px}
+.story-copy p{color:var(--muted);max-width:570px}
+.section-cta{text-align:center;margin:32px auto 0}
+.focus-card{min-height:190px;display:flex;flex-direction:column;align-items:flex-start}
+.focus-card .card-link{margin-top:auto;padding-top:14px}
+.focus-card h3{max-width:100%}
+.value-card{min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.vision-band{padding-block:clamp(62px,8vw,100px)}
+.vision-copy .button{margin-top:3px}
+.community-banner{isolation:isolate}
+.community-banner img{transition:transform .8s ease,opacity .4s}
+.community-banner:hover img{transform:scale(1.035);opacity:.42}
+.join-card{border-top:4px solid var(--coral)}
+.social-section{padding-block:28px}
+.social-inner{max-width:1180px}
+.social-links a{border-radius:2px}
+footer{row-gap:18px}
+.footer-links{max-width:720px}
+.footer-links a{padding:3px 0}
+.footer-note{line-height:1.9}
+.progress{display:none!important}
+@media(min-width:1101px){
+  .topbar{padding-inline:clamp(24px,3vw,52px);gap:14px}
+  .brand{min-width:clamp(180px,17vw,230px)}
+  .main-nav{gap:clamp(7px,.75vw,12px)}
+  .main-nav>a,.main-nav summary{font-size:clamp(.56rem,.64vw,.69rem);letter-spacing:.025em}
+  .main-nav .join-link{padding:8px 10px!important}
+}
+@media(max-width:1100px){
+  .main-nav{display:none!important}
+  .mobile-nav{display:block!important}
+}
+@media(min-width:701px) and (max-width:1100px){
+  .topbar{padding-inline:30px}
+  .hero{min-height:clamp(590px,72vh,790px)}
+  .focus-grid,.directorate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .two-column{gap:28px}
+}
+@media(max-width:700px){
+  .two-column{grid-template-columns:1fr;gap:28px}
+  .story-image{min-height:clamp(260px,68vw,390px)}
+  .story-copy{padding-inline:2px}
+  .focus-card{min-height:165px}
+}
+@media(max-width:480px){
+  .focus-card{min-height:0}
+  .story-image{min-height:270px}
+  .section-cta{margin-top:24px}
+  .footer-links{gap:8px 14px}
+}
+
+
+/* Updated PAHAD navigation only — homepage sections remain unchanged. */
+.main-nav{gap:clamp(5px,.72vw,11px)}
+.main-nav>a,.main-nav summary{font-size:clamp(.53rem,.61vw,.68rem);letter-spacing:.025em}
+.main-nav summary{display:block}
+.nav-dropdown{position:relative}
+.nav-dropdown:not([open])>.dropdown-panel{display:none}
+.nav-dropdown[open]>.dropdown-panel{display:grid;z-index:100}
+.nav-dropdown>.dropdown-panel{top:calc(100% + 5px);left:0;min-width:225px;max-height:75vh;overflow:auto;border-radius:0 0 10px 10px}
+.main-nav .join-link{white-space:nowrap;border-radius:3px}
+.mobile-panel details{display:block}
+.mobile-panel details>summary{cursor:pointer;list-style:none}
+.mobile-panel details>summary::-webkit-details-marker{display:none}
+.mobile-panel details>summary:after{content:"＋";float:right;color:var(--cream)}
+.mobile-panel details[open]>summary:after{content:"−"}
+.mobile-panel .mobile-submenu{display:grid;background:#0c333d;padding:3px 8px 7px}
+.mobile-panel .mobile-submenu a{padding-left:18px;font-size:.73rem}
+.mobile-panel .mobile-join-link{display:block;text-align:center;margin-top:9px;background:var(--coral);border:0;color:white;font-weight:900;letter-spacing:.08em}
+@media(max-width:600px){.brand-logo{width:55px;height:55px}.brand{min-width:0;gap:9px}.brand small{font-size:.38rem;max-width:180px}}
+@media(min-width:1181px) and (max-width:1450px){
+ .brand{min-width:clamp(165px,16vw,220px)}
+ .brand-wording{font-size:1.02rem}
+ .brand small{font-size:.39rem}
+ .main-nav{gap:clamp(4px,.48vw,8px)}
+ .main-nav>a,.main-nav summary{font-size:clamp(.49rem,.55vw,.62rem);letter-spacing:0}
+ .main-nav .join-link{padding:8px 9px!important}
+}
+
+
+/* Compact app-install action beside Home */
+.nav-install-button{display:inline-flex;align-items:center;gap:5px;border:1px solid #f7d9b8a8;background:#ffffff12;color:#fff;border-radius:999px;padding:6px 9px;font-size:.65rem;font-weight:850;white-space:nowrap;cursor:pointer;transition:background .2s,transform .2s}
+.nav-install-button:hover{background:#ffffff25;transform:translateY(-1px)}
+.mobile-install-button{display:block;width:100%;margin:7px 0 10px;padding:10px 12px;border:1px solid #f7d9b8a8;border-radius:8px;background:#ffffff12;color:#fff;text-align:left;font-size:.78rem;font-weight:850;cursor:pointer}
+.pwa-help[hidden]{display:none!important}
+.pwa-help{position:fixed;inset:0;z-index:1400;background:#092d33a8;display:grid;place-items:center;padding:18px}
+.pwa-help-card{width:min(430px,100%);background:var(--paper);border-radius:18px;padding:25px;box-shadow:0 25px 70px #001e2555}
+.pwa-help-card h3{margin:0 0 9px;color:var(--teal);font:normal 1.7rem/1.1 var(--serif)}
+.pwa-help-card p,.pwa-help-card li{font-size:13px;color:#526a6d}
+.pwa-help-card ol{padding-left:20px}
+.pwa-help-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.pwa-help-actions button{border:0;padding:11px 15px;cursor:pointer;font-weight:850}
+.pwa-help-close{background:#e7ece7;color:var(--teal)}
+.nav-install-button:disabled,.mobile-install-button:disabled{opacity:.7;cursor:default}
+</style>
+<style>
+.knowledge-page{background:#fbf4e9;color:#183941;overflow:hidden}
+.knowledge-page *{box-sizing:border-box}
+.knowledge-page a{text-decoration:none}
+.knowledge-hero{background:#164f5b;color:#fff;position:relative;overflow:hidden;min-height:690px;isolation:isolate}
+.knowledge-hero-inner{max-width:1440px;min-height:690px;margin:auto;padding:90px clamp(24px,8vw,120px) 78px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;position:relative}
+.hero-pattern{position:absolute;inset:0;opacity:.11;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:65px 65px;mask-image:linear-gradient(90deg,#000,transparent 90%)}
+.knowledge-hero-copy{position:relative;z-index:2;max-width:760px}
+.knowledge-page .eyebrow{display:flex;align-items:center;gap:11px;font-size:.68rem;letter-spacing:.19em;font-weight:850;text-transform:uppercase;color:#28796d}
+.knowledge-page .eyebrow span{display:inline-block;width:28px;height:2px;background:#f07855}
+.knowledge-hero .eyebrow{color:#f7d9b8}
+.hero-index{font-size:.63rem;letter-spacing:.2em;color:#b9d1cd;margin:30px 0 12px;font-weight:800}
+.knowledge-hero h1{font:normal clamp(3.1rem,6.4vw,6.3rem)/.99 Georgia,serif;letter-spacing:-.055em;margin:0 0 24px;max-width:850px}
+.knowledge-hero h1 em,.knowledge-page h2 em{font-weight:400;color:#f3b18e}
+.hero-description{max-width:610px;color:#e1eeea;font-size:1.08rem;line-height:1.85}
+.hero-buttons{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:34px}
+.knowledge-button{display:inline-flex;align-items:center;justify-content:space-between;gap:25px;padding:15px 19px;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;font-weight:900;transition:.25s}
+.knowledge-button b{font-size:1.15rem}
+.knowledge-button.coral{background:#f07855;color:#173f47}
+.knowledge-button:hover{transform:translateY(-4px);box-shadow:0 12px 25px #092e3540}
+.knowledge-text-link{color:#fff;border-bottom:1px solid #ffffff70;padding:9px 0;font-size:.83rem}
+.knowledge-text-link span{color:#f3b18e;margin-left:10px}
+.knowledge-orbit{width:min(390px,34vw);aspect-ratio:1;justify-self:center;position:relative;display:grid;place-items:center;margin:20px 0}
+.orbit-ring{position:absolute;inset:0;border:1px solid #f07855;border-radius:50%;animation:knowledgeOrbit 32s linear infinite}
+.ring-a{box-shadow:inset 0 0 0 20px #ffffff08,inset 0 0 0 42px #ffffff06}
+.ring-b{inset:14%;border-color:#f7d9b8a0;transform:rotate(45deg);border-radius:43% 57% 50% 50%;animation-direction:reverse;animation-duration:38s}
+.orbit-core{width:46%;aspect-ratio:1;border-radius:50%;display:grid;align-content:center;justify-items:center;text-align:center;background:#286d70;border:1px solid #ffffff60;box-shadow:0 0 70px #0d303b80;font:1.6rem/1.15 Georgia,serif;color:#fff}
+.orbit-core small{font:600 .48rem system-ui;letter-spacing:.12em;margin-top:10px;color:#f7d9b8}
+.orbit-label{position:absolute;color:#f7d9b8;font-size:.57rem;letter-spacing:.15em;font-weight:800;background:#164f5b;padding:5px 8px}
+.label-one{top:7%;left:34%}.label-two{right:-5%;top:53%}.label-three{left:-5%;top:53%}
+.hero-bottom{position:absolute;bottom:25px;left:clamp(24px,8vw,120px);right:clamp(24px,8vw,120px);display:flex;justify-content:space-between;gap:15px;color:#b9d1cd;font-size:.59rem;letter-spacing:.17em}
+.knowledge-intro{max-width:1150px;margin:auto;padding:100px 28px;display:grid;grid-template-columns:.35fr 1fr;gap:40px;align-items:start}
+.intro-mark{font:clamp(5rem,12vw,9rem)/.8 Georgia,serif;color:#f07855;opacity:.9}
+.knowledge-page h2{font:normal clamp(2.7rem,5.2vw,5rem)/1.02 Georgia,serif;letter-spacing:-.045em;color:#164f5b;margin:20px 0}
+.knowledge-intro p,.section-heading p,.library-heading p{max-width:700px;color:#657b7c;line-height:1.9}
+.library-section{background:#f2e8d9;padding:100px clamp(22px,7vw,100px)}
+.library-heading{max-width:1200px;margin:0 auto 42px;display:flex;justify-content:space-between;align-items:end;gap:35px}
+.library-heading>div:first-child{max-width:720px}
+.library-heading h2{margin-bottom:12px}
+.library-note{max-width:210px;border-left:2px solid #f07855;padding:5px 0 5px 17px;color:#164f5b}
+.library-note b,.library-note span{display:block}.library-note b{font-size:.62rem;letter-spacing:.16em}.library-note span{font:1.05rem/1.45 Georgia,serif;margin-top:8px}
+.library-tools{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.search-box{background:#fffaf2;border:1px solid #d9cbbb;min-height:55px;display:flex;align-items:center;gap:12px;padding:0 15px;flex:1;min-width:min(100%,300px)}
+.search-box>span{font-size:1.5rem;color:#d87960}.search-box input{border:0;outline:0;background:transparent;flex:1;min-width:0;font:inherit;color:#183941}.search-box kbd{font-size:.56rem;letter-spacing:.13em;color:#8b9b96}
+.access-filters{display:flex;gap:5px;flex-wrap:wrap}
+.access-filter,.category-chip{border:1px solid #d2c4b5;background:transparent;color:#526a6d;padding:9px 13px;font:700 .68rem system-ui;cursor:pointer;transition:.2s}
+.access-filter.active,.category-chip.active,.access-filter:hover,.category-chip:hover{background:#164f5b;color:white;border-color:#164f5b}
+.category-list{max-width:1200px;margin:18px auto 28px;display:flex;gap:8px;flex-wrap:wrap}
+.category-chip{border-radius:99px;padding:8px 12px;font-size:.64rem}
+.resource-grid{max-width:1200px;margin:30px auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.resource-card{background:#fffaf2;padding:22px;border:1px solid #e5d8c8;min-height:210px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.resource-card:hover{transform:translateY(-5px);box-shadow:0 15px 32px #164f5b18}
+.resource-icon{width:43px;height:43px;display:grid;place-items:center;background:#f2e8d9;color:#d87960;font-size:1.3rem;margin-bottom:16px}
+.resource-card h3{font:1.35rem/1.2 Georgia,serif;color:#164f5b;margin:0 0 8px}
+.resource-card p{font-size:.82rem;line-height:1.6;color:#657b7c;margin:0 0 18px}
+.resource-meta{margin-top:auto;padding-top:13px;border-top:1px solid #eadfD2;display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:.61rem;color:#7a8d89}
+.access-label{background:#e5eee8;color:#286d70;padding:5px 8px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.access-label.member{background:#f8e3d8;color:#a54f39}
+.library-empty{max-width:1200px;margin:28px auto 0;text-align:center;padding:55px 22px;background:#fffaf2;border:1px dashed #cdbca9}
+.empty-symbol{font:3rem Georgia;color:#d87960}.empty-kicker{font-size:.6rem;letter-spacing:.2em;color:#8b9b96;font-weight:900}
+.library-empty h3{font:normal clamp(1.6rem,3vw,2.4rem) Georgia,serif;color:#164f5b;margin:10px 0}
+.library-empty>p:last-child{max-width:570px;margin:auto;color:#657b7c;font-size:.88rem;line-height:1.8}
+.library-footnote{max-width:1200px;margin:18px auto 0;color:#7b8e88;font-size:.65rem;letter-spacing:.04em}
+.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4f8f89;margin-right:8px}
+.subjects-section{padding:100px clamp(22px,7vw,100px);background:#fbf4e9}
+.section-heading{text-align:center;max-width:760px;margin:0 auto 55px}
+.section-heading .eyebrow{justify-content:center}
+.section-heading p{margin:0 auto}
+.subject-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.subject-card{position:relative;min-height:250px;padding:25px;background:#f2e8d9;border-bottom:3px solid #d87960;transition:transform .3s,background .3s,box-shadow .3s}
+.subject-card:hover{transform:translateY(-7px);background:#fffaf2;box-shadow:0 18px 35px #164f5b14}
+.subject-no{position:absolute;right:22px;top:20px;color:#9aa9a1;font-size:.66rem;letter-spacing:.14em}
+.subject-icon{display:block;font:2rem Georgia;color:#28796d;margin:8px 0 25px}
+.subject-card h3{font:1.45rem/1.15 Georgia,serif;color:#164f5b;margin:0 0 10px}
+.subject-card p{font-size:.82rem;line-height:1.7;color:#657b7c;min-height:48px}
+.subject-card b{font-size:.58rem;letter-spacing:.15em;color:#d87960}
+.access-section{background:#123f49;color:#fff;padding:95px clamp(22px,8vw,115px);position:relative;overflow:hidden}
+.access-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:9%;align-items:center}
+.access-section .eyebrow{color:#f4c5a7}.access-copy h2{color:#fff}.access-copy p{color:#c1d4d0;line-height:1.8;max-width:460px}
+.access-levels{border-left:1px solid #f078557a;padding-left:35px}
+.access-level{display:grid;grid-template-columns:40px 1fr auto;gap:15px;align-items:center;padding:20px 0;border-bottom:1px solid #ffffff25}
+.access-icon{font-size:1.5rem;color:#f07855}.access-level h3{font:1.3rem Georgia,serif;color:#f7d9b8;margin:0 0 5px}.access-level p{font-size:.78rem;color:#c1d4d0;margin:0;line-height:1.6}.access-level>b{font-size:.55rem;letter-spacing:.12em;color:#f3b18e}
+.documentation-section{padding:100px clamp(22px,8vw,115px);background:#fbf4e9}
+.doc-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:9%;align-items:center}
+.doc-art{width:min(340px,65vw);aspect-ratio:1;border:1px solid #f07855;border-radius:50%;display:grid;place-items:center;position:relative;margin:auto}
+.doc-ring{position:absolute;inset:12%;border:1px solid #28796d;border-radius:47% 53% 50% 50%;transform:rotate(35deg);animation:knowledgeOrbit 35s linear infinite}
+.doc-ring:after{content:"";position:absolute;inset:20%;border:1px solid #f07855;border-radius:50%}
+.doc-core{width:44%;aspect-ratio:1;border-radius:50%;background:#164f5b;color:#fff;display:grid;align-content:center;justify-items:center;text-align:center;font:1.25rem Georgia,serif;box-shadow:0 0 0 13px #164f5b10}
+.doc-core small{font:600 .5rem system-ui;letter-spacing:.15em;color:#f7d9b8}
+.doc-copy p{color:#657b7c;line-height:1.85}
+.contribute-section{background:#f07855;color:#173f47;padding:95px clamp(22px,9vw,130px)}
+.contribute-content{max-width:1000px;margin:auto}
+.contribute-section .eyebrow{color:#164f5b}
+.contribute-section h2{color:#173f47;font-size:clamp(3rem,6vw,5.7rem);margin:20px 0}
+.contribute-section h2 em{color:#fff3e7}
+.contribute-section p{max-width:680px;line-height:1.85;font-size:1rem}
+.knowledge-button.light{background:#f7d9b8;color:#164f5b;margin-top:17px}
+.knowledge-closing{text-align:center;padding:65px 20px;background:#f2e3d2}
+.knowledge-closing p{font-size:.62rem;letter-spacing:.2em;color:#d87960;font-weight:900}
+.knowledge-closing h2{font-size:clamp(2.5rem,5vw,4.5rem);margin:12px 0}
+.knowledge-closing h2 em{color:#d87960}
+.agent-fallback{position:fixed;right:22px;bottom:22px;z-index:1300;display:inline-flex;align-items:center;gap:10px;padding:13px 18px;background:#f07855;color:#173f47;border:1px solid #fff4e7;box-shadow:0 12px 32px #092e3540;font-size:.72rem;font-weight:900;letter-spacing:.05em;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.agent-fallback:before{content:"✦";font-size:1.1rem}.agent-fallback:hover{transform:translateY(-4px);box-shadow:0 17px 36px #092e3555}
+@keyframes knowledgeOrbit{to{transform:rotate(360deg)}}
+@media(max-width:900px){.knowledge-hero-inner{grid-template-columns:1fr .65fr}.knowledge-orbit{width:min(290px,30vw)}.subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.library-heading{align-items:start}.access-inner{gap:5%}}
+@media(max-width:650px){.knowledge-hero-inner{display:block;min-height:0;padding:80px 24px 90px}.knowledge-hero h1{font-size:clamp(3rem,12vw,4.5rem)}.knowledge-orbit{width:220px;margin:50px auto 15px}.hero-bottom{font-size:.5rem;bottom:17px}.knowledge-intro{grid-template-columns:1fr;gap:16px;padding:70px 24px}.intro-mark{font-size:4rem}.library-section,.subjects-section{padding:75px 18px}.library-heading{display:block}.library-note{margin-top:25px}.library-tools{align-items:stretch}.access-filters{justify-content:flex-start}.category-list{gap:6px}.category-chip{font-size:.6rem;padding:7px 10px}.subject-grid,.resource-grid{grid-template-columns:1fr}.subject-card{min-height:215px}.access-inner,.doc-inner{grid-template-columns:1fr;gap:38px}.access-levels{padding-left:18px}.access-level{grid-template-columns:30px 1fr;gap:10px}.access-level>b{grid-column:2}.doc-art{width:230px}.contribute-section{padding:75px 24px}.agent-fallback{right:13px;bottom:13px;padding:12px 15px;font-size:.68rem}.knowledge-closing{padding:55px 18px}}
+@media(prefers-reduced-motion:reduce){.knowledge-page *, .knowledge-page *:before,.knowledge-page *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<a aria-label="PAHAD home" class="brand" href="index.html">
+<img alt="PAHAD official emblem" class="brand-logo" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://drive.google.com/thumbnail?id=1EVrr5ctvcM2xQMp86U2lPOkBiprrZVRK&amp;sz=w1000';}else{this.style.display='none';var f=document.createElement('span');f.className='brand-logo-fallback';f.textContent='P';f.setAttribute('aria-label','PAHAD emblem');this.after(f)}" src="https://drive.google.com/uc?export=view&amp;id=1EVrr5ctvcM2xQMp86U2lPOkBiprrZVRK"/>
+<span class="brand-wording">PAHAD<small>PARTICIPATORY ACTION FOR HOLISTIC ADVANCEMENT &amp; DEVELOPMENT</small></span>
+</a>
+<nav aria-label="Main navigation" class="main-nav">
+<a class="live-events-link" href="live-events.html"><span aria-hidden="true" class="live-dot"></span>Live Events</a>
+<button aria-label="Install PAHAD app" class="nav-install-button" id="pwaNavInstallButton" title="Install PAHAD app" type="button">↓ <span>Install</span></button>
+<details class="nav-dropdown"><summary>About Us</summary><div class="dropdown-panel">
+<a href="about.html">About the Organisation</a>
+<a href="vision-mission.html">Vision &amp; Mission</a>
+<a href="vision-mission.html#values">Values &amp; Principles</a>
+<a href="about.html#journey">Our Journey</a>
+</div></details>
+<details class="nav-dropdown"><summary>Governance</summary><div class="dropdown-panel">
+<a href="governance.html">Governance Framework</a>
+<a href="governance.html#governing-body">Governing Body</a>
+<a href="governance.html#executive-administration">Executive Administration</a>
+<a href="constitution.html">Constitution &amp; Rules</a>
+<a href="transparency.html#policies">Policies &amp; Regulations</a>
+<a href="transparency.html">Transparency &amp; Accountability</a>
+</div></details>
+<details class="nav-dropdown"><summary>Our Work</summary><div class="dropdown-panel">
+<a href="our-work.html">Overview of Our Work</a>
+<a href="our-work.html#human-development">Human Development</a>
+<a href="our-work.html#livelihood-development">Livelihood Development</a>
+<a href="our-work.html#community-development">Community Development</a>
+<a href="our-work.html#research-innovation">Research &amp; Innovation</a>
+<a href="our-work.html#himalayan-sustainability">Himalayan Sustainability &amp; Heritage</a>
+</div></details>
+<details class="nav-dropdown"><summary>Programmes</summary><div class="dropdown-panel">
+<a href="programmes.html">Programmes Overview</a>
+<a href="programmes.html#projects">Projects &amp; Initiatives</a>
+<a href="programmes.html#activities">Community Activities</a>
+<a href="programmes.html#project-status">Ongoing &amp; Completed Work</a>
+</div></details>
+<details class="nav-dropdown"><summary>Knowledge &amp; Research</summary><div class="dropdown-panel">
+<a href="knowledge.html#research">Research &amp; Studies</a>
+<a href="knowledge.html#publications">Publications &amp; Reports</a>
+<a href="knowledge.html#resources">Knowledge Resources</a>
+<a href="knowledge.html#documentation">Documentation</a>
+</div></details>
+<details class="nav-dropdown"><summary>News &amp; Media</summary><div class="dropdown-panel">
+<a href="news.html">News &amp; Updates</a>
+<a href="news.html#announcements">Announcements</a>
+<a href="news.html#events">Events &amp; Activities</a>
+<a href="news.html#gallery">Photo Gallery</a>
+<a href="news.html#videos">Video &amp; Media</a>
+</div></details>
+<details class="nav-dropdown"><summary>Join PAHAD</summary><div class="dropdown-panel">
+<a href="membership.html">Membership</a>
+<a href="membership.html#categories">Membership Categories</a>
+<a href="get-involved.html#volunteer">Volunteer with PAHAD</a>
+<a href="get-involved.html#partnerships">Partnerships &amp; Collaboration</a>
+</div></details>
+<a href="contact.html">Contact</a>
+<a href="dashboard.html">My Dashboard</a>
+<a class="join-link" href="get-involved.html">Get Involved ↗</a>
+</nav>
+<details class="mobile-nav">
+<summary aria-label="Open site navigation">☰ MENU</summary>
+<div class="mobile-panel">
+<a class="live-events-link" href="live-events.html"><span aria-hidden="true" class="live-dot"></span>Live Events</a>
+<button class="mobile-install-button" id="pwaMobileInstallButton" type="button">↓ Install PAHAD App</button>
+<details><summary>About Us</summary><div class="mobile-submenu">
+<a href="about.html">About the Organisation</a><a href="vision-mission.html">Vision &amp; Mission</a>
+<a href="vision-mission.html#values">Values &amp; Principles</a><a href="about.html#journey">Our Journey</a>
+</div></details>
+<details><summary>Governance</summary><div class="mobile-submenu">
+<a href="governance.html">Governance Framework</a><a href="governance.html#governing-body">Governing Body</a>
+<a href="governance.html#executive-administration">Executive Administration</a><a href="constitution.html">Constitution &amp; Rules</a>
+<a href="transparency.html#policies">Policies &amp; Regulations</a><a href="transparency.html">Transparency &amp; Accountability</a>
+</div></details>
+<details><summary>Our Work</summary><div class="mobile-submenu">
+<a href="our-work.html">Overview of Our Work</a><a href="our-work.html#human-development">Human Development</a>
+<a href="our-work.html#livelihood-development">Livelihood Development</a><a href="our-work.html#community-development">Community Development</a>
+<a href="our-work.html#research-innovation">Research &amp; Innovation</a><a href="our-work.html#himalayan-sustainability">Himalayan Sustainability &amp; Heritage</a>
+</div></details>
+<details><summary>Programmes</summary><div class="mobile-submenu">
+<a href="programmes.html">Programmes Overview</a><a href="programmes.html#projects">Projects &amp; Initiatives</a>
+<a href="programmes.html#activities">Community Activities</a><a href="programmes.html#project-status">Ongoing &amp; Completed Work</a>
+</div></details>
+<details><summary>Knowledge &amp; Research</summary><div class="mobile-submenu">
+<a href="knowledge.html#research">Research &amp; Studies</a><a href="knowledge.html#publications">Publications &amp; Reports</a>
+<a href="knowledge.html#resources">Knowledge Resources</a><a href="knowledge.html#documentation">Documentation</a>
+</div></details>
+<details><summary>News &amp; Media</summary><div class="mobile-submenu">
+<a href="news.html">News &amp; Updates</a><a href="news.html#announcements">Announcements</a>
+<a href="news.html#events">Events &amp; Activities</a><a href="news.html#gallery">Photo Gallery</a><a href="news.html#videos">Video &amp; Media</a>
+</div></details>
+<details><summary>Join PAHAD</summary><div class="mobile-submenu">
+<a href="membership.html">Membership</a><a href="membership.html#categories">Membership Categories</a>
+<a href="get-involved.html#volunteer">Volunteer with PAHAD</a><a href="get-involved.html#partnerships">Partnerships &amp; Collaboration</a>
+</div></details>
+<a href="contact.html">Contact</a>
+<a href="dashboard.html">My Dashboard</a>
+<a class="mobile-join-link" href="get-involved.html">GET INVOLVED ↗</a>
+</div>
+</details>
+</header>
+
+<main class="knowledge-page">
+  <section class="knowledge-hero" id="top">
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="knowledge-hero-inner">
+      <div class="knowledge-hero-copy">
+        <div class="eyebrow"><span></span> PEOPLE · KNOWLEDGE · ACTION</div>
+        <p class="hero-index">PAHAD KNOWLEDGE &amp; RESEARCH</p>
+        <h1>Knowledge is a resource.<br><em>Sharing it creates possibility.</em></h1>
+        <p class="hero-description">A shared space to discover research, publications, learning materials, reports and knowledge rooted in our communities and the wider Himalayan region.</p>
+        <div class="hero-buttons">
+          <a class="knowledge-button coral" href="#library">Explore the library <b>↓</b></a>
+          <a class="knowledge-text-link" href="#contribute">Contribute knowledge <span>↗</span></a>
+        </div>
+      </div>
+      <div class="knowledge-orbit" aria-label="Knowledge connects people, ideas and action">
+        <div class="orbit-ring ring-a"></div><div class="orbit-ring ring-b"></div>
+        <div class="orbit-core"><strong>KNOW<br>MORE</strong><small>SHARE · LEARN · GROW</small></div>
+        <span class="orbit-label label-one">RESEARCH</span><span class="orbit-label label-two">EXPERIENCE</span><span class="orbit-label label-three">COMMUNITY</span>
+      </div>
+      <div class="hero-bottom"><span>01 / DISCOVER</span><span>KNOWLEDGE FOR COLLECTIVE PROGRESS</span></div>
+    </div>
+  </section>
+
+  <section class="knowledge-intro">
+    <div class="intro-mark">K.</div>
+    <div>
+      <div class="eyebrow dark"><span></span> A SHARED KNOWLEDGE SPACE</div>
+      <h2>Bring knowledge<br><em>within reach.</em></h2>
+      <p>Knowledge should not remain scattered, inaccessible or limited to a few. PAHAD Knowledge brings useful information, research, local experiences and documentation together so people can discover it, learn from it and build upon it.</p>
+    </div>
+  </section>
+
+  <section class="library-section" id="library">
+    <div class="library-heading">
+      <div>
+        <div class="eyebrow dark"><span></span> THE KNOWLEDGE LIBRARY</div>
+        <h2>Explore what<br><em>you are looking for.</em></h2>
+        <p>Browse by subject or search for a specific resource. Access depends on the publication permissions assigned to each item.</p>
+      </div>
+      <div class="library-note"><b>ONE LIBRARY</b><span>Public and member resources, organised together.</span></div>
+    </div>
+    <div class="library-tools">
+      <label class="search-box" for="resource-search"><span aria-hidden="true">⌕</span><input id="resource-search" type="search" placeholder="Search titles, subjects or keywords…" autocomplete="off"><kbd>SEARCH</kbd></label>
+      <div class="access-filters" role="group" aria-label="Filter by access">
+        <button class="access-filter active" data-access="all" type="button">All resources</button>
+        <button class="access-filter" data-access="public" type="button">Public</button>
+        <button class="access-filter" data-access="members" type="button">Members</button>
+      </div>
+    </div>
+    <div class="category-list" role="group" aria-label="Filter by subject">
+      <button class="category-chip active" data-category="all" type="button">All subjects</button>
+      <button class="category-chip" data-category="Research &amp; Publications" type="button">Research &amp; Publications</button>
+      <button class="category-chip" data-category="Education &amp; Learning" type="button">Education &amp; Learning</button>
+      <button class="category-chip" data-category="Community Development" type="button">Community Development</button>
+      <button class="category-chip" data-category="Livelihood &amp; Enterprise" type="button">Livelihood &amp; Enterprise</button>
+      <button class="category-chip" data-category="Culture &amp; Heritage" type="button">Culture &amp; Heritage</button>
+      <button class="category-chip" data-category="Environment &amp; Sustainability" type="button">Environment &amp; Sustainability</button>
+      <button class="category-chip" data-category="Policy &amp; Governance" type="button">Policy &amp; Governance</button>
+      <button class="category-chip" data-category="Reports &amp; Documentation" type="button">Reports &amp; Documentation</button>
+      <button class="category-chip" data-category="Media Archive" type="button">Media Archive</button>
+    </div>
+    <div class="resource-grid" id="resource-grid" hidden></div>
+    <div class="library-empty" id="empty-state">
+      <div class="empty-symbol">✳</div>
+      <p class="empty-kicker">THE LIBRARY IS GROWING</p>
+      <h3>Knowledge resources will appear here.</h3>
+      <p>As resources are added to PAHAD’s Google Drive collection and approved for sharing, they will be listed here for people to explore.</p>
+    </div>
+    <p class="library-footnote"><span class="status-dot"></span> Library catalogue · New resources will appear as the collection grows</p>
+  </section>
+
+  <section class="subjects-section" id="research">
+    <div class="section-heading">
+      <div class="eyebrow dark"><span></span> EXPLORE BY SUBJECT</div>
+      <h2>Different knowledge.<br><em>Shared progress.</em></h2>
+      <p>Explore areas of knowledge connected to people's lives, local opportunities and the future of our communities.</p>
+    </div>
+    <div class="subject-grid">
+      <a class="subject-card" href="#library" data-subject="Research &amp; Publications"><span class="subject-no">01</span><span class="subject-icon">⌕</span><h3>Research &amp; Publications</h3><p>Research papers, studies, articles and publications.</p><b>EXPLORE ↗</b></a>
+      <a class="subject-card" href="#library" data-subject="Education &amp; Learning"><span class="subject-no">02</span><span class="subject-icon">✳</span><h3>Education &amp; Learning</h3><p>Learning materials, educational resources and references.</p><b>EXPLORE ↗</b></a>
+      <a class="subject-card" href="#library" data-subject="Community Development"><span class="subject-no">03</span><span class="subject-icon">⌂</span><h3>Community Development</h3><p>Community initiatives, development reports and practical resources.</p><b>EXPLORE ↗</b></a>
+      <a class="subject-card" href="#library" data-subject="Livelihood &amp; Enterprise"><span class="subject-no">04</span><span class="subject-icon">↗</span><h3>Livelihood &amp; Enterprise</h3><p>Local industries, entrepreneurship, livelihoods and economic opportunities.</p><b>EXPLORE ↗</b></a>
+      <a class="subject-card" href="#library" data-subject="Culture &amp; Heritage"><span class="subject-no">05</span><span class="subject-icon">◉</span><h3>Culture &amp; Heritage</h3><p>Local history, traditions, languages and cultural documentation.</p><b>EXPLORE ↗</b></a>
+      <a class="subject-card" href="#library" data-subject="Environment &amp; Sustainability"><span class="subject-no">06</span><span class="subject-icon">⌁</span><h3>Environment &amp; Sustainability</h3><p>Biodiversity, conservation, environmental studies and sustainability.</p><b>EXPLORE ↗</b></a>
+      <a class="subject-card" href="#library" data-subject="Policy &amp; Governance"><span class="subject-no">07</span><span class="subject-icon">▤</span><h3>Policy &amp; Governance</h3><p>Policies, public information, governance and institutional resources.</p><b>EXPLORE ↗</b></a>
+      <a class="subject-card" href="#library" data-subject="Reports &amp; Documentation"><span class="subject-no">08</span><span class="subject-icon">▧</span><h3>Reports &amp; Documentation</h3><p>Reports, surveys, records and useful documentation.</p><b>EXPLORE ↗</b></a>
+      <a class="subject-card" href="#library" data-subject="Media Archive"><span class="subject-no">09</span><span class="subject-icon">▶</span><h3>Media Archive</h3><p>Photographs, audio recordings and videos.</p><b>EXPLORE ↗</b></a>
+    </div>
+  </section>
+
+  <section class="access-section" id="publications">
+    <div class="access-inner">
+      <div class="access-copy">
+        <div class="eyebrow light"><span></span> ACCESS FOR EVERYONE</div>
+        <h2>Knowledge should<br><em>be within reach.</em></h2>
+        <p>Resources are organised in one library. Each item is made available according to its approved access level.</p>
+      </div>
+      <div class="access-levels">
+        <div class="access-level"><span class="access-icon">◎</span><div><h3>Public resources</h3><p>Materials approved for anyone to discover and access.</p></div><b>OPEN</b></div>
+        <div class="access-level"><span class="access-icon">◈</span><div><h3>Member resources</h3><p>Additional materials available to signed-in PAHAD members.</p></div><b>MEMBERS</b></div>
+        <div class="access-level"><span class="access-icon">▣</span><div><h3>Restricted resources</h3><p>Materials reserved for specifically authorised access and not listed in the public library.</p></div><b>LIMITED</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="documentation-section" id="documentation">
+    <div class="doc-inner">
+      <div class="doc-art"><div class="doc-ring"></div><div class="doc-core">PAHAD<br><small>KNOWLEDGE</small></div></div>
+      <div class="doc-copy">
+        <div class="eyebrow dark"><span></span> BEYOND DOCUMENTS</div>
+        <h2>Knowledge lives<br><em>in people too.</em></h2>
+        <p>Knowledge is not limited to academic research or published documents. It also exists in people's experiences, professional skills, local practices, community histories and everyday lives.</p>
+        <p>PAHAD seeks to recognise, collect, organise and connect these different forms of knowledge.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contribute-section" id="contribute">
+    <div class="contribute-content">
+      <div class="eyebrow light"><span></span> CONTRIBUTE KNOWLEDGE</div>
+      <h2>Share what you know.<br><em>Help others learn.</em></h2>
+      <p>Have a research paper, report, publication, educational resource, documentation or other useful material to share? We welcome relevant contributions that can help preserve knowledge, improve understanding and support community development.</p>
+      <a class="knowledge-button light" href="contact.html">Get in touch <b>↗</b></a>
+    </div>
+  </section>
+  <section class="knowledge-closing"><p>PEOPLE · KNOWLEDGE · ACTION</p><h2>Stronger communities,<br><em>advancing together.</em></h2></section>
+</main>
+
+<footer>
+<div class="footer-brand">PAHAD<small>Participatory Action for Holistic<br/>Advancement &amp; Development</small></div>
+<nav aria-label="Footer navigation" class="footer-links">
+<a href="about.html">About</a><a href="our-work.html">Our Work</a><a href="programmes.html">Programmes</a><a href="knowledge.html">Knowledge</a><a href="governance.html">Governance</a><a href="membership.html">Membership</a><a href="transparency.html">Transparency</a><a href="constitution.html">Constitution</a><a href="get-involved.html">Get Involved</a><a href="contact.html">Contact</a>
+</nav>
+<div class="footer-note"><a href="mailto:Pahad.org@gmail.com" style="color:inherit">Pahad.org@gmail.com</a><br/>People · Knowledge · Action</div>
+</footer>
+<div aria-labelledby="pwaHelpTitle" aria-modal="true" class="pwa-help" hidden="" id="pwaHelp" role="dialog">
+<div class="pwa-help-card">
+<h3 id="pwaHelpTitle">Install PAHAD App</h3>
+<p>Add PAHAD to your home screen for quick access and offline reading:</p>
+<ol>
+<li>Open your browser menu (tap <strong>Share</strong> on iOS or <strong>⋮</strong> on Android/Desktop).</li>
+<li>Select <strong>Add to Home Screen</strong> or <strong>Install App</strong>.</li>
+</ol>
+<div class="pwa-help-actions">
+<button class="button button-primary" id="pwaHelpDone" type="button">Got it</button>
+<button class="pwa-help-close" id="pwaHelpClose" type="button">Close</button>
+</div>
+</div>
+</div>
+<a class="agent-fallback" href="https://agent.jotform.com/01a1c8c20568700084ef412f4b069721dc93" target="_blank" rel="noopener noreferrer" aria-label="Open PAHAD AI Assistant">Ask PAHAD AI ↗</a>
+<script>
+
+(() => {
+  let deferredInstallPrompt = null;
+  const help = document.getElementById('pwaHelp');
+  const installButtons = [
+    document.getElementById('pwaNavInstallButton'),
+    document.getElementById('pwaMobileInstallButton')
+  ].filter(Boolean);
+
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  installButtons.forEach(button => {
+    if (isStandalone) {
+      button.disabled = true;
+      button.textContent = '✓ Installed';
+      button.setAttribute('aria-label','PAHAD is installed');
+    }
+    button.addEventListener('click', async () => {
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        await deferredInstallPrompt.userChoice;
+        deferredInstallPrompt = null;
+      } else if (help) {
+        help.hidden = false;
+      }
+    });
+  });
+
+  window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+  });
+  window.addEventListener('appinstalled', () => {
+    deferredInstallPrompt = null;
+    installButtons.forEach(button => {
+      button.disabled = true;
+      button.textContent = '✓ Installed';
+    });
+  });
+
+  const doneBtn = document.getElementById('pwaHelpDone');
+  const closeBtn = document.getElementById('pwaHelpClose');
+  if (doneBtn && help) doneBtn.addEventListener('click', () => help.hidden = true);
+  if (closeBtn && help) closeBtn.addEventListener('click', () => help.hidden = true);
+  if (help) help.addEventListener('click', event => { if (event.target === help) help.hidden = true; });
+
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(error => {
+        console.warn('PAHAD offline support could not be registered:', error);
+      });
+    });
+  }
+})();
+
+</script>
+<script>
+(()=>{
+ const search=document.getElementById('resource-search');
+ const grid=document.getElementById('resource-grid');
+ const empty=document.getElementById('empty-state');
+ const accessButtons=[...document.querySelectorAll('.access-filter')];
+ const categoryButtons=[...document.querySelectorAll('.category-chip')];
+ let access='all',category='all';
+ // Replace this empty array with approved records from the secure Drive/Firebase catalogue.
+ // Expected fields: title, description, category, format, access, url, keywords, icon.
+ const resources=[];
+ function render(){
+   const q=(search.value||'').trim().toLowerCase();
+   const matches=resources.filter(r=>{
+     const haystack=[r.title,r.description,r.category,...(r.keywords||[])].join(' ').toLowerCase();
+     return (!q||haystack.includes(q))&&(access==='all'||r.access===access)&&(category==='all'||r.category===category);
+   });
+   grid.replaceChildren();
+   matches.forEach(r=>{
+     const card=document.createElement('article');card.className='resource-card';
+     const icon=document.createElement('div');icon.className='resource-icon';icon.textContent=r.icon||'▤';
+     const title=document.createElement('h3');title.textContent=r.title||'Untitled resource';
+     const desc=document.createElement('p');desc.textContent=r.description||'';
+     const meta=document.createElement('div');meta.className='resource-meta';
+     const kind=document.createElement('span');kind.textContent=[r.format,r.category].filter(Boolean).join(' · ');
+     const badge=document.createElement('span');badge.className='access-label'+(r.access==='members'?' member':'');badge.textContent=r.access==='members'?'Members':'Public';
+     meta.append(kind,badge);card.append(icon,title,desc,meta);
+     if(r.url && r.access==='public'){const a=document.createElement('a');a.className='resource-open';a.href=r.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open resource ↗';card.append(a)}
+     else if(r.access==='members'){const a=document.createElement('a');a.className='resource-open';a.href='dashboard.html';a.textContent='Sign in to access ↗';card.append(a)}
+     grid.append(card);
+   });
+   grid.hidden=matches.length===0;empty.hidden=matches.length!==0;
+   if(resources.length&&matches.length===0){empty.querySelector('h3').textContent='No matching resources';empty.querySelector('p:last-child').textContent='Try another keyword or choose a different subject or access filter.'}
+   else if(!resources.length){empty.querySelector('h3').textContent='The library is growing';empty.querySelector('p:last-child').textContent='As resources are added to PAHAD’s Google Drive collection and approved for sharing, they will appear here.'}
+ }
+ search.addEventListener('input',render);
+ accessButtons.forEach(btn=>btn.addEventListener('click',()=>{access=btn.dataset.access;accessButtons.forEach(b=>b.classList.toggle('active',b===btn));render()}));
+ categoryButtons.forEach(btn=>btn.addEventListener('click',()=>{category=btn.dataset.category;categoryButtons.forEach(b=>b.classList.toggle('active',b===btn));render()}));
+ document.querySelectorAll('.subject-card').forEach(card=>card.addEventListener('click',()=>{category=card.dataset.subject;categoryButtons.forEach(b=>b.classList.toggle('active',b.dataset.category===category));render()}));
+ render();
+})();
+</script>
+</body></html>
