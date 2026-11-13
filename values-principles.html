@@ -914,6 +914,20 @@ footer{row-gap:18px}
 }
 </style>
 <style>html{scroll-padding-top:100px} [id]{scroll-margin-top:100px}</style><style id="pahad-current-link-style">.is-current-page{color:#f7d9b8!important;text-decoration:underline!important;text-underline-offset:5px}</style>
+
+<style id="pahad-desktop-nav-size">
+@media (min-width:1181px){
+  .topbar{gap:clamp(10px,1.15vw,18px);padding-left:clamp(14px,2vw,34px);padding-right:clamp(14px,2vw,34px)}
+  .brand{min-width:clamp(155px,15vw,205px);gap:9px}
+  .brand-logo{width:62px;height:62px}
+  .brand-wording{font-size:1.08rem}
+  .brand small{font-size:.40rem;max-width:190px}
+  .main-nav{gap:clamp(5px,.65vw,10px)}
+  .main-nav>a,.main-nav summary{font-size:clamp(.68rem,.76vw,.82rem);letter-spacing:.035em;padding:12px 7px}
+  .main-nav .join-link{padding:12px 10px!important}
+  .main-nav .nav-install-button{font-size:.78rem;padding:10px 9px}
+}
+</style>
 </head>
 <body><header class="topbar">
 <a aria-label="PAHAD home" class="brand" href="index.html">
@@ -921,179 +935,143 @@ footer{row-gap:18px}
 <span class="brand-wording">PAHAD<small>PARTICIPATORY ACTION FOR HOLISTIC ADVANCEMENT &amp; DEVELOPMENT</small></span>
 </a>
 <nav aria-label="Main navigation" class="main-nav">
-<a class="live-events-link" href="live-events.html"><span aria-hidden="true" class="live-dot"></span>Live Events</a>
-<button aria-label="Install PAHAD app" class="nav-install-button" id="pwaNavInstallButton" title="Install PAHAD app" type="button">↓ <span>Install</span></button>
-<details class="nav-dropdown"><summary>About Us</summary><div class="dropdown-panel">
-<a href="about.html">About the Organisation</a><a href="vision-mission.html">Vision &amp; Mission</a><a href="index.html#values">Values &amp; Principles</a><a href="reconnect.html#journey">Our Journey</a>
-</div></details>
-<details class="nav-dropdown"><summary>Governance</summary><div class="dropdown-panel">
-<a href="governance.html">Governance Framework</a><a href="governance.html#governing-body">Governing Body</a><a href="governance.html#executive-administration">Executive Administration</a><a href="constitution.html">Constitution &amp; Rules</a><a href="transparency.html#policies">Policies &amp; Regulations</a><a href="transparency.html">Transparency &amp; Accountability</a>
-</div></details>
-<details class="nav-dropdown"><summary>Our Work</summary><div class="dropdown-panel">
-<a href="our-work.html">Overview of Our Work</a><a href="our-work.html#human-development">Human Development</a><a href="our-work.html#livelihood-development">Livelihood Development</a><a href="our-work.html#community-development">Community Development</a><a href="our-work.html#research-innovation">Research &amp; Innovation</a><a href="our-work.html#himalayan-sustainability">Himalayan Sustainability &amp; Heritage</a>
-</div></details>
-<details class="nav-dropdown"><summary>Programmes</summary><div class="dropdown-panel">
-<a href="programmes.html">Programmes Overview</a><a href="programmes.html#projects">Community Learning</a><a href="programmes.html#activities">Youth &amp; Civic Participation</a><a href="programmes.html#livelihood-enterprise">Livelihood &amp; Enterprise</a><a href="programmes.html#research-documentation">Research &amp; Documentation</a><a href="programmes.html#project-status">Programme Updates</a>
-</div></details>
-<details class="nav-dropdown"><summary>Knowledge &amp; Research</summary><div class="dropdown-panel">
-<a href="knowledge.html#research">Research &amp; Learning</a><a href="knowledge.html#publications">Publications &amp; Reports</a><a href="knowledge.html#resources">Knowledge Resources</a><a href="knowledge.html#documentation">Documentation</a><a href="Knowledge.html">Knowledge Library</a>
-</div></details>
-<details class="nav-dropdown"><summary>News &amp; Media</summary><div class="dropdown-panel">
-<a href="news.html">News &amp; Updates</a><a href="news.html#announcements">Announcements</a><a href="news.html#events">Events</a><a href="news.html#gallery">Photo Gallery</a><a href="news.html#videos">Video &amp; Media</a>
-</div></details>
-<details class="nav-dropdown"><summary>Join PAHAD</summary><div class="dropdown-panel">
-<a href="membership.html">Membership</a><a href="membership.html#categories">Membership Categories</a><a href="get-involved.html#volunteer">Volunteer with PAHAD</a><a href="get-involved.html#partnerships">Partnerships &amp; Collaboration</a><a href="get-involved.html">Get Involved</a>
-</div></details>
-<details class="nav-dropdown"><summary>More</summary><div class="dropdown-panel">
-<a href="explore.html">Explore PAHAD</a><a href="dashboard.html">My Dashboard</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Notice</a><a href="Terms_and_Conditions.html">Terms &amp; Conditions</a><a href="reconnect.html">Reconnect</a>
-</div></details>
-<a class="join-link" href="get-involved.html">Get Involved ↗</a>
+<a class="live-events-link" href="live-events.html"><span class="live-dot" aria-hidden="true"></span>Live Events</a>
+<a href="index.html">Home</a><a href="about.html">About</a><a href="governance.html">Governance</a><a href="our-work.html">Our Work</a><a href="programmes.html">Programmes</a><a href="knowledge.html">Knowledge</a><a href="news.html">News &amp; Events</a><a class="join-link" href="membership.html">Get Involved</a>
+<a href="dashboard.html">Login</a><a href="dashboard.html">Dashboard</a>
+<button aria-label="Install PAHAD app" class="nav-install-button" id="pwaNavInstallButton" title="Install PAHAD app" type="button">↓ <span>Install App</span></button>
 </nav>
 <details class="mobile-nav"><summary aria-label="Open site navigation">☰ MENU</summary><div class="mobile-panel">
-<a class="live-events-link" href="live-events.html"><span aria-hidden="true" class="live-dot"></span>Live Events</a><button class="mobile-install-button" id="pwaMobileInstallButton" type="button">↓ Install PAHAD App</button>
-<details><summary>About Us</summary><div class="mobile-submenu"><a href="about.html">About the Organisation</a><a href="vision-mission.html">Vision &amp; Mission</a><a href="index.html#values">Values &amp; Principles</a><a href="reconnect.html#journey">Our Journey</a></div></details>
-<details><summary>Governance</summary><div class="mobile-submenu"><a href="governance.html">Governance Framework</a><a href="governance.html#governing-body">Governing Body</a><a href="governance.html#executive-administration">Executive Administration</a><a href="constitution.html">Constitution &amp; Rules</a><a href="transparency.html#policies">Policies &amp; Regulations</a><a href="transparency.html">Transparency &amp; Accountability</a></div></details>
-<details><summary>Our Work</summary><div class="mobile-submenu"><a href="our-work.html">Overview of Our Work</a><a href="our-work.html#human-development">Human Development</a><a href="our-work.html#livelihood-development">Livelihood Development</a><a href="our-work.html#community-development">Community Development</a><a href="our-work.html#research-innovation">Research &amp; Innovation</a><a href="our-work.html#himalayan-sustainability">Himalayan Sustainability &amp; Heritage</a></div></details>
-<details><summary>Programmes</summary><div class="mobile-submenu"><a href="programmes.html">Programmes Overview</a><a href="programmes.html#projects">Community Learning</a><a href="programmes.html#activities">Youth &amp; Civic Participation</a><a href="programmes.html#livelihood-enterprise">Livelihood &amp; Enterprise</a><a href="programmes.html#research-documentation">Research &amp; Documentation</a><a href="programmes.html#project-status">Programme Updates</a></div></details>
-<details><summary>Knowledge &amp; Research</summary><div class="mobile-submenu"><a href="knowledge.html#research">Research &amp; Learning</a><a href="knowledge.html#publications">Publications &amp; Reports</a><a href="knowledge.html#resources">Knowledge Resources</a><a href="knowledge.html#documentation">Documentation</a><a href="Knowledge.html">Knowledge Library</a></div></details>
-<details><summary>News &amp; Media</summary><div class="mobile-submenu"><a href="news.html">News &amp; Updates</a><a href="news.html#announcements">Announcements</a><a href="news.html#events">Events</a><a href="news.html#gallery">Photo Gallery</a><a href="news.html#videos">Video &amp; Media</a></div></details>
-<details><summary>Join PAHAD</summary><div class="mobile-submenu"><a href="membership.html">Membership</a><a href="membership.html#categories">Membership Categories</a><a href="get-involved.html#volunteer">Volunteer with PAHAD</a><a href="get-involved.html#partnerships">Partnerships &amp; Collaboration</a></div></details>
-<details><summary>More</summary><div class="mobile-submenu"><a href="explore.html">Explore PAHAD</a><a href="dashboard.html">My Dashboard</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Notice</a><a href="Terms_and_Conditions.html">Terms &amp; Conditions</a><a href="reconnect.html">Reconnect</a></div></details>
-<a class="mobile-join-link" href="get-involved.html">GET INVOLVED ↗</a></div></details>
+<a class="live-events-link" href="live-events.html"><span class="live-dot" aria-hidden="true"></span>Live Events</a>
+<a href="index.html">Home</a><a href="about.html">About</a><a href="governance.html">Governance</a><a href="our-work.html">Our Work</a><a href="programmes.html">Programmes</a><a href="knowledge.html">Knowledge</a><a href="news.html">News &amp; Events</a><a href="membership.html">Get Involved</a>
+<a href="dashboard.html">Login</a><a href="dashboard.html">Dashboard</a><button class="mobile-install-button" id="pwaMobileInstallButton" type="button">↓ Install PAHAD App</button>
+</div></details>
 </header>
-
 <main class="vp-page" id="top">
-  <section class="vp-hero">
-    <div class="vp-hero-pattern" aria-hidden="true"></div>
-    <div class="vp-hero-copy">
-      <p class="vp-eyebrow">THE WAY WE WORK · THE STANDARDS WE UPHOLD</p>
-      <h1>Values that guide us.<br><em>Principles that shape our work.</em></h1>
-      <p class="vp-lead">PAHAD believes that meaningful development begins with people, grows through knowledge and becomes real through responsible collective action.</p>
-      <div class="vp-actions">
-        <a class="vp-button vp-button-primary" href="#values">Explore our values <span>↓</span></a>
-        <a class="vp-text-link" href="#principles">Our working principles ↗</a>
-      </div>
-    </div>
-    <div class="vp-hero-mark" aria-hidden="true">
-      <div class="vp-orbit vp-orbit-one"></div>
-      <div class="vp-orbit vp-orbit-two"></div>
-      <div class="vp-mark-core">P<span>·</span>K<span>·</span>A</div>
-      <small>PEOPLE · KNOWLEDGE · ACTION</small>
-    </div>
-    <div class="vp-hero-foot"><span>PAHAD · VALUES &amp; PRINCIPLES</span><span>OUR SHARED FOUNDATION ↓</span></div>
-  </section>
-
-  <section class="vp-intro">
-    <span class="vp-kicker">OUR FOUNDATION</span>
-    <h2>Good intentions need <em>clear principles.</em></h2>
-    <p>Our values describe what matters to us. Our principles explain how those values should guide decisions, relationships and action — across our organisation, programmes and partnerships.</p>
-  </section>
-
-  <section class="vp-values-section" id="values">
-    <div class="vp-section-heading">
-      <div><span class="vp-kicker">01 / WHAT WE VALUE</span><h2>The values <em>we stand for.</em></h2></div>
-      <p>These values are a shared compass for how PAHAD listens, learns, works with others and contributes to community progress.</p>
-    </div>
-    <div class="vp-values-grid">
-      <article class="vp-value-card vp-value-featured">
-        <span class="vp-number">01</span><span class="vp-symbol">◎</span>
-        <h3>People-centred development</h3>
-        <p>People are the purpose and the partners of development. We recognise their abilities, experiences, aspirations and right to shape decisions that affect their lives.</p>
-        <small>PEOPLE FIRST</small>
-      </article>
-      <article class="vp-value-card">
-        <span class="vp-number">02</span><span class="vp-symbol">◌</span>
-        <h3>Dignity and respect</h3>
-        <p>We treat every person with fairness and consideration, value different experiences and uphold the dignity of individuals and communities.</p>
-        <small>RESPECT EVERY PERSON</small>
-      </article>
-      <article class="vp-value-card">
-        <span class="vp-number">03</span><span class="vp-symbol">✳</span>
-        <h3>Inclusion and equity</h3>
-        <p>We seek to widen participation and opportunity, recognise barriers and make room for voices that are often unheard or under-represented.</p>
-        <small>LEAVE NO VOICE UNHEARD</small>
-      </article>
-      <article class="vp-value-card">
-        <span class="vp-number">04</span><span class="vp-symbol">⌘</span>
-        <h3>Knowledge and learning</h3>
-        <p>We value research, evidence, lived experience, local wisdom and open learning as foundations for understanding challenges and improving action.</p>
-        <small>LEARN CONTINUOUSLY</small>
-      </article>
-      <article class="vp-value-card">
-        <span class="vp-number">05</span><span class="vp-symbol">↗</span>
-        <h3>Integrity and accountability</h3>
-        <p>We aim to act honestly, use resources responsibly, communicate clearly and accept responsibility for our decisions and commitments.</p>
-        <small>BE HONEST · BE ANSWERABLE</small>
-      </article>
-      <article class="vp-value-card">
-        <span class="vp-number">06</span><span class="vp-symbol">⇄</span>
-        <h3>Participation and collaboration</h3>
-        <p>We believe progress is stronger when people contribute, communities take part and institutions work together with mutual respect.</p>
-        <small>WORK TOGETHER</small>
-      </article>
-      <article class="vp-value-card">
-        <span class="vp-number">07</span><span class="vp-symbol">⌂</span>
-        <h3>Local knowledge and cultural respect</h3>
-        <p>We respect the languages, cultures, histories, identities and place-based knowledge that shape communities and their relationship with the region.</p>
-        <small>ROOTED IN PLACE</small>
-      </article>
-      <article class="vp-value-card">
-        <span class="vp-number">08</span><span class="vp-symbol">❋</span>
-        <h3>Sustainability and stewardship</h3>
-        <p>We consider long-term social, economic, cultural and environmental well-being, and encourage responsible care for shared resources.</p>
-        <small>THINK BEYOND TODAY</small>
-      </article>
-      <article class="vp-value-card">
-        <span class="vp-number">09</span><span class="vp-symbol">⟡</span>
-        <h3>Innovation and practical action</h3>
-        <p>We remain open to new ideas and useful solutions, while focusing on action that responds to real needs and can create lasting value.</p>
-        <small>TURN IDEAS INTO ACTION</small>
-      </article>
-    </div>
-  </section>
-
-  <section class="vp-principles-section" id="principles">
-    <div class="vp-section-heading vp-light-heading">
-      <div><span class="vp-kicker">02 / HOW WE PUT VALUES INTO PRACTICE</span><h2>Our working <em>principles.</em></h2></div>
-      <p>These principles guide the way we plan, make decisions, deliver work and relate to people and institutions.</p>
-    </div>
-    <div class="vp-principles-list">
-      <article class="vp-principle"><span>01</span><div><h3>Listen before acting</h3><p>Understand local needs, priorities and existing efforts before proposing an intervention.</p></div><b>LISTEN</b></article>
-      <article class="vp-principle"><span>02</span><div><h3>Participation with responsibility</h3><p>Encourage meaningful involvement, shared ownership and clear responsibilities at every appropriate stage.</p></div><b>PARTICIPATE</b></article>
-      <article class="vp-principle"><span>03</span><div><h3>Evidence-informed decisions</h3><p>Use reliable information, research, community knowledge and reflection to inform choices and improve practice.</p></div><b>UNDERSTAND</b></article>
-      <article class="vp-principle"><span>04</span><div><h3>Transparency in process</h3><p>Explain objectives, roles, decisions and the use of resources in ways that are understandable and appropriate.</p></div><b>BE OPEN</b></article>
-      <article class="vp-principle"><span>05</span><div><h3>Fairness and non-discrimination</h3><p>Work respectfully across differences and avoid unfair exclusion based on identity, background, belief or circumstance.</p></div><b>BE FAIR</b></article>
-      <article class="vp-principle"><span>06</span><div><h3>Collaboration, not duplication</h3><p>Recognise existing community initiatives and institutional efforts, seek practical cooperation and add value where possible.</p></div><b>CONNECT</b></article>
-      <article class="vp-principle"><span>07</span><div><h3>Responsible use of resources</h3><p>Use time, funds, knowledge, relationships and natural resources carefully, purposefully and accountably.</p></div><b>BE RESPONSIBLE</b></article>
-      <article class="vp-principle"><span>08</span><div><h3>Learn, review and improve</h3><p>Reflect on outcomes, welcome constructive feedback, acknowledge limitations and adapt when better approaches emerge.</p></div><b>IMPROVE</b></article>
-      <article class="vp-principle"><span>09</span><div><h3>Long-term and holistic thinking</h3><p>Consider how social, human, economic, cultural, institutional and environmental dimensions connect over time.</p></div><b>THINK LONG TERM</b></article>
-    </div>
-  </section>
-
-  <section class="vp-application" id="application">
-    <div class="vp-section-heading">
-      <div><span class="vp-kicker">03 / WHERE THEY APPLY</span><h2>One foundation.<br><em>Every part of our work.</em></h2></div>
-      <p>Our values and principles should be visible not only in statements, but in the everyday conduct of the institution.</p>
-    </div>
-    <div class="vp-application-grid">
-      <article><span>01</span><h3>Governance and leadership</h3><p>Fair processes, clear responsibilities, participation and accountable decisions.</p><a href="governance.html">Explore governance ↗</a></article>
-      <article><span>02</span><h3>Programmes and initiatives</h3><p>Community-informed priorities, practical action, responsible delivery and learning.</p><a href="programmes.html">Explore programmes ↗</a></article>
-      <article><span>03</span><h3>Research and knowledge</h3><p>Respectful documentation, evidence, local knowledge and shared learning.</p><a href="knowledge.html">Explore knowledge ↗</a></article>
-      <article><span>04</span><h3>Partnerships and participation</h3><p>Mutual respect, collaboration, openness and meaningful opportunities to contribute.</p><a href="get-involved.html">Get involved ↗</a></article>
-    </div>
-  </section>
-
-  <section class="vp-closing">
-    <span class="vp-kicker">PEOPLE · KNOWLEDGE · ACTION</span>
-    <h2>Values are meaningful<br><em>when they shape what we do.</em></h2>
-    <p>We invite members, volunteers, partners and communities to help put these values into practice through thoughtful participation and responsible collective action.</p>
-    <div class="vp-actions">
-      <a class="vp-button vp-button-primary" href="get-involved.html">Get involved ↗</a>
-      <a class="vp-text-link" href="vision-mission.html">Read our vision &amp; mission</a>
-    </div>
-  </section>
+<section class="vp-hero">
+<div aria-hidden="true" class="vp-hero-pattern"></div>
+<div class="vp-hero-copy">
+<p class="vp-eyebrow">THE WAY WE WORK · THE STANDARDS WE UPHOLD</p>
+<h1>Values that guide us.<br/><em>Principles that shape our work.</em></h1>
+<p class="vp-lead">PAHAD believes that meaningful development begins with people, grows through knowledge and becomes real through responsible collective action.</p>
+<div class="vp-actions">
+<a class="vp-button vp-button-primary" href="#values">Explore our values <span>↓</span></a>
+<a class="vp-text-link" href="#principles">Our working principles ↗</a>
+</div>
+</div>
+<div aria-hidden="true" class="vp-hero-mark">
+<div class="vp-orbit vp-orbit-one"></div>
+<div class="vp-orbit vp-orbit-two"></div>
+<div class="vp-mark-core">P<span>·</span>K<span>·</span>A</div>
+<small>PEOPLE · KNOWLEDGE · ACTION</small>
+</div>
+<div class="vp-hero-foot"><span>PAHAD · VALUES &amp; PRINCIPLES</span><span>OUR SHARED FOUNDATION ↓</span></div>
+</section>
+<section class="vp-intro">
+<span class="vp-kicker">OUR FOUNDATION</span>
+<h2>Good intentions need <em>clear principles.</em></h2>
+<p>Our values describe what matters to us. Our principles explain how those values should guide decisions, relationships and action — across our organisation, programmes and partnerships.</p>
+</section>
+<section class="vp-values-section" id="values">
+<div class="vp-section-heading">
+<div><span class="vp-kicker">01 / WHAT WE VALUE</span><h2>The values <em>we stand for.</em></h2></div>
+<p>These values are a shared compass for how PAHAD listens, learns, works with others and contributes to community progress.</p>
+</div>
+<div class="vp-values-grid">
+<article class="vp-value-card vp-value-featured">
+<span class="vp-number">01</span><span class="vp-symbol">◎</span>
+<h3>People-centred development</h3>
+<p>People are the purpose and the partners of development. We recognise their abilities, experiences, aspirations and right to shape decisions that affect their lives.</p>
+<small>PEOPLE FIRST</small>
+</article>
+<article class="vp-value-card">
+<span class="vp-number">02</span><span class="vp-symbol">◌</span>
+<h3>Dignity and respect</h3>
+<p>We treat every person with fairness and consideration, value different experiences and uphold the dignity of individuals and communities.</p>
+<small>RESPECT EVERY PERSON</small>
+</article>
+<article class="vp-value-card">
+<span class="vp-number">03</span><span class="vp-symbol">✳</span>
+<h3>Inclusion and equity</h3>
+<p>We seek to widen participation and opportunity, recognise barriers and make room for voices that are often unheard or under-represented.</p>
+<small>LEAVE NO VOICE UNHEARD</small>
+</article>
+<article class="vp-value-card">
+<span class="vp-number">04</span><span class="vp-symbol">⌘</span>
+<h3>Knowledge and learning</h3>
+<p>We value research, evidence, lived experience, local wisdom and open learning as foundations for understanding challenges and improving action.</p>
+<small>LEARN CONTINUOUSLY</small>
+</article>
+<article class="vp-value-card">
+<span class="vp-number">05</span><span class="vp-symbol">↗</span>
+<h3>Integrity and accountability</h3>
+<p>We aim to act honestly, use resources responsibly, communicate clearly and accept responsibility for our decisions and commitments.</p>
+<small>BE HONEST · BE ANSWERABLE</small>
+</article>
+<article class="vp-value-card">
+<span class="vp-number">06</span><span class="vp-symbol">⇄</span>
+<h3>Participation and collaboration</h3>
+<p>We believe progress is stronger when people contribute, communities take part and institutions work together with mutual respect.</p>
+<small>WORK TOGETHER</small>
+</article>
+<article class="vp-value-card">
+<span class="vp-number">07</span><span class="vp-symbol">⌂</span>
+<h3>Local knowledge and cultural respect</h3>
+<p>We respect the languages, cultures, histories, identities and place-based knowledge that shape communities and their relationship with the region.</p>
+<small>ROOTED IN PLACE</small>
+</article>
+<article class="vp-value-card">
+<span class="vp-number">08</span><span class="vp-symbol">❋</span>
+<h3>Sustainability and stewardship</h3>
+<p>We consider long-term social, economic, cultural and environmental well-being, and encourage responsible care for shared resources.</p>
+<small>THINK BEYOND TODAY</small>
+</article>
+<article class="vp-value-card">
+<span class="vp-number">09</span><span class="vp-symbol">⟡</span>
+<h3>Innovation and practical action</h3>
+<p>We remain open to new ideas and useful solutions, while focusing on action that responds to real needs and can create lasting value.</p>
+<small>TURN IDEAS INTO ACTION</small>
+</article>
+</div>
+</section>
+<section class="vp-principles-section" id="principles">
+<div class="vp-section-heading vp-light-heading">
+<div><span class="vp-kicker">02 / HOW WE PUT VALUES INTO PRACTICE</span><h2>Our working <em>principles.</em></h2></div>
+<p>These principles guide the way we plan, make decisions, deliver work and relate to people and institutions.</p>
+</div>
+<div class="vp-principles-list">
+<article class="vp-principle"><span>01</span><div><h3>Listen before acting</h3><p>Understand local needs, priorities and existing efforts before proposing an intervention.</p></div><b>LISTEN</b></article>
+<article class="vp-principle"><span>02</span><div><h3>Participation with responsibility</h3><p>Encourage meaningful involvement, shared ownership and clear responsibilities at every appropriate stage.</p></div><b>PARTICIPATE</b></article>
+<article class="vp-principle"><span>03</span><div><h3>Evidence-informed decisions</h3><p>Use reliable information, research, community knowledge and reflection to inform choices and improve practice.</p></div><b>UNDERSTAND</b></article>
+<article class="vp-principle"><span>04</span><div><h3>Transparency in process</h3><p>Explain objectives, roles, decisions and the use of resources in ways that are understandable and appropriate.</p></div><b>BE OPEN</b></article>
+<article class="vp-principle"><span>05</span><div><h3>Fairness and non-discrimination</h3><p>Work respectfully across differences and avoid unfair exclusion based on identity, background, belief or circumstance.</p></div><b>BE FAIR</b></article>
+<article class="vp-principle"><span>06</span><div><h3>Collaboration, not duplication</h3><p>Recognise existing community initiatives and institutional efforts, seek practical cooperation and add value where possible.</p></div><b>CONNECT</b></article>
+<article class="vp-principle"><span>07</span><div><h3>Responsible use of resources</h3><p>Use time, funds, knowledge, relationships and natural resources carefully, purposefully and accountably.</p></div><b>BE RESPONSIBLE</b></article>
+<article class="vp-principle"><span>08</span><div><h3>Learn, review and improve</h3><p>Reflect on outcomes, welcome constructive feedback, acknowledge limitations and adapt when better approaches emerge.</p></div><b>IMPROVE</b></article>
+<article class="vp-principle"><span>09</span><div><h3>Long-term and holistic thinking</h3><p>Consider how social, human, economic, cultural, institutional and environmental dimensions connect over time.</p></div><b>THINK LONG TERM</b></article>
+</div>
+</section>
+<section class="vp-application" id="application">
+<div class="vp-section-heading">
+<div><span class="vp-kicker">03 / WHERE THEY APPLY</span><h2>One foundation.<br/><em>Every part of our work.</em></h2></div>
+<p>Our values and principles should be visible not only in statements, but in the everyday conduct of the institution.</p>
+</div>
+<div class="vp-application-grid">
+<article><span>01</span><h3>Governance and leadership</h3><p>Fair processes, clear responsibilities, participation and accountable decisions.</p><a href="governance.html">Explore governance ↗</a></article>
+<article><span>02</span><h3>Programmes and initiatives</h3><p>Community-informed priorities, practical action, responsible delivery and learning.</p><a href="programmes.html">Explore programmes ↗</a></article>
+<article><span>03</span><h3>Research and knowledge</h3><p>Respectful documentation, evidence, local knowledge and shared learning.</p><a href="knowledge.html">Explore knowledge ↗</a></article>
+<article><span>04</span><h3>Partnerships and participation</h3><p>Mutual respect, collaboration, openness and meaningful opportunities to contribute.</p><a href="get-involved.html">Get involved ↗</a></article>
+</div>
+</section>
+<section class="vp-closing">
+<span class="vp-kicker">PEOPLE · KNOWLEDGE · ACTION</span>
+<h2>Values are meaningful<br/><em>when they shape what we do.</em></h2>
+<p>We invite members, volunteers, partners and communities to help put these values into practice through thoughtful participation and responsible collective action.</p>
+<div class="vp-actions">
+<a class="vp-button vp-button-primary" href="get-involved.html">Get involved ↗</a>
+<a class="vp-text-link" href="vision-mission.html">Read our vision &amp; mission</a>
+</div>
+</section>
 </main>
-
 <!-- PWA Install Help Modal -->
 <div aria-labelledby="pwaHelpTitle" aria-modal="true" class="pwa-help" hidden="" id="pwaHelp" role="dialog">
 <div class="pwa-help-card">
@@ -1110,11 +1088,11 @@ footer{row-gap:18px}
 </div>
 </div>
 <footer>
-<div class="footer-brand">PAHAD<small>Participatory Action for Holistic<br/>Advancement &amp; Development</small></div>
+<div class="footer-brand">PAHAD<small>Participatory Action for Holistic<br>Advancement &amp; Development</br></small></div>
 <nav aria-label="Footer navigation" class="footer-links">
 <a href="about.html">About</a><a href="values-principles.html">Values &amp; Principles</a><a href="our-work.html">Our Work</a><a href="programmes.html">Programmes</a><a href="knowledge.html">Knowledge</a><a href="governance.html">Governance</a><a href="membership.html">Membership</a><a href="transparency.html">Transparency</a><a href="constitution.html">Constitution</a><a href="get-involved.html">Get Involved</a><a href="contact.html">Contact</a>
 </nav>
-<div class="footer-note"><a href="mailto:Pahad.org@gmail.com" style="color:inherit">Pahad.org@gmail.com</a><br/>People · Knowledge · Action</div>
+<div class="footer-note"><a href="mailto:Pahad.org@gmail.com" style="color:inherit">Pahad.org@gmail.com</a><br>People · Knowledge · Action</br></div>
 </footer>
 <script>
 (()=> {
@@ -1623,4 +1601,7 @@ footer{row-gap:18px}
  if(location.hash){requestAnimationFrame(()=>{const el=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(el)el.scrollIntoView({block:'start'});});}
 })();
 </script>
+
+<!-- PAHAD AI Assistant: persistent Jotform chatbot on every page -->
+<script src="https://cdn.jotfor.ms/agent/embedjs/01a1c8c20568700084ef412f4b069721dc93/embed.js" defer></script>
 </body></html>
