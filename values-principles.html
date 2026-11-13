@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#164f5b" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<link href="pahad-app-icon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="PAHAD" name="apple-mobile-web-app-title"/>
+<meta content="PAHAD Values and Principles — the values and working principles that guide our community-centred development approach." name="description"/>
+<title>Values &amp; Principles | PAHAD</title>
+<style>
+
+:root{--teal:#164f5b;--teal2:#286d70;--coral:#f07855;--cream:#f7d9b8;--paper:#fbf4e9;--sage:#4f8f89;--ink:#183941;--muted:#62777a;--white:#fff;--serif:Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}
+.topbar{position:sticky;top:0;z-index:1000;min-height:78px;padding:10px clamp(16px,4vw,58px);display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(22,79,91,.98);color:white;box-shadow:0 7px 25px #102f3430}
+.brand{display:flex;align-items:center;gap:12px;flex:0 0 auto;text-decoration:none;min-width:190px;background:transparent}.brand-logo{width:68px;height:68px;object-fit:contain;object-position:center;flex:0 0 auto;display:block;background:transparent;border:0;border-radius:0;padding:0;mix-blend-mode:normal;filter:none}.live-events-link{display:inline-flex!important;align-items:center;gap:6px}.live-dot{width:7px;height:7px;border-radius:50%;background:#ff5148;display:inline-block;box-shadow:0 0 0 0 #ff514880;animation:livePulse 1.35s infinite}@keyframes livePulse{0%{box-shadow:0 0 0 0 #ff514880;opacity:1}70%{box-shadow:0 0 0 6px #ff514800;opacity:.8}100%{box-shadow:0 0 0 0 #ff514800;opacity:1}}.brand-logo-fallback{width:68px;height:68px;display:grid;place-items:center;flex:0 0 auto;border:2px solid #f7d9b8;border-radius:50%;color:#f7d9b8;font-family:Georgia,serif;font-size:2.5rem;font-weight:bold;background:transparent}.brand-wording{font-weight:950;letter-spacing:.18em;font-size:1.15rem;line-height:1.1}.brand small{display:block;max-width:230px;margin-top:5px;color:#f7d9b8;font-size:.43rem;letter-spacing:.09em;font-weight:650;line-height:1.35}
+.main-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(9px,1.35vw,20px);flex:1}.main-nav>a,.main-nav summary{font-size:.66rem;letter-spacing:.075em;text-transform:uppercase;font-weight:800;text-decoration:none;color:#fff;white-space:nowrap;padding:10px 0;cursor:pointer;list-style:none}.main-nav summary::-webkit-details-marker{display:none}.main-nav summary:after{content:"⌄";color:var(--cream);margin-left:5px}.main-nav>a:hover,.main-nav summary:hover{color:var(--cream)}.nav-dropdown{position:relative}.dropdown-panel{position:absolute;top:100%;left:-15px;min-width:205px;background:#103d47;padding:9px;box-shadow:0 16px 35px #071f2b55;border:1px solid #ffffff25;display:grid;gap:2px}.dropdown-panel a{padding:9px 11px;color:white;text-decoration:none;font-size:.76rem}.dropdown-panel a:hover{background:#ffffff17;color:var(--cream)}.join-link{background:var(--coral);padding:10px 14px!important;color:#fff!important}.join-link:hover{background:#e76645;color:white!important}
+.mobile-nav{display:none;position:relative}.mobile-nav summary{list-style:none;cursor:pointer;border:1px solid #ffffff80;padding:8px 12px;font-size:.72rem;font-weight:800;letter-spacing:.1em}.mobile-nav summary::-webkit-details-marker{display:none}.mobile-nav .mobile-panel{position:absolute;right:0;top:calc(100% + 13px);width:min(310px,90vw);max-height:80vh;overflow:auto;background:#103d47;padding:12px;box-shadow:0 18px 35px #071f2b66;display:grid;gap:2px}.mobile-panel a,.mobile-panel summary{display:block;color:#fff;text-decoration:none;padding:10px 12px;font-size:.78rem;border-bottom:1px solid #ffffff20}.mobile-panel details .dropdown-panel{position:static;box-shadow:none;border:0;padding:3px 8px;background:#0c333d}
+.hero{min-height:clamp(560px,82vh,850px);position:relative;display:flex;align-items:center;overflow:hidden;background:var(--teal);color:white}.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block;opacity:.83;animation:heroZoom 14s ease-in-out infinite alternate}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,43,51,.84),rgba(8,43,51,.45) 56%,rgba(8,43,51,.12)),linear-gradient(0deg,rgba(8,43,51,.48),transparent 55%)}.hero-content{position:relative;z-index:1;width:min(1100px,100%);padding:90px clamp(24px,8vw,120px);animation:rise .9s ease both}.kicker,.eyebrow{color:var(--coral);font-size:.68rem;font-weight:900;letter-spacing:.19em;text-transform:uppercase}.hero .kicker{color:var(--cream)}.hero h1{font:normal clamp(3.4rem,8vw,7.5rem)/.96 var(--serif);letter-spacing:-.055em;max-width:850px;margin:19px 0 22px}.hero h1 em{color:var(--cream);font-weight:normal}.hero-lead{font:clamp(1.05rem,2vw,1.3rem)/1.55 var(--serif);max-width:620px;color:#fff;margin:0}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 19px;text-decoration:none;text-transform:uppercase;letter-spacing:.09em;font-size:.68rem;font-weight:900;transition:transform .25s,background .25s,box-shadow .25s}.button:hover{transform:translateY(-3px);box-shadow:0 9px 22px #071f2b30}.button-primary{background:var(--coral);color:#fff}.button-outline{border:1px solid #fff;color:#fff}.button-dark{border:1px solid var(--teal);color:var(--teal)}.hero-note{margin-top:30px;color:var(--cream);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase}
+.intro{max-width:900px;margin:auto;padding:76px 24px 68px;text-align:center}.intro h2,.section-heading h2{font:normal clamp(2.5rem,5vw,4.3rem)/1.08 var(--serif);letter-spacing:-.04em;color:var(--teal);margin:12px 0 16px}.intro p,.section-heading p{max-width:700px;margin:0 auto;color:var(--muted)}.section{padding:76px clamp(20px,6vw,80px)}.section-heading{text-align:center;max-width:800px;margin:0 auto 35px}.section-heading h2{margin-bottom:13px}.focus-section{background:#efe2d2}.focus-grid,.directorate-grid{max-width:1160px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.focus-card,.directorate{background:#fffaf3;padding:24px;border:1px solid #164f5b1a;transition:transform .3s,box-shadow .3s}.focus-card:hover,.directorate:hover{transform:translateY(-5px);box-shadow:0 16px 36px #164f5b18}.number,.directorate span{font-size:.65rem;letter-spacing:.15em;color:var(--coral);font-weight:900}.focus-card h3,.directorate h3{font:normal 1.55rem/1.2 var(--serif);color:var(--teal);margin:12px 0 8px}.focus-card p,.directorate p{font-size:.88rem;color:var(--muted);margin:0 0 15px}.card-link,.text-link{display:inline-block;color:var(--teal2);font-size:.7rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--coral);padding-bottom:4px}
+.vision-band{background:var(--teal);color:white;padding:72px clamp(22px,7vw,90px)}.vision-inner{max-width:1050px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:55px}.vision-label{color:var(--cream);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:900}.vision-inner h2{font:normal clamp(2.6rem,5vw,4.8rem)/1.05 var(--serif);margin:14px 0}.vision-copy{border-left:1px solid #ffffff55;padding-left:32px}.vision-copy h3{font:normal 1.45rem var(--serif);color:var(--cream);margin:0 0 6px}.vision-copy p{color:#f2f3ed;margin:0 0 22px}.values{background:#f4e9dc}.value-grid{max-width:1050px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.value-card{background:#fffaf3;padding:22px 15px;text-align:center}.value-card span{font:normal 2.4rem var(--serif);color:var(--coral)}.value-card h3{font:normal 1.3rem var(--serif);color:var(--teal);margin:5px 0}.value-card p{font-size:.8rem;color:var(--muted);margin:0}
+.directorates{background:#fffaf3}.directorate-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.directorate{background:var(--paper)}.community-banner{position:relative;min-height:370px;display:grid;place-items:center;text-align:center;overflow:hidden;background:var(--teal);color:white;padding:65px 24px}.community-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}.community-banner:after{content:"";position:absolute;inset:0;background:#0b424bb8}.community-content{position:relative;z-index:1;max-width:750px}.community-content .eyebrow{color:var(--cream)}.community-content h2{font:normal clamp(2.6rem,5.8vw,5rem)/1.05 var(--serif);margin:12px 0}.community-content p{color:#f4f4ef;margin:0 auto 23px;max-width:630px}
+.join-section{padding:70px 22px;background:var(--paper)}.join-card{max-width:900px;margin:auto;text-align:center;padding:clamp(28px,5vw,55px);background:#fff;border:1px solid #164f5b1a;box-shadow:0 18px 48px #164f5b0d}.join-card h2{font:normal clamp(2.4rem,5vw,4rem)/1.08 var(--serif);color:var(--teal);margin:12px 0}.join-card p{max-width:650px;margin:0 auto 24px;color:var(--muted)}.join-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.social-section{background:#164f5b;color:white;padding:35px 22px}.social-inner{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.social-inner strong{font:normal 1.4rem var(--serif);color:var(--cream)}.social-links{display:flex;gap:9px;flex-wrap:wrap}.social-links a{color:white;text-decoration:none;border:1px solid #ffffff55;padding:8px 12px;font-size:.68rem;font-weight:800;transition:background .2s,color .2s}.social-links a:hover{background:var(--cream);color:var(--teal)}
+.closing{padding:66px 20px;text-align:center;background:#f2e3d2}.closing h2{font:normal clamp(2.4rem,5vw,4.5rem)/1.1 var(--serif);color:var(--teal);margin:0 0 12px}.closing h2 em{color:var(--coral);font-weight:normal}.closing p{margin:3px;color:var(--muted);font-size:.83rem}
+footer{background:#103d47;color:#dce9e5;padding:30px clamp(20px,6vw,80px);display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer-brand{font-weight:900;letter-spacing:.16em;color:white}.footer-brand small{display:block;font-size:.62rem;letter-spacing:.03em;font-weight:500;color:#c4d5d1}.footer-links{display:flex;gap:9px 17px;flex-wrap:wrap}.footer-links a{color:#e0eae7;text-decoration:none;font-size:.72rem}.footer-links a:hover{color:var(--cream)}.footer-note{font-size:.68rem;color:#c4d5d1}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}@keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.08)}}
+@media(max-width:1180px){.main-nav{display:none}.mobile-nav{display:block}.topbar{min-height:72px}.brand-logo{width:48px;height:48px}}
+@media(max-width:760px){.hero{min-height:78svh;min-height:620px}.hero-content{padding:75px 7vw}.hero h1{font-size:clamp(3.2rem,12vw,5.5rem)}.focus-grid,.directorate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vision-inner{grid-template-columns:1fr;gap:22px}.vision-copy{padding-left:22px}.value-grid{grid-template-columns:repeat(2,1fr)}.social-inner{display:block}.social-links{margin-top:16px}}
+@media(max-width:480px){.topbar{padding:8px 13px}.brand{min-width:0;gap:8px}.brand-logo{width:42px;height:42px}.brand-wording{font-size:1rem}.brand small{font-size:.36rem;max-width:195px}.hero{min-height:590px}.hero-content{padding:65px 23px}.hero-actions{align-items:stretch;flex-direction:column;max-width:280px}.section{padding:58px 17px}.focus-grid,.directorate-grid{grid-template-columns:1fr}.focus-card,.directorate{padding:21px}.value-grid{gap:8px}.value-card{padding:19px 10px}.join-actions{flex-direction:column}.join-actions .button{width:100%}.community-banner{min-height:420px}footer{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+
+@media (min-width:761px){.focus-card,.directorate,.value-card{animation:rise .65s ease both}}
+
+/* ===== Responsive layout refinement: desktop, tablet and mobile ===== */
+.topbar{width:100%;gap:clamp(12px,1.6vw,24px)}
+.brand{min-width:clamp(180px,19vw,260px)}
+.brand small{max-width:clamp(150px,18vw,230px)}
+.main-nav{min-width:0;gap:clamp(7px,.95vw,15px)}
+.main-nav>a,.main-nav summary{font-size:clamp(.58rem,.68vw,.72rem);letter-spacing:.045em}
+.main-nav .join-link{padding:9px 11px!important}
+.hero{width:100%;min-height:clamp(560px,78vh,900px)}
+.hero-image{object-fit:cover;object-position:center center}
+.hero-content{width:min(100%,1440px);margin-inline:auto}
+.focus-grid,.directorate-grid{width:min(100%,1240px)}
+.two-column{width:min(100%,1240px)}
+.section-heading{padding-inline:12px}
+.intro,.section,.vision-band,.join-section,.closing{overflow:hidden}
+img{max-width:100%}
+
+/* Every text-bearing element gets a deliberate hover response.
+   Text remains selectable; only links/buttons are navigation controls. */
+h1,h2,h3,h4,p,small,strong,em,span,li,label,.eyebrow,.kicker,
+.focus-card,.directorate,.value-card,.vision-copy,.community-content,
+.join-card,.footer-note,.footer-brand{
+  transition:color .24s ease, text-shadow .24s ease, transform .24s ease, letter-spacing .24s ease;
+}
+h1:hover,h2:hover,h3:hover,h4:hover{
+  color:var(--coral);
+  text-shadow:0 5px 22px rgba(240,120,85,.16);
+  transform:translateY(-2px);
+}
+p:hover,li:hover,.focus-card p:hover,.directorate p:hover,.value-card p:hover{
+  color:var(--teal2);
+}
+.eyebrow:hover,.kicker:hover,.number:hover,.directorate span:hover{
+  color:var(--coral);
+  letter-spacing:.24em;
+  transform:translateX(3px);
+}
+.brand:hover .brand-wording{color:var(--cream);transform:translateX(2px)}
+.brand-logo{transition:transform .35s ease,filter .35s ease}
+.brand:hover .brand-logo{transform:rotate(-5deg) scale(1.07);filter:drop-shadow(0 5px 9px #071f2b55)}
+.main-nav>a,.main-nav summary,.dropdown-panel a,.mobile-panel a,
+.footer-links a,.social-links a,.button,.card-link,.text-link{
+  transition:color .22s ease,background .22s ease,transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.main-nav>a:hover,.main-nav summary:hover,.dropdown-panel a:hover,.mobile-panel a:hover,
+.footer-links a:hover{transform:translateY(-2px);color:var(--cream)}
+.focus-card:hover h3,.directorate:hover h3,.value-card:hover h3{color:var(--coral);transform:translateX(3px)}
+.focus-card:hover .number,.directorate:hover span{letter-spacing:.22em}
+.value-card:hover span{transform:scale(1.12);display:block}
+.community-content h2:hover,.join-card h2:hover{color:var(--cream)}
+.closing h2:hover{letter-spacing:.005em}
+.footer-brand:hover{color:var(--cream);transform:translateY(-2px)}
+a:focus-visible,summary:focus-visible,button:focus-visible{
+  outline:3px solid var(--cream);outline-offset:4px;border-radius:2px
+}
+
+/* Large desktop: use the full horizontal navigation and spacious grids. */
+@media (min-width:1440px){
+  .topbar{padding-inline:max(4vw,60px)}
+  .main-nav{gap:18px}
+  .main-nav>a,.main-nav summary{font-size:.72rem}
+  .hero{min-height:820px}
+  .hero h1{font-size:clamp(7rem,7.5vw,9rem)}
+  .section{padding-block:100px}
+  .focus-grid,.directorate-grid{gap:20px}
+}
+
+/* Standard desktop and compact laptops: keep all main tabs visible.
+   Dropdown navigation groups secondary pages, not the primary links. */
+@media (min-width:1101px) and (max-width:1439px){
+  .topbar{padding-inline:22px;gap:12px}
+  .brand{min-width:180px;gap:8px}
+  .brand-logo{width:46px;height:46px}
+  .brand-wording{font-size:1.02rem}
+  .brand small{font-size:.38rem;max-width:175px}
+  .main-nav{gap:9px}
+  .main-nav>a,.main-nav summary{font-size:.59rem;letter-spacing:.025em}
+  .main-nav .join-link{padding:8px 9px!important}
+  .focus-grid,.directorate-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* Tablet landscape / portrait: a compact menu prevents clipped navigation. */
+@media (min-width:701px) and (max-width:1100px){
+  .topbar{min-height:76px;padding:10px 28px}
+  .brand{min-width:0}
+  .brand-logo{width:52px;height:52px}
+  .brand-wording{font-size:1.15rem}
+  .brand small{font-size:.43rem;max-width:250px}
+  .main-nav{display:none}
+  .mobile-nav{display:block;margin-left:auto;flex:0 0 auto}
+  .mobile-nav summary{padding:11px 16px;font-size:.76rem}
+  .hero{min-height:clamp(570px,72vh,760px)}
+  .hero-content{padding:80px clamp(36px,7vw,85px)}
+  .hero h1{font-size:clamp(4.2rem,8vw,6.2rem)}
+  .focus-grid,.directorate-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .vision-inner{grid-template-columns:.85fr 1.15fr;gap:30px}
+  .value-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .section{padding:76px 5vw}
+  .join-card{max-width:850px}
+}
+
+/* Tablet portrait and larger phones */
+@media (min-width:481px) and (max-width:700px){
+  .topbar{min-height:72px;padding:9px 20px}
+  .brand-logo{width:46px;height:46px}
+  .brand-wording{font-size:1.05rem}
+  .brand small{font-size:.38rem;max-width:210px}
+  .main-nav{display:none}
+  .mobile-nav{display:block}
+  .hero{min-height:650px;min-height:78svh}
+  .hero-content{padding:72px 7vw}
+  .hero h1{font-size:clamp(3.5rem,10vw,5.2rem)}
+  .focus-grid,.directorate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vision-inner{grid-template-columns:1fr;gap:20px}
+  .vision-copy{padding-left:22px}
+  .value-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .section{padding:64px 22px}
+}
+
+/* Phones */
+@media (max-width:480px){
+  .topbar{min-height:66px;padding:8px 13px;gap:8px}
+  .brand{gap:7px;min-width:0}
+  .brand-logo{width:40px;height:40px}
+  .brand-wording{font-size:.95rem;letter-spacing:.14em}
+  .brand small{font-size:.34rem;max-width:175px;letter-spacing:.055em}
+  .mobile-nav summary{font-size:.66rem;padding:9px 10px}
+  .mobile-nav .mobile-panel{right:0;width:min(300px,calc(100vw - 24px))}
+  .hero{min-height:590px;min-height:82svh}
+  .hero-image{object-position:55% center}
+  .hero-content{padding:60px 22px}
+  .hero h1{font-size:clamp(3rem,13vw,4.2rem)}
+  .hero-lead{font-size:1.04rem}
+  .hero-actions{max-width:100%;flex-direction:column;align-items:stretch}
+  .hero-actions .button{width:100%}
+  .focus-grid,.directorate-grid{grid-template-columns:1fr}
+  .value-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vision-inner{grid-template-columns:1fr;gap:18px}
+  .vision-copy{padding-left:18px}
+  .section{padding:55px 16px}
+  .intro{padding:62px 20px}
+  .community-banner{min-height:400px}
+  .join-actions{flex-direction:column}
+  .join-actions .button{width:100%}
+  .social-links{gap:7px}
+  .social-links a{padding:8px 10px}
+  footer{padding:27px 18px;align-items:flex-start;flex-direction:column}
+}
+
+/* Reduce motion when requested by the visitor's operating system. */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+
+
+/* ===== Final homepage polish ===== */
+.story-section{padding-block:clamp(58px,7vw,96px)}
+.two-column{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(28px,6vw,82px);max-width:1200px;margin:0 auto}
+.story-image{position:relative;min-height:clamp(300px,40vw,520px);overflow:hidden;background:#d9e4df;border-radius:2px;box-shadow:0 18px 45px #164f5b20}
+.story-image img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s}
+.story-image:hover img{transform:scale(1.055);filter:saturate(1.08)}
+.story-image:after{content:"";position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#103d4788);pointer-events:none}
+.image-label{position:absolute;z-index:1;left:22px;bottom:18px;color:#fff;font:italic 1.2rem Georgia,serif}
+.story-copy h2{font:normal clamp(2.3rem,4.3vw,3.9rem)/1.08 Georgia,serif;color:var(--teal);letter-spacing:-.04em;margin:13px 0 16px}
+.story-copy p{color:var(--muted);max-width:570px}
+.section-cta{text-align:center;margin:32px auto 0}
+.focus-card{min-height:190px;display:flex;flex-direction:column;align-items:flex-start}
+.focus-card .card-link{margin-top:auto;padding-top:14px}
+.focus-card h3{max-width:100%}
+.value-card{min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.vision-band{padding-block:clamp(62px,8vw,100px)}
+.vision-copy .button{margin-top:3px}
+.community-banner{isolation:isolate}
+.community-banner img{transition:transform .8s ease,opacity .4s}
+.community-banner:hover img{transform:scale(1.035);opacity:.42}
+.join-card{border-top:4px solid var(--coral)}
+.social-section{padding-block:28px}
+.social-inner{max-width:1180px}
+.social-links a{border-radius:2px}
+footer{row-gap:18px}
+.footer-links{max-width:720px}
+.footer-links a{padding:3px 0}
+.footer-note{line-height:1.9}
+.progress{display:none!important}
+@media(min-width:1101px){
+  .topbar{padding-inline:clamp(24px,3vw,52px);gap:14px}
+  .brand{min-width:clamp(180px,17vw,230px)}
+  .main-nav{gap:clamp(7px,.75vw,12px)}
+  .main-nav>a,.main-nav summary{font-size:clamp(.56rem,.64vw,.69rem);letter-spacing:.025em}
+  .main-nav .join-link{padding:8px 10px!important}
+}
+@media(max-width:1100px){
+  .main-nav{display:none!important}
+  .mobile-nav{display:block!important}
+}
+@media(min-width:701px) and (max-width:1100px){
+  .topbar{padding-inline:30px}
+  .hero{min-height:clamp(590px,72vh,790px)}
+  .focus-grid,.directorate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .two-column{gap:28px}
+}
+@media(max-width:700px){
+  .two-column{grid-template-columns:1fr;gap:28px}
+  .story-image{min-height:clamp(260px,68vw,390px)}
+  .story-copy{padding-inline:2px}
+  .focus-card{min-height:165px}
+}
+@media(max-width:480px){
+  .focus-card{min-height:0}
+  .story-image{min-height:270px}
+  .section-cta{margin-top:24px}
+  .footer-links{gap:8px 14px}
+}
+
+
+/* Updated PAHAD navigation only — homepage sections remain unchanged. */
+.main-nav{gap:clamp(5px,.72vw,11px)}
+.main-nav>a,.main-nav summary{font-size:clamp(.53rem,.61vw,.68rem);letter-spacing:.025em}
+.main-nav summary{display:block}
+.nav-dropdown{position:relative}
+.nav-dropdown:not([open])>.dropdown-panel{display:none}
+.nav-dropdown[open]>.dropdown-panel{display:grid;z-index:100}
+.nav-dropdown>.dropdown-panel{top:calc(100% + 5px);left:0;min-width:225px;max-height:75vh;overflow:auto;border-radius:0 0 10px 10px}
+.main-nav .join-link{white-space:nowrap;border-radius:3px}
+.mobile-panel details{display:block}
+.mobile-panel details>summary{cursor:pointer;list-style:none}
+.mobile-panel details>summary::-webkit-details-marker{display:none}
+.mobile-panel details>summary:after{content:"＋";float:right;color:var(--cream)}
+.mobile-panel details[open]>summary:after{content:"−"}
+.mobile-panel .mobile-submenu{display:grid;background:#0c333d;padding:3px 8px 7px}
+.mobile-panel .mobile-submenu a{padding-left:18px;font-size:.73rem}
+.mobile-panel .mobile-join-link{display:block;text-align:center;margin-top:9px;background:var(--coral);border:0;color:white;font-weight:900;letter-spacing:.08em}
+@media(max-width:600px){.brand-logo{width:55px;height:55px}.brand{min-width:0;gap:9px}.brand small{font-size:.38rem;max-width:180px}}
+@media(min-width:1181px) and (max-width:1450px){
+ .brand{min-width:clamp(165px,16vw,220px)}
+ .brand-wording{font-size:1.02rem}
+ .brand small{font-size:.39rem}
+ .main-nav{gap:clamp(4px,.48vw,8px)}
+ .main-nav>a,.main-nav summary{font-size:clamp(.49rem,.55vw,.62rem);letter-spacing:0}
+ .main-nav .join-link{padding:8px 9px!important}
+}
+
+
+/* Compact app-install action beside Home */
+.nav-install-button{display:inline-flex;align-items:center;gap:5px;border:1px solid #f7d9b8a8;background:#ffffff12;color:#fff;border-radius:999px;padding:6px 9px;font-size:.65rem;font-weight:850;white-space:nowrap;cursor:pointer;transition:background .2s,transform .2s}
+.nav-install-button:hover{background:#ffffff25;transform:translateY(-1px)}
+.mobile-install-button{display:block;width:100%;margin:7px 0 10px;padding:10px 12px;border:1px solid #f7d9b8a8;border-radius:8px;background:#ffffff12;color:#fff;text-align:left;font-size:.78rem;font-weight:850;cursor:pointer}
+.pwa-help[hidden]{display:none!important}
+.pwa-help{position:fixed;inset:0;z-index:1400;background:#092d33a8;display:grid;place-items:center;padding:18px}
+.pwa-help-card{width:min(430px,100%);background:var(--paper);border-radius:18px;padding:25px;box-shadow:0 25px 70px #001e2555}
+.pwa-help-card h3{margin:0 0 9px;color:var(--teal);font:normal 1.7rem/1.1 var(--serif)}
+.pwa-help-card p,.pwa-help-card li{font-size:13px;color:#526a6d}
+.pwa-help-card ol{padding-left:20px}
+.pwa-help-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.pwa-help-actions button{border:0;padding:11px 15px;cursor:pointer;font-weight:850}
+.pwa-help-close{background:#e7ece7;color:var(--teal)}
+.nav-install-button:disabled,.mobile-install-button:disabled{opacity:.7;cursor:default}
+
+/* PAHAD Values & Principles page */
+.vp-page{background:var(--paper);color:var(--ink);overflow:hidden}
+.vp-hero{min-height:650px;position:relative;display:flex;align-items:center;justify-content:space-between;gap:35px;padding:90px clamp(24px,8vw,120px) 105px;background:linear-gradient(120deg,#103b45 0%,#164f5b 62%,#286d70 100%);color:#fff;overflow:hidden}
+.vp-hero-pattern{position:absolute;inset:0;opacity:.13;background-image:linear-gradient(90deg,transparent 49.8%,#fff 50%,transparent 50.2%),linear-gradient(transparent 49.8%,#fff 50%,transparent 50.2%);background-size:72px 72px;mask-image:linear-gradient(90deg,transparent,#000)}
+.vp-hero-copy{position:relative;z-index:2;max-width:760px;animation:vpRise .8s ease both}
+.vp-eyebrow,.vp-kicker{display:inline-block;color:var(--coral);font-size:.68rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.vp-hero .vp-eyebrow{color:var(--cream)}
+.vp-hero h1{font:normal clamp(3rem,7vw,6.4rem)/1.02 var(--serif);letter-spacing:-.055em;margin:22px 0;max-width:850px}
+.vp-hero h1 em,.vp-intro h2 em,.vp-section-heading h2 em,.vp-closing h2 em{color:var(--coral);font-weight:normal}
+.vp-hero h1 em{color:var(--cream)}
+.vp-lead{font:clamp(1.05rem,2vw,1.3rem)/1.6 var(--serif);max-width:650px;color:#f4eee5}
+.vp-actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:30px}
+.vp-button{display:inline-flex;align-items:center;gap:18px;padding:14px 20px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;font-size:.68rem;font-weight:900;transition:transform .2s,background .2s}
+.vp-button:hover{transform:translateY(-3px)}
+.vp-button-primary{background:var(--coral);color:#fff}
+.vp-text-link{color:#fff;text-decoration:none;border-bottom:1px solid #ffffff80;padding:8px 0;font-size:.83rem;font-weight:700}
+.vp-hero-mark{position:relative;z-index:1;width:min(31vw,340px);aspect-ratio:1;flex:0 0 auto;display:grid;place-items:center;border:1px solid #f7d9b855;border-radius:50%;animation:vpFloat 6s ease-in-out infinite}
+.vp-orbit{position:absolute;inset:10%;border:1px solid #f7d9b866;border-radius:50%;transform:rotate(35deg) scaleX(.72)}
+.vp-orbit-two{inset:0;transform:rotate(-38deg) scaleX(.72);border-color:#f0785580}
+.vp-mark-core{width:48%;aspect-ratio:1;display:grid;place-items:center;border-radius:50%;background:#f7d9b8;color:#164f5b;font:800 clamp(1.3rem,3vw,2.5rem) var(--serif);letter-spacing:.08em;box-shadow:0 0 0 14px #f7d9b81c}
+.vp-mark-core span{color:var(--coral)}
+.vp-hero-mark small{position:absolute;bottom:-28px;color:var(--cream);font-size:.55rem;letter-spacing:.13em;white-space:nowrap}
+.vp-hero-foot{position:absolute;bottom:28px;left:clamp(24px,8vw,120px);right:clamp(24px,8vw,120px);display:flex;justify-content:space-between;color:#f7d9b8;font-size:.58rem;font-weight:800;letter-spacing:.15em}
+.vp-intro{max-width:900px;margin:auto;padding:85px 24px 75px;text-align:center}
+.vp-intro h2,.vp-section-heading h2{font:normal clamp(2.3rem,5vw,4.4rem)/1.08 var(--serif);letter-spacing:-.04em;margin:15px 0 20px}
+.vp-intro p{max-width:760px;margin:auto;color:var(--muted);font-size:1.03rem}
+.vp-values-section,.vp-application{padding:70px clamp(22px,7vw,100px) 95px}
+.vp-values-section{background:#fff}
+.vp-section-heading{max-width:1200px;margin:0 auto 42px;display:flex;align-items:end;justify-content:space-between;gap:35px}
+.vp-section-heading>div{max-width:680px}
+.vp-section-heading>p{max-width:420px;color:var(--muted);margin:0 0 8px}
+.vp-section-heading h2{margin-bottom:0}
+.vp-values-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.vp-value-card{position:relative;min-height:270px;padding:30px 27px;background:#fbf4e9;border:1px solid #e7e0d4;transition:transform .25s,box-shadow .25s,border-color .25s;overflow:hidden}
+.vp-value-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px #103b4515;border-color:#f07855}
+.vp-value-featured{background:#164f5b;color:#fff}
+.vp-number{position:absolute;top:22px;right:24px;color:#9aa8a2;font:1rem var(--serif)}
+.vp-value-featured .vp-number{color:#f7d9b8}
+.vp-symbol{display:grid;place-items:center;width:43px;height:43px;margin-bottom:28px;border:1px solid #f07855;color:#d86c4d;font-size:1.25rem}
+.vp-value-featured .vp-symbol{color:#f7d9b8;border-color:#f7d9b8}
+.vp-value-card h3{font:normal 1.55rem/1.15 var(--serif);margin:0 0 12px}
+.vp-value-card p{font-size:.9rem;color:var(--muted);margin:0 0 25px}
+.vp-value-featured p{color:#e1e9e6}
+.vp-value-card small{font-size:.58rem;font-weight:900;letter-spacing:.13em;color:#c66a4d}
+.vp-value-featured small{color:#f7d9b8}
+.vp-principles-section{padding:85px clamp(22px,7vw,100px) 95px;background:#103b45;color:#fff}
+.vp-light-heading h2{color:#fff}.vp-light-heading h2 em{color:#f7d9b8}.vp-light-heading>p{color:#d1dfdc}
+.vp-light-heading .vp-kicker{color:#f7d9b8}
+.vp-principles-list{max-width:1200px;margin:auto;border-top:1px solid #ffffff35}
+.vp-principle{display:grid;grid-template-columns:55px 1fr 150px;align-items:center;gap:25px;padding:22px 8px;border-bottom:1px solid #ffffff35;transition:background .2s,padding .2s}
+.vp-principle:hover{background:#ffffff0b;padding-left:18px;padding-right:18px}
+.vp-principle>span{color:#f7d9b8;font:1.25rem var(--serif)}
+.vp-principle h3{font:normal 1.35rem var(--serif);margin:0 0 4px}
+.vp-principle p{margin:0;color:#cbd9d6;font-size:.88rem}
+.vp-principle>b{text-align:right;color:#f07855;font-size:.58rem;letter-spacing:.14em}
+.vp-application{background:var(--paper)}
+.vp-application-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.vp-application-grid article{padding:25px;background:#fff;border-top:3px solid var(--coral);min-height:245px}
+.vp-application-grid article>span{color:#c66a4d;font:1rem var(--serif)}
+.vp-application-grid h3{font:normal 1.35rem/1.15 var(--serif);margin:24px 0 10px}
+.vp-application-grid p{font-size:.85rem;color:var(--muted);min-height:70px}
+.vp-application-grid a{color:var(--teal);font-size:.75rem;font-weight:900;text-decoration:none}
+.vp-application-grid a:hover{text-decoration:underline}
+.vp-closing{padding:90px 24px 100px;text-align:center;background:#f1e4d3}
+.vp-closing h2{font:normal clamp(2.5rem,5vw,4.5rem)/1.08 var(--serif);letter-spacing:-.04em;margin:18px auto;max-width:800px}
+.vp-closing p{max-width:660px;margin:0 auto;color:var(--muted)}
+.vp-closing .vp-text-link{color:var(--teal);border-color:#164f5b70}
+@keyframes vpRise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes vpFloat{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-12px) rotate(4deg)}}
+@media(max-width:900px){.vp-hero{min-height:590px}.vp-hero-mark{width:230px}.vp-values-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vp-application-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.vp-hero{min-height:680px;padding:75px 24px 100px;display:block}.vp-hero h1{font-size:clamp(2.7rem,12vw,4.3rem)}.vp-hero-mark{position:absolute;width:150px;right:28px;bottom:70px;opacity:.68}.vp-hero-mark small{display:none}.vp-hero-foot{font-size:.48rem;letter-spacing:.08em;bottom:20px}.vp-section-heading{display:block}.vp-section-heading>p{margin-top:18px}.vp-values-grid{grid-template-columns:1fr}.vp-value-card{min-height:0}.vp-principle{grid-template-columns:35px 1fr;gap:13px;padding:20px 2px}.vp-principle>b{grid-column:2;text-align:left}.vp-application-grid{grid-template-columns:1fr}.vp-application-grid article{min-height:0}.vp-application-grid p{min-height:0}.vp-intro{padding:65px 24px}.vp-values-section,.vp-principles-section,.vp-application{padding:65px 20px 75px}}
+
+</style>
+<style>
+/* Vision & Mission page — page-specific styles; shared site header/footer remain unchanged */
+.vm-page{overflow:hidden;background:#fbf4e9;color:#183941}
+.vm-page *{box-sizing:border-box}.vm-page a{text-decoration:none}
+.vm-hero{min-height:690px;position:relative;isolation:isolate;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;padding:95px clamp(24px,8vw,120px) 105px;background:#164f5b;color:#fff;overflow:hidden}
+.hero-grid{position:absolute;inset:0;z-index:-2;opacity:.12;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(90deg,black,transparent 85%)}
+.hero-orbit{position:absolute;border:1px solid #ffffff24;border-radius:50%;z-index:-1;pointer-events:none}.orbit-one{width:760px;height:760px;right:-180px;top:-180px}.orbit-two{width:570px;height:570px;right:-85px;top:-85px}
+.hero-copy{max-width:720px;z-index:2}.eyebrow{font-size:.72rem;letter-spacing:.19em;font-weight:800;display:flex;align-items:center;gap:12px}.eyebrow span{width:30px;height:2px;background:#f07855}.vm-hero h1{font:clamp(3.2rem,6.6vw,6.4rem)/.99 Georgia,serif;letter-spacing:-.055em;margin:28px 0}.vm-hero h1 em,.vm-page h2 em{font-weight:400;color:#f3b18e}.hero-lead{max-width:570px;color:#e1eeea;font-size:1.12rem;line-height:1.8}.hero-actions{display:flex;align-items:center;gap:28px;margin-top:38px;flex-wrap:wrap}.vm-btn{display:inline-flex;gap:22px;align-items:center;padding:15px 21px;border-radius:3px;font-size:.86rem;font-weight:750;transition:.3s}.vm-btn b{font-size:1.2rem}.vm-btn.primary{background:#f07855;color:#173f47}.vm-btn.primary:hover{transform:translateY(-4px);box-shadow:0 12px 25px #092e3540}.text-link{color:#fff;font-size:.88rem;border-bottom:1px solid #ffffff70;padding:8px 0}.text-link span{color:#f3b18e;margin-left:10px}
+.hero-side{height:430px;display:grid;place-items:center;position:relative}.spiral-wrap{width:min(390px,75vw);aspect-ratio:1;position:relative;display:grid;place-items:center}.spiral{position:absolute;inset:0;border:2px solid #f07855;border-radius:50%;animation:spiralTurn 28s linear infinite;box-shadow:inset 0 0 0 18px #ffffff08,inset 0 0 0 38px #ffffff06}.spiral:before,.spiral:after{content:"";position:absolute;inset:12%;border:1px solid #f7d9b8a0;border-radius:47% 53% 50% 50%;transform:rotate(35deg)}.spiral:after{inset:25%;border-color:#ffffff70;transform:rotate(-35deg)}@keyframes spiralTurn{to{transform:rotate(360deg)}}.spiral-core{width:44%;aspect-ratio:1;border-radius:50%;display:grid;place-content:center;text-align:center;background:#286d70;border:1px solid #ffffff60;font:1.7rem Georgia,serif;box-shadow:0 0 70px #0d303b80}.spiral-core small{font:600 .48rem system-ui;letter-spacing:.12em;margin-top:8px;color:#f7d9b8}.hero-note{position:absolute;right:0;bottom:0;display:flex;gap:12px;align-items:center;color:#d6e6e1;font-size:.75rem;line-height:1.6}.note-line{width:40px;height:1px;background:#f07855}.hero-bottom{position:absolute;bottom:26px;left:clamp(24px,8vw,120px);right:clamp(24px,8vw,120px);display:flex;justify-content:space-between;color:#b9d1cd;font-size:.63rem;letter-spacing:.18em}
+.statement-band{background:#f07855;color:#173f47;padding:55px 8vw}.statement-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:180px 1fr;gap:35px;align-items:center}.section-kicker{font-size:.68rem;font-weight:850;letter-spacing:.2em}.statement-inner p{font:clamp(1.45rem,3vw,2.5rem)/1.3 Georgia,serif;margin:0}.statement-inner strong{font-weight:400}
+.vm-section{padding:110px clamp(24px,8vw,120px);position:relative}.section-number{font-size:.66rem;letter-spacing:.2em;color:#79918e;font-weight:800;margin-bottom:55px}.vision-section{background:#fbf4e9}.vision-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:9%;align-items:center;max-width:1200px;margin:auto}.eyebrow.dark{color:#28796d}.section-heading h2,.mission-intro h2,.center-heading h2,.dimensions-head h2,.recognition-copy h2,.regional-content h2,.commitment-inner h2{font:clamp(2.7rem,5.2vw,5.1rem)/1.02 Georgia,serif;letter-spacing:-.045em;margin:22px 0}.section-heading h2 em,.center-heading h2 em,.dimensions-head h2 em,.commitment-inner h2 em{color:#d87960}.section-heading>p,.mission-intro>p,.center-heading>p,.dimensions-head>p{color:#657b7c;max-width:470px;font-size:1rem;line-height:1.85}.vision-card{background:#164f5b;color:#fff;padding:clamp(30px,5vw,62px);position:relative;box-shadow:18px 18px 0 #e8d9c6;transform:rotate(1deg)}.card-mark{font:6rem/.7 Georgia;color:#f07855}.vision-card>p{font:clamp(1.45rem,2.7vw,2.25rem)/1.45 Georgia,serif;margin:20px 0 40px}.card-foot{display:flex;align-items:center;justify-content:space-between;font-size:.6rem;letter-spacing:.16em;color:#b9d1cd}.small-orbit{width:30px;height:30px;border:1px solid #f07855;border-radius:50%;position:relative}.small-orbit:after{content:"";position:absolute;inset:7px;border:1px solid #f07855;border-radius:50%}
+.vision-visual{height:100px;position:relative;margin:70px 0 0 20%;max-width:800px;overflow:hidden}.v-line{position:absolute;left:0;right:0;height:1px;background:#d8c8b5;transform:rotate(-7deg)}.l2{top:35px;transform:rotate(5deg)}.l3{top:70px;transform:rotate(-2deg)}.v-word{position:absolute;background:#fbf4e9;padding:4px 12px;font-size:.62rem;letter-spacing:.2em;color:#79918e}.w1{left:8%;top:7px}.w2{left:47%;top:43px}.w3{right:3%;top:73px}
+.mission-section{background:#123f49;color:#fff;overflow:hidden}.mission-bg-shape{position:absolute;width:700px;height:700px;border:1px solid #ffffff0e;border-radius:50%;right:-280px;top:-250px;box-shadow:0 0 0 60px #ffffff05,0 0 0 120px #ffffff04}.section-number.light{color:#9dbab5}.mission-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:10%;align-items:center;position:relative;z-index:1}.eyebrow.light{color:#f4c5a7}.mission-intro h2 em,.recognition-copy h2 em,.regional-content h2 em{color:#f07855}.mission-intro>p{color:#c1d4d0}.mission-statement{padding:45px 0 35px 45px;border-left:1px solid #f078557a;position:relative}.mission-symbol{font-size:2.3rem;color:#f07855}.mission-statement p{font:clamp(1.4rem,2.5vw,2.15rem)/1.55 Georgia,serif;color:#f5eee4;margin:20px 0 32px}.mission-rule{display:block;width:70px;height:2px;background:#f07855;margin-bottom:14px}.mission-statement small{font-size:.62rem;letter-spacing:.18em;color:#9dbab5}.mission-flow{display:flex;align-items:center;justify-content:center;gap:clamp(10px,3vw,35px);margin:75px auto 0;flex-wrap:wrap}.flow-node{border:1px solid #6a9695;padding:12px 20px;color:#f7d9b8;font-size:.65rem;letter-spacing:.14em}.mission-flow i{font-style:normal;color:#f07855}
+.philosophy-section{background:#f2e8d9}.center-heading{text-align:center;max-width:760px;margin:0 auto 65px}.center-heading .eyebrow{justify-content:center}.center-heading>p{margin:0 auto}.pka-flow{display:grid;grid-template-columns:1fr 45px 1fr 45px 1fr;align-items:center;max-width:1180px;margin:auto}.pka-card{min-height:330px;padding:35px 30px;background:#fffaf2;position:relative;border-top:4px solid #d87960;box-shadow:0 15px 35px #264a4a0c;transition:transform .4s,box-shadow .4s}.pka-card:hover{transform:translateY(-10px);box-shadow:0 22px 40px #264a4a18}.pka-card.knowledge{border-color:#28796d}.pka-card.action{border-color:#164f5b}.pka-index{position:absolute;right:25px;top:22px;font-size:.68rem;color:#9aaba6;letter-spacing:.1em}.pka-icon{font-size:2.2rem;color:#d87960;margin:20px 0}.knowledge .pka-icon{color:#28796d}.action .pka-icon{color:#164f5b}.pka-card h3{font:2rem Georgia,serif;margin:0 0 12px}.pka-card p{color:#647a79;line-height:1.75;font-size:.9rem}.pka-card>span{display:block;margin-top:25px;font-size:.58rem;letter-spacing:.14em;color:#9b7e6b;font-weight:800}.pka-connector{text-align:center;color:#d87960;font-size:1.6rem;position:relative}.pka-connector:before{content:"";position:absolute;height:1px;background:#d4b8a2;left:0;right:0;top:50%;z-index:0}.pka-connector span{position:relative;background:#f2e8d9;padding:0 8px}.reverse-flow{display:flex;justify-content:center;align-items:center;gap:14px;margin:38px auto 0;color:#64817c;font-size:.67rem;letter-spacing:.1em;flex-wrap:wrap}.reverse-flow b{color:#d87960;font-size:1.5rem}.reverse-flow .reverse-arrow{font-size:1.8rem;color:#28796d}
+.dimensions-section{background:#fbf4e9}.dimensions-head{display:flex;align-items:end;justify-content:space-between;gap:50px;margin-bottom:55px}.dimensions-head h2{margin-bottom:0}.dimensions-head>p{max-width:390px;margin:0 0 8px}.dimension-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.dimension{background:#f2e8d9;padding:28px 25px 26px;min-height:275px;position:relative;border-bottom:3px solid #d87960;transition:transform .35s,background .35s}.dimension:hover{transform:translateY(-7px);background:#fffaf2}.dimension>span{position:absolute;right:22px;top:20px;color:#9aa9a1;font-size:.68rem}.dim-icon{font-size:1.7rem;color:#28796d;margin:10px 0 24px}.dimension h3{font:1.4rem/1.15 Georgia,serif;margin:0 0 12px}.dimension p{font-size:.82rem;color:#657b7c;line-height:1.7;margin:0 0 22px}.dimension b{font-size:.56rem;letter-spacing:.13em;color:#d87960}
+.recognition-section{background:#164f5b;color:#fff;display:grid;grid-template-columns:.8fr 1.2fr;gap:9%;align-items:center;padding:100px clamp(24px,10vw,150px);overflow:hidden}.recognition-art{width:min(360px,70vw);aspect-ratio:1;border-radius:50%;border:1px solid #f07855;display:grid;place-items:center;position:relative;margin:auto}.recognition-ring{position:absolute;inset:12%;border:1px solid #ffffff70;border-radius:50%;animation:spiralTurn 35s linear infinite}.recognition-ring:before,.recognition-ring:after{content:"";position:absolute;inset:12%;border:1px solid #f07855;border-radius:50%;transform:rotate(45deg)}.recognition-ring:after{inset:28%;transform:rotate(-45deg);border-color:#ffffff70}.recognition-dot{width:12px;height:12px;background:#f07855;border-radius:50%;position:absolute;top:8%;left:50%;box-shadow:0 0 25px #f07855}.recognition-art>span{font-size:.72rem;letter-spacing:.2em;text-align:center;line-height:1.8;color:#f7d9b8}.recognition-copy h2{font-size:clamp(2.6rem,4.6vw,4.5rem)}.recognition-copy>p{color:#d0e0db;line-height:1.85;max-width:650px}.recognition-copy blockquote{margin:30px 0 0;padding:20px 0 20px 25px;border-left:2px solid #f07855;font:1.25rem/1.55 Georgia,serif;color:#f7d9b8;max-width:700px}
+.approach-section{background:#f2e8d9}.cycle-wrap{max-width:900px;height:610px;margin:0 auto;position:relative;display:grid;place-items:center}.cycle-orbit{position:absolute;width:430px;height:430px;border:1px dashed #bba996;border-radius:50%;animation:spiralTurn 70s linear infinite}.cycle-orbit:before,.cycle-orbit:after{content:"";position:absolute;border:1px solid #d8796060;border-radius:50%;inset:35px}.cycle-orbit:after{inset:75px;border-color:#28796d70}.cycle-center{position:absolute;width:145px;height:145px;border-radius:50%;background:#164f5b;color:white;display:grid;align-content:center;justify-items:center;z-index:2;box-shadow:0 0 0 14px #164f5b12}.cycle-center b{font:1.6rem Georgia}.cycle-center small{font-size:.55rem;letter-spacing:.15em;text-align:center;color:#f7d9b8;margin-top:6px}.cycle-step{position:absolute;width:190px;background:#fffaf2;padding:18px 20px;box-shadow:0 10px 30px #244a4810;z-index:3}.cycle-step i{font-style:normal;color:#d87960;font-size:.65rem;letter-spacing:.12em}.cycle-step b{display:block;font:1.35rem Georgia;margin:6px 0}.cycle-step small{color:#6b807c;line-height:1.5}.s1{top:4%;left:calc(50% - 95px)}.s2{right:1%;top:32%}.s3{right:15%;bottom:1%}.s4{left:15%;bottom:1%}.s5{left:1%;top:32%}.cycle-reverse{display:flex;justify-content:center;align-items:center;gap:18px;color:#718580;font-size:.64rem;letter-spacing:.14em}.cycle-reverse b{font-size:1.8rem;color:#d87960}
+.regional-section{min-height:590px;position:relative;display:flex;align-items:center;padding:100px clamp(24px,10vw,150px);background:#123f49;color:white;overflow:hidden}.regional-parallax{position:absolute;inset:-10%;background:radial-gradient(ellipse at 78% 30%,#3d7770 0,transparent 38%),radial-gradient(ellipse at 90% 90%,#d8796040 0,transparent 35%),linear-gradient(125deg,#123f49,#164f5b 65%,#286d70);transform:translateY(var(--parallax,0px)) scale(1.05)}.regional-content{max-width:780px;position:relative}.regional-content h2{font-size:clamp(3rem,5.6vw,5.3rem)}.regional-content>p{max-width:680px;color:#d0e0db;line-height:1.85}.light-btn{background:#f7d9b8;color:#164f5b;margin-top:22px}.light-btn:hover{transform:translateY(-4px);background:#f07855}
+.commitment-section{background:#f07855;padding:100px clamp(24px,10vw,150px);color:#173f47}.commitment-inner{max-width:1100px;margin:auto}.commitment-inner .eyebrow{color:#164f5b}.commitment-inner h2{font-size:clamp(3rem,6vw,5.8rem);margin:22px 0}.commitment-inner h2 em{color:#fff3e7}.commitment-inner>p{max-width:630px;font-size:1.05rem;line-height:1.8}.commitment-bottom{border-top:1px solid #164f5b55;margin-top:50px;padding-top:22px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.65rem;letter-spacing:.15em;font-weight:800}.commitment-bottom a{font-size:.85rem;letter-spacing:0;border-bottom:1px solid #164f5b;padding-bottom:5px}.commitment-bottom a b{margin-left:12px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.is-visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.vm-hero{grid-template-columns:1fr .65fr;padding-top:80px}.hero-side{height:330px}.spiral-wrap{width:280px}.vision-layout,.mission-layout{gap:6%}.dimension-grid{grid-template-columns:repeat(2,1fr)}.pka-flow{grid-template-columns:1fr;gap:14px;max-width:600px}.pka-card{min-height:0}.pka-connector{transform:rotate(90deg);height:24px}.pka-connector:before{display:none}.recognition-section{gap:5%}.cycle-wrap{transform:scale(.9);margin:-20px auto}}
+@media(max-width:650px){.vm-hero{display:block;min-height:0;padding:85px 24px 90px}.vm-hero h1{font-size:clamp(3rem,13vw,4.5rem)}.hero-side{height:260px;margin-top:25px}.spiral-wrap{width:230px}.hero-note{right:0;bottom:-4px}.hero-bottom{font-size:.52rem;bottom:18px}.statement-inner{grid-template-columns:1fr;gap:12px}.statement-band{padding:35px 24px}.vm-section{padding:75px 24px}.section-number{margin-bottom:35px}.vision-layout,.mission-layout{grid-template-columns:1fr;gap:45px}.vision-card{transform:none;box-shadow:9px 9px 0 #e8d9c6}.vision-visual{margin-left:0}.mission-statement{padding-left:22px}.mission-flow{margin-top:45px;gap:10px}.flow-node{padding:10px 12px;font-size:.57rem}.mission-flow i{font-size:.8rem}.center-heading{margin-bottom:42px}.pka-card{padding:28px}.dimensions-head{display:block}.dimensions-head>p{margin-top:20px}.dimension-grid{grid-template-columns:1fr}.dimension{min-height:0}.recognition-section{grid-template-columns:1fr;padding:75px 24px;gap:55px}.recognition-art{width:230px}.cycle-wrap{height:680px;transform:none;margin:0 -5px}.cycle-orbit{width:270px;height:270px}.cycle-center{width:100px;height:100px}.cycle-center b{font-size:1.2rem}.cycle-step{width:145px;padding:13px}.cycle-step b{font-size:1.05rem}.cycle-step small{font-size:.68rem}.s1{top:1%;left:calc(50% - 72px)}.s2{right:0;top:29%}.s3{right:2%;bottom:0}.s4{left:2%;bottom:0}.s5{left:0;top:29%}.cycle-reverse{font-size:.52rem;gap:8px;flex-wrap:wrap}.regional-section{min-height:0;padding:85px 24px}.commitment-section{padding:75px 24px}.commitment-bottom{margin-top:35px}.section-heading h2,.mission-intro h2{font-size:3.1rem}}
+@media(prefers-reduced-motion:reduce){.vm-page *, .vm-page *:before,.vm-page *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+<style id="interactive-motion-upgrade">
+/* Interactive motion upgrade: revolving development cycle, floating surfaces and touch feedback */
+.cycle-wrap{height:650px;isolation:isolate}
+.cycle-orbit{animation:cycleOrbit 42s linear infinite}
+.cycle-step{
+  top:50%!important;left:50%!important;right:auto!important;bottom:auto!important;
+  transform:translate(-50%,-50%);
+  transform-origin:center;
+  animation:cycleRevolve 36s linear infinite;
+  will-change:transform;
+  border:1px solid #e7d7c5;
+  transition:box-shadow .35s,border-color .35s,background .35s;
+}
+.cycle-step.s1{animation-delay:0s}
+.cycle-step.s2{animation-delay:-7.2s}
+.cycle-step.s3{animation-delay:-14.4s}
+.cycle-step.s4{animation-delay:-21.6s}
+.cycle-step.s5{animation-delay:-28.8s}
+@keyframes cycleRevolve{
+  from{transform:translate(-50%,-50%) rotate(0deg) translateY(-235px) rotate(0deg)}
+  to{transform:translate(-50%,-50%) rotate(360deg) translateY(-235px) rotate(-360deg)}
+}
+@keyframes cycleOrbit{to{transform:rotate(-360deg)}}
+.cycle-step:hover,.cycle-step:focus-visible{
+  z-index:5;background:#fff;color:#164f5b;
+  border-color:#d87960;box-shadow:0 18px 42px #164f5b2b,0 0 0 5px #d8796020;
+}
+.pka-card,.dimension,.vision-card,.mission-statement,.recognition-art,.vm-btn,.flow-node{
+  transform-style:preserve-3d;will-change:transform;
+}
+.pka-card,.dimension,.vision-card,.cycle-step{
+  animation-fill-mode:both;
+}
+.pka-card,.dimension{
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s;
+}
+.pka-card:hover,.dimension:hover{
+  transform:translateY(-10px) scale(1.015);
+  box-shadow:0 22px 45px #164f5b20,0 0 0 1px #d8796040;
+}
+.dimension:nth-child(odd){animation:gentleFloat 6.5s ease-in-out infinite}
+.dimension:nth-child(even){animation:gentleFloat 7.5s ease-in-out -2s infinite}
+.pka-card.people{animation:gentleFloat 7s ease-in-out infinite}
+.pka-card.knowledge{animation:gentleFloat 8s ease-in-out -2s infinite}
+.pka-card.action{animation:gentleFloat 7.5s ease-in-out -4s infinite}
+@keyframes gentleFloat{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.vm-btn,.flow-node{position:relative;overflow:hidden}
+.vm-btn:after,.flow-node:after{
+  content:"";position:absolute;inset:-120% auto -120% -45%;width:28%;
+  background:linear-gradient(90deg,transparent,#ffffff70,transparent);
+  transform:rotate(22deg);transition:left .65s ease;
+}
+.vm-btn:hover:after,.flow-node:hover:after{left:130%}
+.touch-ripple{
+  position:absolute;border-radius:50%;pointer-events:none;
+  width:18px;height:18px;background:#f0785550;
+  transform:translate(-50%,-50%) scale(0);
+  animation:touchRipple .65s ease-out forwards;z-index:10;
+}
+@keyframes touchRipple{to{transform:translate(-50%,-50%) scale(13);opacity:0}}
+.touch-active{filter:brightness(1.06);box-shadow:0 0 0 3px #f0785550,0 15px 35px #123f4930!important}
+.vm-page .pka-card,.vm-page .dimension,.vm-page .cycle-step,.vm-page .vm-btn,.vm-page .flow-node{cursor:pointer}
+
+/* Hero Touch Response & Interactive PAHAD Circle */
+.vm-hero{touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.hero-touch-glow{
+  position:absolute;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(240,120,85,0.28) 0%,rgba(247,217,184,0.1) 45%,transparent 70%);
+  transform:translate(-50%,-50%) scale(0.4);opacity:0;pointer-events:none;
+  transition:opacity .35s ease,transform .35s ease;z-index:1;
+}
+.vm-hero.is-touching .hero-touch-glow{opacity:1;transform:translate(-50%,-50%) scale(1.15)}
+.spiral-wrap{
+  cursor:grab;touch-action:none;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .3s ease;
+  will-change:transform;
+}
+.spiral-wrap.is-touched{
+  cursor:grabbing;
+  transition:transform .08s linear,filter .2s ease;
+  filter:drop-shadow(0 18px 38px rgba(9,35,42,0.65));
+}
+.spiral-core{
+  animation:coreRotate 20s linear infinite;
+  transition:box-shadow .35s ease,background .35s ease,border-color .35s ease,transform .35s ease;
+  will-change:transform;
+  user-select:none;
+}
+@keyframes coreRotate{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+.spiral-wrap.is-touched .spiral,
+.spiral-wrap.is-touched .spiral-core{
+  animation-play-state:paused;
+}
+.spiral-wrap.is-touched .spiral-core{
+  background:#1f5c63;
+  border-color:#f07855;
+  box-shadow:0 0 85px #f0785588,inset 0 0 22px #f7d9b844;
+}
+
+/* Our Belief Word Selection -> White */
+.statement-band p::selection,
+.statement-band strong::selection,
+.statement-band span::selection{
+  background:transparent;
+  color:#ffffff;
+}
+.belief-word{
+  display:inline-block;
+  cursor:pointer;
+  padding:1px 4px;
+  margin:0 -2px;
+  border-radius:4px;
+  transition:color .2s ease,transform .2s ease,text-shadow .2s ease,background-color .2s ease;
+}
+.belief-word:hover,
+.belief-word.is-selected{
+  color:#ffffff!important;
+  text-shadow:0 4px 18px rgba(23,63,71,0.32);
+  transform:translateY(-2px);
+}
+.belief-word.is-selected{
+  background:rgba(255,255,255,0.14);
+}
+
+/* 01 / The Future We Seek — Typewriter Vision Card & Interactive Visual Words */
+.vision-card{
+  cursor:pointer;
+  user-select:none;
+  transition:transform .38s cubic-bezier(.2,.8,.2,1),box-shadow .38s ease,border-color .3s ease;
+  border:1px solid transparent;
+}
+.vision-card:hover,.vision-card.is-typing{
+  transform:rotate(0deg) translateY(-6px);
+  box-shadow:22px 22px 0 #dfcbb3,0 16px 40px rgba(22,79,91,0.22);
+  border-color:#f0785588;
+}
+.vision-card .typewriter-cursor{
+  display:inline-block;
+  width:2px;
+  height:1.05em;
+  background:#f07855;
+  margin-left:4px;
+  vertical-align:text-bottom;
+  animation:cursorBlink .75s step-end infinite;
+}
+@keyframes cursorBlink{50%{opacity:0}}
+.vision-card-hint{
+  font-size:.55rem;
+  letter-spacing:.15em;
+  color:#f7d9b8;
+  opacity:.85;
+}
+
+.vision-visual{
+  height:125px;
+  position:relative;
+  margin:70px 0 0 15%;
+  max-width:850px;
+  overflow:visible;
+}
+.v-line{
+  transform-origin:left center;
+  transition:transform .9s cubic-bezier(.2,.8,.2,1),background-color .35s ease,box-shadow .35s ease,height .25s ease;
+  scale:0 1;
+}
+.vision-visual.is-displayed .v-line{
+  scale:1 1;
+}
+.vision-visual.is-displayed .l2{transition-delay:.18s}
+.vision-visual.is-displayed .l3{transition-delay:.36s}
+.v-line.is-active{
+  background:#f07855;
+  height:2px;
+  box-shadow:0 0 14px rgba(240,120,85,0.55);
+}
+
+.v-word{
+  cursor:pointer;
+  user-select:none;
+  border:1px solid #d8c8b5;
+  border-radius:999px;
+  padding:7px 16px;
+  font-weight:800;
+  background:#fbf4e9;
+  color:#164f5b;
+  box-shadow:0 6px 18px rgba(22,79,91,0.08);
+  opacity:0;
+  transform:translateY(18px) scale(.88);
+  transition:opacity .6s ease,transform .4s cubic-bezier(.2,.8,.2,1),background-color .3s ease,color .3s ease,border-color .3s ease,box-shadow .3s ease,letter-spacing .3s ease;
+}
+.vision-visual.is-displayed .v-word{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+.vision-visual.is-displayed .w1{
+  transition-delay:.15s;
+  animation:wordPulseFloat 4.2s ease-in-out 1s infinite;
+}
+.vision-visual.is-displayed .w2{
+  transition-delay:.35s;
+  animation:wordPulseFloat 4.6s ease-in-out 1.4s infinite;
+}
+.vision-visual.is-displayed .w3{
+  transition-delay:.55s;
+  animation:wordPulseFloat 5s ease-in-out 1.8s infinite;
+}
+@keyframes wordPulseFloat{
+  0%,100%{translate:0 0}
+  50%{translate:0 -6px}
+}
+.v-word:hover,.v-word.is-active{
+  background:#164f5b;
+  color:#fff!important;
+  border-color:#f07855;
+  letter-spacing:.26em;
+  transform:translateY(-5px) scale(1.09)!important;
+  box-shadow:0 12px 26px rgba(22,79,91,0.24),0 0 0 4px rgba(240,120,85,0.22);
+  z-index:4;
+}
+.v-word-caption{
+  position:absolute;
+  left:50%;
+  bottom:-14px;
+  transform:translateX(-50%);
+  font:italic .88rem Georgia,serif;
+  color:#286d70;
+  background:#fffaf2;
+  border:1px solid #e5d6c3;
+  padding:6px 16px;
+  border-radius:999px;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .3s ease,transform .3s ease;
+  box-shadow:0 8px 20px rgba(22,79,91,0.08);
+}
+.v-word-caption.is-shown{
+  opacity:1;
+  transform:translateX(-50%) translateY(-4px);
+}
+
+/* 02 / What We Do (Our Mission) — Interactive Cursor & Touch Flow Animation */
+.mission-section{
+  position:relative;
+  isolation:isolate;
+}
+.mission-cursor-glow{
+  position:absolute;
+  width:380px;
+  height:380px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(240,120,85,0.22) 0%,rgba(247,217,184,0.08) 45%,transparent 70%);
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .35s ease;
+  z-index:0;
+}
+.mission-section.is-hovered .mission-cursor-glow{
+  opacity:1;
+}
+.mission-bg-shape{
+  animation:missionOrbitPulse 18s ease-in-out infinite alternate;
+  transition:transform .4s ease,border-color .4s ease;
+}
+.mission-section.is-hovered .mission-bg-shape{
+  border-color:rgba(240,120,85,0.28);
+}
+@keyframes missionOrbitPulse{
+  0%{transform:scale(1) rotate(0deg)}
+  100%{transform:scale(1.08) rotate(25deg)}
+}
+.mission-statement{
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .4s ease,background-color .4s ease,box-shadow .4s ease;
+  border-radius:0 8px 8px 0;
+}
+.mission-statement:hover,.mission-statement.is-active{
+  transform:translateX(8px);
+  border-left-color:#f07855;
+  background:rgba(255,255,255,0.04);
+  box-shadow:0 18px 42px rgba(7,28,34,0.35);
+}
+.mission-symbol{
+  display:inline-block;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),color .3s ease,text-shadow .3s ease;
+}
+.mission-statement:hover .mission-symbol,.mission-statement.is-active .mission-symbol{
+  transform:translate(5px,-5px) scale(1.18);
+  color:#f7d9b8;
+  text-shadow:0 0 18px rgba(240,120,85,0.8);
+}
+.mission-statement:hover .mission-rule,.mission-statement.is-active .mission-rule{
+  width:135px;
+  box-shadow:0 0 12px #f07855;
+}
+.mission-rule{
+  transition:width .45s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease;
+}
+.mission-flow{
+  position:relative;
+  z-index:2;
+  padding:16px 12px;
+  border-radius:12px;
+}
+.flow-node{
+  position:relative;
+  user-select:none;
+  border:1px solid #6a9695;
+  border-radius:4px;
+  background:rgba(22,79,91,0.45);
+  transition:transform .32s cubic-bezier(.2,.8,.2,1),background-color .32s ease,color .32s ease,border-color .32s ease,box-shadow .32s ease,letter-spacing .32s ease;
+}
+.flow-node.is-lit,.flow-node:hover{
+  background:#f07855;
+  color:#123f49!important;
+  border-color:#f7d9b8;
+  font-weight:900;
+  letter-spacing:.2em;
+  transform:translateY(-7px) scale(1.08);
+  box-shadow:0 14px 30px rgba(240,120,85,0.42),0 0 22px rgba(247,217,184,0.35);
+}
+.flow-node.is-trail{
+  background:rgba(240,120,85,0.22);
+  color:#fff!important;
+  border-color:#f07855;
+  box-shadow:0 6px 18px rgba(240,120,85,0.2);
+}
+.mission-flow i{
+  display:inline-block;
+  transition:transform .3s ease,color .3s ease,text-shadow .3s ease;
+}
+.mission-flow i.is-lit{
+  color:#f7d9b8;
+  transform:translateX(4px) scale(1.35);
+  text-shadow:0 0 14px #f07855;
+}
+.mission-flow-caption{
+  text-align:center;
+  margin-top:18px;
+  min-height:24px;
+  font:italic .92rem Georgia,serif;
+  color:#f7d9b8;
+  letter-spacing:.04em;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .3s ease,transform .3s ease;
+}
+.mission-flow-caption.is-shown{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* 03 / Guiding Idea (PKA) — slow, calm floating; no ripple effects */
+.pka-card{
+  position:relative;
+  overflow:hidden;
+  user-select:none;
+  translate:0 0;
+  animation:pkaSlowFloat 10s ease-in-out infinite;
+  transition:translate .35s ease,box-shadow .38s ease,background-color .3s ease,border-color .3s ease;
+}
+.pka-card:nth-child(2){animation-delay:-2.5s}
+.pka-card:nth-child(3){animation-delay:-5s}
+.pka-card.is-pressed,.pka-card:active{translate:0 -4px}
+.pka-card:hover,.pka-card:focus-visible{animation-play-state:paused;box-shadow:0 20px 42px rgba(22,79,91,.14)}
+@keyframes pkaSlowFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+
+/* 04 / Where We Focus — 3D Flip Cards with gentle floating; no ripple effects */
+.dimension-grid{
+  perspective:1200px;
+}
+.dimension{
+  background:transparent!important;
+  padding:0!important;
+  border-bottom:0!important;
+  min-height:275px;
+  perspective:1200px;
+  user-select:none;
+}
+.dimension:hover{
+  transform:none!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.dimension-flip-inner{
+  position:relative;
+  width:100%;
+  height:100%;
+  min-height:275px;
+  transform-style:preserve-3d;
+  transition:transform .68s cubic-bezier(.22,.85,.3,1.08),box-shadow .4s ease;
+}
+.dimension:hover .dimension-flip-inner,
+.dimension.is-flipped .dimension-flip-inner,
+.dimension:focus-visible .dimension-flip-inner{
+  transform:rotateY(180deg);
+}
+.dimension-face{
+  position:absolute;
+  inset:0;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  padding:28px 25px 26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  overflow:hidden;
+  border-radius:3px;
+}
+.dimension-front{
+  background:#f2e8d9;
+  border-bottom:3px solid #d87960;
+  box-shadow:0 10px 26px rgba(22,79,91,0.06);
+  transition:background-color .35s ease,box-shadow .35s ease,border-color .35s ease;
+}
+.dimension-front .dim-num{
+  position:absolute;
+  right:22px;
+  top:20px;
+  color:#9aa9a1;
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.1em;
+}
+.dimension-front .dim-icon{
+  font-size:2.1rem;
+  color:#28796d;
+  margin:8px 0 18px;
+  transition:transform .35s ease,color .35s ease;
+}
+.dimension-front h3{
+  font:1.52rem/1.18 Georgia,serif;
+  color:#164f5b;
+  margin:0 0 14px;
+}
+.dimension-front .dim-front-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-top:auto;
+}
+.dimension-front b{
+  font-size:.56rem;
+  letter-spacing:.13em;
+  color:#d87960;
+}
+.dimension-flip-hint{
+  font-size:.55rem;
+  letter-spacing:.12em;
+  color:#657b7c;
+  font-weight:700;
+  opacity:.8;
+}
+.dimension-back{
+  background:#164f5b;
+  color:#fff;
+  transform:rotateY(180deg);
+  border-bottom:3px solid #f07855;
+  box-shadow:0 20px 44px rgba(18,63,73,0.28);
+}
+.dimension-back-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:.62rem;
+  letter-spacing:.16em;
+  color:#f7d9b8;
+  font-weight:800;
+}
+.dimension-back h4{
+  font:1.22rem/1.2 Georgia,serif;
+  color:#f07855;
+  margin:12px 0 8px;
+}
+.dimension-back p{
+  font-size:.9rem;
+  color:#f4f4ef!important;
+  line-height:1.72;
+  margin:0 0 auto;
+}
+.dimension-back b{
+  font-size:.56rem;
+  letter-spacing:.15em;
+  color:#f7d9b8;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+/* Calm staggered floating for focus cards; the flip interaction remains intact. */
+.dimension{translate:0 0;animation:dimensionSlowFloat 11s ease-in-out infinite}
+.dimension:nth-child(2){animation-delay:-1.4s}
+.dimension:nth-child(3){animation-delay:-2.8s}
+.dimension:nth-child(4){animation-delay:-4.2s}
+.dimension:nth-child(5){animation-delay:-5.6s}
+.dimension:nth-child(6){animation-delay:-7s}
+.dimension:nth-child(7){animation-delay:-8.4s}
+.dimension:hover,.dimension:focus-visible,.dimension.is-flipped{animation-play-state:paused}
+@keyframes dimensionSlowFloat{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@media(max-width:650px){
+ .dimension,.dimension-flip-inner{min-height:245px}
+ .cycle-wrap{height:690px;transform:none}
+ .cycle-step{width:132px;padding:12px 13px}
+ @keyframes cycleRevolve{
+  from{transform:translate(-50%,-50%) rotate(0deg) translateY(-190px) rotate(0deg)}
+  to{transform:translate(-50%,-50%) rotate(360deg) translateY(-190px) rotate(-360deg)}
+ }
+ .dimension:nth-child(n),.pka-card{animation-duration:9s}
+}
+@media(prefers-reduced-motion:reduce){
+ .cycle-step,.cycle-orbit,.dimension,.pka-card{animation:none!important;translate:none!important}
+ .cycle-step.s1{transform:translate(-50%,-50%) translateY(-235px)}
+ .cycle-step.s2{transform:translate(-50%,-50%) translate(220px,-70px)}
+ .cycle-step.s3{transform:translate(-50%,-50%) translate(135px,190px)}
+ .cycle-step.s4{transform:translate(-50%,-50%) translate(-135px,190px)}
+ .cycle-step.s5{transform:translate(-50%,-50%) translate(-220px,-70px)}
+}
+</style>
+<style>html{scroll-padding-top:100px} [id]{scroll-margin-top:100px}</style><style id="pahad-current-link-style">.is-current-page{color:#f7d9b8!important;text-decoration:underline!important;text-underline-offset:5px}</style>
+</head>
+<body><header class="topbar">
+<a aria-label="PAHAD home" class="brand" href="index.html">
+<img alt="PAHAD official emblem" class="brand-logo" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://drive.google.com/thumbnail?id=1EVrr5ctvcM2xQMp86U2lPOkBiprrZVRK&amp;sz=w1000';}else{this.style.display='none';var f=document.createElement('span');f.className='brand-logo-fallback';f.textContent='P';f.setAttribute('aria-label','PAHAD emblem');this.after(f)}" src="https://drive.google.com/uc?export=view&amp;id=1EVrr5ctvcM2xQMp86U2lPOkBiprrZVRK"/>
+<span class="brand-wording">PAHAD<small>PARTICIPATORY ACTION FOR HOLISTIC ADVANCEMENT &amp; DEVELOPMENT</small></span>
+</a>
+<nav aria-label="Main navigation" class="main-nav">
+<a class="live-events-link" href="live-events.html"><span aria-hidden="true" class="live-dot"></span>Live Events</a>
+<button aria-label="Install PAHAD app" class="nav-install-button" id="pwaNavInstallButton" title="Install PAHAD app" type="button">↓ <span>Install</span></button>
+<details class="nav-dropdown"><summary>About Us</summary><div class="dropdown-panel">
+<a href="about.html">About the Organisation</a><a href="vision-mission.html">Vision &amp; Mission</a><a href="index.html#values">Values &amp; Principles</a><a href="reconnect.html#journey">Our Journey</a>
+</div></details>
+<details class="nav-dropdown"><summary>Governance</summary><div class="dropdown-panel">
+<a href="governance.html">Governance Framework</a><a href="governance.html#governing-body">Governing Body</a><a href="governance.html#executive-administration">Executive Administration</a><a href="constitution.html">Constitution &amp; Rules</a><a href="transparency.html#policies">Policies &amp; Regulations</a><a href="transparency.html">Transparency &amp; Accountability</a>
+</div></details>
+<details class="nav-dropdown"><summary>Our Work</summary><div class="dropdown-panel">
+<a href="our-work.html">Overview of Our Work</a><a href="our-work.html#human-development">Human Development</a><a href="our-work.html#livelihood-development">Livelihood Development</a><a href="our-work.html#community-development">Community Development</a><a href="our-work.html#research-innovation">Research &amp; Innovation</a><a href="our-work.html#himalayan-sustainability">Himalayan Sustainability &amp; Heritage</a>
+</div></details>
+<details class="nav-dropdown"><summary>Programmes</summary><div class="dropdown-panel">
+<a href="programmes.html">Programmes Overview</a><a href="programmes.html#projects">Community Learning</a><a href="programmes.html#activities">Youth &amp; Civic Participation</a><a href="programmes.html#livelihood-enterprise">Livelihood &amp; Enterprise</a><a href="programmes.html#research-documentation">Research &amp; Documentation</a><a href="programmes.html#project-status">Programme Updates</a>
+</div></details>
+<details class="nav-dropdown"><summary>Knowledge &amp; Research</summary><div class="dropdown-panel">
+<a href="knowledge.html#research">Research &amp; Learning</a><a href="knowledge.html#publications">Publications &amp; Reports</a><a href="knowledge.html#resources">Knowledge Resources</a><a href="knowledge.html#documentation">Documentation</a><a href="Knowledge.html">Knowledge Library</a>
+</div></details>
+<details class="nav-dropdown"><summary>News &amp; Media</summary><div class="dropdown-panel">
+<a href="news.html">News &amp; Updates</a><a href="news.html#announcements">Announcements</a><a href="news.html#events">Events</a><a href="news.html#gallery">Photo Gallery</a><a href="news.html#videos">Video &amp; Media</a>
+</div></details>
+<details class="nav-dropdown"><summary>Join PAHAD</summary><div class="dropdown-panel">
+<a href="membership.html">Membership</a><a href="membership.html#categories">Membership Categories</a><a href="get-involved.html#volunteer">Volunteer with PAHAD</a><a href="get-involved.html#partnerships">Partnerships &amp; Collaboration</a><a href="get-involved.html">Get Involved</a>
+</div></details>
+<details class="nav-dropdown"><summary>More</summary><div class="dropdown-panel">
+<a href="explore.html">Explore PAHAD</a><a href="dashboard.html">My Dashboard</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Notice</a><a href="Terms_and_Conditions.html">Terms &amp; Conditions</a><a href="reconnect.html">Reconnect</a>
+</div></details>
+<a class="join-link" href="get-involved.html">Get Involved ↗</a>
+</nav>
+<details class="mobile-nav"><summary aria-label="Open site navigation">☰ MENU</summary><div class="mobile-panel">
+<a class="live-events-link" href="live-events.html"><span aria-hidden="true" class="live-dot"></span>Live Events</a><button class="mobile-install-button" id="pwaMobileInstallButton" type="button">↓ Install PAHAD App</button>
+<details><summary>About Us</summary><div class="mobile-submenu"><a href="about.html">About the Organisation</a><a href="vision-mission.html">Vision &amp; Mission</a><a href="index.html#values">Values &amp; Principles</a><a href="reconnect.html#journey">Our Journey</a></div></details>
+<details><summary>Governance</summary><div class="mobile-submenu"><a href="governance.html">Governance Framework</a><a href="governance.html#governing-body">Governing Body</a><a href="governance.html#executive-administration">Executive Administration</a><a href="constitution.html">Constitution &amp; Rules</a><a href="transparency.html#policies">Policies &amp; Regulations</a><a href="transparency.html">Transparency &amp; Accountability</a></div></details>
+<details><summary>Our Work</summary><div class="mobile-submenu"><a href="our-work.html">Overview of Our Work</a><a href="our-work.html#human-development">Human Development</a><a href="our-work.html#livelihood-development">Livelihood Development</a><a href="our-work.html#community-development">Community Development</a><a href="our-work.html#research-innovation">Research &amp; Innovation</a><a href="our-work.html#himalayan-sustainability">Himalayan Sustainability &amp; Heritage</a></div></details>
+<details><summary>Programmes</summary><div class="mobile-submenu"><a href="programmes.html">Programmes Overview</a><a href="programmes.html#projects">Community Learning</a><a href="programmes.html#activities">Youth &amp; Civic Participation</a><a href="programmes.html#livelihood-enterprise">Livelihood &amp; Enterprise</a><a href="programmes.html#research-documentation">Research &amp; Documentation</a><a href="programmes.html#project-status">Programme Updates</a></div></details>
+<details><summary>Knowledge &amp; Research</summary><div class="mobile-submenu"><a href="knowledge.html#research">Research &amp; Learning</a><a href="knowledge.html#publications">Publications &amp; Reports</a><a href="knowledge.html#resources">Knowledge Resources</a><a href="knowledge.html#documentation">Documentation</a><a href="Knowledge.html">Knowledge Library</a></div></details>
+<details><summary>News &amp; Media</summary><div class="mobile-submenu"><a href="news.html">News &amp; Updates</a><a href="news.html#announcements">Announcements</a><a href="news.html#events">Events</a><a href="news.html#gallery">Photo Gallery</a><a href="news.html#videos">Video &amp; Media</a></div></details>
+<details><summary>Join PAHAD</summary><div class="mobile-submenu"><a href="membership.html">Membership</a><a href="membership.html#categories">Membership Categories</a><a href="get-involved.html#volunteer">Volunteer with PAHAD</a><a href="get-involved.html#partnerships">Partnerships &amp; Collaboration</a></div></details>
+<details><summary>More</summary><div class="mobile-submenu"><a href="explore.html">Explore PAHAD</a><a href="dashboard.html">My Dashboard</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Notice</a><a href="Terms_and_Conditions.html">Terms &amp; Conditions</a><a href="reconnect.html">Reconnect</a></div></details>
+<a class="mobile-join-link" href="get-involved.html">GET INVOLVED ↗</a></div></details>
+</header>
+
+<main class="vp-page" id="top">
+  <section class="vp-hero">
+    <div class="vp-hero-pattern" aria-hidden="true"></div>
+    <div class="vp-hero-copy">
+      <p class="vp-eyebrow">THE WAY WE WORK · THE STANDARDS WE UPHOLD</p>
+      <h1>Values that guide us.<br><em>Principles that shape our work.</em></h1>
+      <p class="vp-lead">PAHAD believes that meaningful development begins with people, grows through knowledge and becomes real through responsible collective action.</p>
+      <div class="vp-actions">
+        <a class="vp-button vp-button-primary" href="#values">Explore our values <span>↓</span></a>
+        <a class="vp-text-link" href="#principles">Our working principles ↗</a>
+      </div>
+    </div>
+    <div class="vp-hero-mark" aria-hidden="true">
+      <div class="vp-orbit vp-orbit-one"></div>
+      <div class="vp-orbit vp-orbit-two"></div>
+      <div class="vp-mark-core">P<span>·</span>K<span>·</span>A</div>
+      <small>PEOPLE · KNOWLEDGE · ACTION</small>
+    </div>
+    <div class="vp-hero-foot"><span>PAHAD · VALUES &amp; PRINCIPLES</span><span>OUR SHARED FOUNDATION ↓</span></div>
+  </section>
+
+  <section class="vp-intro">
+    <span class="vp-kicker">OUR FOUNDATION</span>
+    <h2>Good intentions need <em>clear principles.</em></h2>
+    <p>Our values describe what matters to us. Our principles explain how those values should guide decisions, relationships and action — across our organisation, programmes and partnerships.</p>
+  </section>
+
+  <section class="vp-values-section" id="values">
+    <div class="vp-section-heading">
+      <div><span class="vp-kicker">01 / WHAT WE VALUE</span><h2>The values <em>we stand for.</em></h2></div>
+      <p>These values are a shared compass for how PAHAD listens, learns, works with others and contributes to community progress.</p>
+    </div>
+    <div class="vp-values-grid">
+      <article class="vp-value-card vp-value-featured">
+        <span class="vp-number">01</span><span class="vp-symbol">◎</span>
+        <h3>People-centred development</h3>
+        <p>People are the purpose and the partners of development. We recognise their abilities, experiences, aspirations and right to shape decisions that affect their lives.</p>
+        <small>PEOPLE FIRST</small>
+      </article>
+      <article class="vp-value-card">
+        <span class="vp-number">02</span><span class="vp-symbol">◌</span>
+        <h3>Dignity and respect</h3>
+        <p>We treat every person with fairness and consideration, value different experiences and uphold the dignity of individuals and communities.</p>
+        <small>RESPECT EVERY PERSON</small>
+      </article>
+      <article class="vp-value-card">
+        <span class="vp-number">03</span><span class="vp-symbol">✳</span>
+        <h3>Inclusion and equity</h3>
+        <p>We seek to widen participation and opportunity, recognise barriers and make room for voices that are often unheard or under-represented.</p>
+        <small>LEAVE NO VOICE UNHEARD</small>
+      </article>
+      <article class="vp-value-card">
+        <span class="vp-number">04</span><span class="vp-symbol">⌘</span>
+        <h3>Knowledge and learning</h3>
+        <p>We value research, evidence, lived experience, local wisdom and open learning as foundations for understanding challenges and improving action.</p>
+        <small>LEARN CONTINUOUSLY</small>
+      </article>
+      <article class="vp-value-card">
+        <span class="vp-number">05</span><span class="vp-symbol">↗</span>
+        <h3>Integrity and accountability</h3>
+        <p>We aim to act honestly, use resources responsibly, communicate clearly and accept responsibility for our decisions and commitments.</p>
+        <small>BE HONEST · BE ANSWERABLE</small>
+      </article>
+      <article class="vp-value-card">
+        <span class="vp-number">06</span><span class="vp-symbol">⇄</span>
+        <h3>Participation and collaboration</h3>
+        <p>We believe progress is stronger when people contribute, communities take part and institutions work together with mutual respect.</p>
+        <small>WORK TOGETHER</small>
+      </article>
+      <article class="vp-value-card">
+        <span class="vp-number">07</span><span class="vp-symbol">⌂</span>
+        <h3>Local knowledge and cultural respect</h3>
+        <p>We respect the languages, cultures, histories, identities and place-based knowledge that shape communities and their relationship with the region.</p>
+        <small>ROOTED IN PLACE</small>
+      </article>
+      <article class="vp-value-card">
+        <span class="vp-number">08</span><span class="vp-symbol">❋</span>
+        <h3>Sustainability and stewardship</h3>
+        <p>We consider long-term social, economic, cultural and environmental well-being, and encourage responsible care for shared resources.</p>
+        <small>THINK BEYOND TODAY</small>
+      </article>
+      <article class="vp-value-card">
+        <span class="vp-number">09</span><span class="vp-symbol">⟡</span>
+        <h3>Innovation and practical action</h3>
+        <p>We remain open to new ideas and useful solutions, while focusing on action that responds to real needs and can create lasting value.</p>
+        <small>TURN IDEAS INTO ACTION</small>
+      </article>
+    </div>
+  </section>
+
+  <section class="vp-principles-section" id="principles">
+    <div class="vp-section-heading vp-light-heading">
+      <div><span class="vp-kicker">02 / HOW WE PUT VALUES INTO PRACTICE</span><h2>Our working <em>principles.</em></h2></div>
+      <p>These principles guide the way we plan, make decisions, deliver work and relate to people and institutions.</p>
+    </div>
+    <div class="vp-principles-list">
+      <article class="vp-principle"><span>01</span><div><h3>Listen before acting</h3><p>Understand local needs, priorities and existing efforts before proposing an intervention.</p></div><b>LISTEN</b></article>
+      <article class="vp-principle"><span>02</span><div><h3>Participation with responsibility</h3><p>Encourage meaningful involvement, shared ownership and clear responsibilities at every appropriate stage.</p></div><b>PARTICIPATE</b></article>
+      <article class="vp-principle"><span>03</span><div><h3>Evidence-informed decisions</h3><p>Use reliable information, research, community knowledge and reflection to inform choices and improve practice.</p></div><b>UNDERSTAND</b></article>
+      <article class="vp-principle"><span>04</span><div><h3>Transparency in process</h3><p>Explain objectives, roles, decisions and the use of resources in ways that are understandable and appropriate.</p></div><b>BE OPEN</b></article>
+      <article class="vp-principle"><span>05</span><div><h3>Fairness and non-discrimination</h3><p>Work respectfully across differences and avoid unfair exclusion based on identity, background, belief or circumstance.</p></div><b>BE FAIR</b></article>
+      <article class="vp-principle"><span>06</span><div><h3>Collaboration, not duplication</h3><p>Recognise existing community initiatives and institutional efforts, seek practical cooperation and add value where possible.</p></div><b>CONNECT</b></article>
+      <article class="vp-principle"><span>07</span><div><h3>Responsible use of resources</h3><p>Use time, funds, knowledge, relationships and natural resources carefully, purposefully and accountably.</p></div><b>BE RESPONSIBLE</b></article>
+      <article class="vp-principle"><span>08</span><div><h3>Learn, review and improve</h3><p>Reflect on outcomes, welcome constructive feedback, acknowledge limitations and adapt when better approaches emerge.</p></div><b>IMPROVE</b></article>
+      <article class="vp-principle"><span>09</span><div><h3>Long-term and holistic thinking</h3><p>Consider how social, human, economic, cultural, institutional and environmental dimensions connect over time.</p></div><b>THINK LONG TERM</b></article>
+    </div>
+  </section>
+
+  <section class="vp-application" id="application">
+    <div class="vp-section-heading">
+      <div><span class="vp-kicker">03 / WHERE THEY APPLY</span><h2>One foundation.<br><em>Every part of our work.</em></h2></div>
+      <p>Our values and principles should be visible not only in statements, but in the everyday conduct of the institution.</p>
+    </div>
+    <div class="vp-application-grid">
+      <article><span>01</span><h3>Governance and leadership</h3><p>Fair processes, clear responsibilities, participation and accountable decisions.</p><a href="governance.html">Explore governance ↗</a></article>
+      <article><span>02</span><h3>Programmes and initiatives</h3><p>Community-informed priorities, practical action, responsible delivery and learning.</p><a href="programmes.html">Explore programmes ↗</a></article>
+      <article><span>03</span><h3>Research and knowledge</h3><p>Respectful documentation, evidence, local knowledge and shared learning.</p><a href="knowledge.html">Explore knowledge ↗</a></article>
+      <article><span>04</span><h3>Partnerships and participation</h3><p>Mutual respect, collaboration, openness and meaningful opportunities to contribute.</p><a href="get-involved.html">Get involved ↗</a></article>
+    </div>
+  </section>
+
+  <section class="vp-closing">
+    <span class="vp-kicker">PEOPLE · KNOWLEDGE · ACTION</span>
+    <h2>Values are meaningful<br><em>when they shape what we do.</em></h2>
+    <p>We invite members, volunteers, partners and communities to help put these values into practice through thoughtful participation and responsible collective action.</p>
+    <div class="vp-actions">
+      <a class="vp-button vp-button-primary" href="get-involved.html">Get involved ↗</a>
+      <a class="vp-text-link" href="vision-mission.html">Read our vision &amp; mission</a>
+    </div>
+  </section>
+</main>
+
+<!-- PWA Install Help Modal -->
+<div aria-labelledby="pwaHelpTitle" aria-modal="true" class="pwa-help" hidden="" id="pwaHelp" role="dialog">
+<div class="pwa-help-card">
+<h3 id="pwaHelpTitle">Install PAHAD App</h3>
+<p>Add PAHAD to your home screen for quick access and offline reading:</p>
+<ol>
+<li>Open your browser menu (tap <strong>Share</strong> on iOS or <strong>⋮</strong> on Android/Desktop).</li>
+<li>Select <strong>Add to Home Screen</strong> or <strong>Install App</strong>.</li>
+</ol>
+<div class="pwa-help-actions">
+<button class="button button-primary" id="pwaHelpDone" type="button">Got it</button>
+<button class="pwa-help-close" id="pwaHelpClose" type="button">Close</button>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-brand">PAHAD<small>Participatory Action for Holistic<br/>Advancement &amp; Development</small></div>
+<nav aria-label="Footer navigation" class="footer-links">
+<a href="about.html">About</a><a href="values-principles.html">Values &amp; Principles</a><a href="our-work.html">Our Work</a><a href="programmes.html">Programmes</a><a href="knowledge.html">Knowledge</a><a href="governance.html">Governance</a><a href="membership.html">Membership</a><a href="transparency.html">Transparency</a><a href="constitution.html">Constitution</a><a href="get-involved.html">Get Involved</a><a href="contact.html">Contact</a>
+</nav>
+<div class="footer-note"><a href="mailto:Pahad.org@gmail.com" style="color:inherit">Pahad.org@gmail.com</a><br/>People · Knowledge · Action</div>
+</footer>
+<script>
+(()=> {
+ const els=document.querySelectorAll('.reveal');
+ if('IntersectionObserver' in window){
+   const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+   els.forEach(el=>io.observe(el));
+ }else els.forEach(el=>el.classList.add('is-visible'));
+ const parallax=document.querySelector('.regional-parallax');
+ let ticking=false;
+ function moveParallax(){if(!parallax)return;const r=parallax.parentElement.getBoundingClientRect();const offset=(r.top-innerHeight/2)*-.055;parallax.style.setProperty('--parallax',Math.max(-35,Math.min(35,offset))+'px');ticking=false}
+ window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(moveParallax);ticking=true}},{passive:true});
+ moveParallax();
+})();
+</script>
+<script>
+(() => {
+  let deferredInstallPrompt = null;
+  const help = document.getElementById('pwaHelp');
+  const installButtons = [
+    document.getElementById('pwaNavInstallButton'),
+    document.getElementById('pwaMobileInstallButton')
+  ].filter(Boolean);
+
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  installButtons.forEach(button => {
+    if (isStandalone) {
+      button.disabled = true;
+      button.textContent = '✓ Installed';
+      button.setAttribute('aria-label','PAHAD is installed');
+    }
+    button.addEventListener('click', async () => {
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        await deferredInstallPrompt.userChoice;
+        deferredInstallPrompt = null;
+      } else if (help) {
+        help.hidden = false;
+      }
+    });
+  });
+
+  window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+  });
+  window.addEventListener('appinstalled', () => {
+    deferredInstallPrompt = null;
+    installButtons.forEach(button => {
+      button.disabled = true;
+      button.textContent = '✓ Installed';
+    });
+  });
+
+  const doneBtn = document.getElementById('pwaHelpDone');
+  const closeBtn = document.getElementById('pwaHelpClose');
+  if (doneBtn && help) doneBtn.addEventListener('click', () => help.hidden = true);
+  if (closeBtn && help) closeBtn.addEventListener('click', () => help.hidden = true);
+  if (help) help.addEventListener('click', event => { if (event.target === help) help.hidden = true; });
+
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(error => {
+        console.warn('PAHAD offline support could not be registered:', error);
+      });
+    });
+  }
+})();
+</script>
+<script id="touch-motion-upgrade">
+(()=> {
+ // Helper to spawn a radial touch/ripple wave inside any card or surface
+ const spawnRipple = (el, clientX, clientY, customColor) => {
+   const rect = el.getBoundingClientRect();
+   const ripple = document.createElement('span');
+   ripple.className = 'touch-ripple';
+   const x = typeof clientX === 'number' ? (clientX - rect.left) : rect.width / 2;
+   const y = typeof clientY === 'number' ? (clientY - rect.top) : rect.height / 2;
+   ripple.style.left = x + 'px';
+   ripple.style.top = y + 'px';
+   if (customColor) ripple.style.background = customColor;
+   el.appendChild(ripple);
+   window.setTimeout(() => ripple.remove(), 680);
+ };
+
+ const targets='.cycle-step,.vm-btn,.flow-node';
+ document.querySelectorAll(targets).forEach(el=>{
+   el.addEventListener('pointerdown',ev=>{
+     spawnRipple(el, ev.clientX, ev.clientY);
+     el.classList.add('touch-active');
+     window.setTimeout(()=>{el.classList.remove('touch-active')},650);
+   },{passive:true});
+ });
+
+ // 03 / Guiding Idea (PKA cards) — gentle touch lift; no ripple or neighbour wave
+ const pkaCards = Array.from(document.querySelectorAll('.pka-card'));
+ pkaCards.forEach(card => {
+   card.addEventListener('pointerdown', () => card.classList.add('is-pressed'), {passive:true});
+   const release = () => card.classList.remove('is-pressed');
+   card.addEventListener('pointerup', release, {passive:true});
+   card.addEventListener('pointerleave', release, {passive:true});
+   card.addEventListener('pointercancel', release, {passive:true});
+ });
+
+ // 04 / Where We Focus — preserve accessible 3D flip; remove all ripple propagation
+ const dimensionCards = Array.from(document.querySelectorAll('.dimension-grid .dimension'));
+ dimensionCards.forEach((card, idx) => {
+   const numEl = card.querySelector('span');
+   const iconEl = card.querySelector('.dim-icon');
+   const titleEl = card.querySelector('h3');
+   const descEl = card.querySelector('p');
+   const tagEl = card.querySelector('b');
+
+   const numText = numEl ? numEl.textContent.trim() : String(idx + 1).padStart(2, '0');
+   const iconText = iconEl ? iconEl.textContent.trim() : '✳';
+   const titleText = titleEl ? titleEl.textContent.trim() : '';
+   const descText = descEl ? descEl.textContent.trim() : '';
+   const tagText = tagEl ? tagEl.textContent.trim() : '';
+
+   card.setAttribute('tabindex', '0');
+   card.setAttribute('role', 'button');
+   card.setAttribute('aria-label', `${titleText} — ${descText}`);
+
+   card.innerHTML = `
+     <div class="dimension-flip-inner">
+       <div class="dimension-face dimension-front">
+         <span class="dim-num">${numText}</span>
+         <div>
+           <div class="dim-icon" aria-hidden="true">${iconText}</div>
+           <h3>${titleText}</h3>
+         </div>
+         <div class="dimension-front-footer">
+           <b>${tagText}</b>
+           <span class="dimension-flip-hint">TURN ↻</span>
+         </div>
+       </div>
+       <div class="dimension-face dimension-back">
+         <div class="dimension-back-top">
+           <span>${numText} / OBJECTIVE</span>
+           <span aria-hidden="true">${iconText}</span>
+         </div>
+         <h4>${titleText}</h4>
+         <p>${descText}</p>
+         <b>${tagText} ↗</b>
+       </div>
+     </div>
+   `;
+
+   card.addEventListener('pointerdown', (ev) => {
+     if (ev.pointerType !== 'mouse') {
+       const willFlip = !card.classList.contains('is-flipped');
+       dimensionCards.forEach(c => c.classList.remove('is-flipped'));
+       if (willFlip) card.classList.add('is-flipped');
+     } else {
+       card.classList.toggle('is-flipped');
+     }
+   });
+
+   card.addEventListener('keydown', (ev) => {
+     if (ev.key === 'Enter' || ev.key === ' ') {
+       ev.preventDefault();
+       card.classList.toggle('is-flipped');
+     }
+   });
+ });
+
+ // 1. Hero touch response & PAHAD circle interactive movement / rotation
+ const hero = document.getElementById('vmHero');
+ const heroGlow = document.getElementById('heroTouchGlow');
+ const spiralWrap = document.getElementById('pahadSpiralWrap');
+
+ if (hero && heroGlow) {
+   const updateHeroGlow = (ev) => {
+     const rect = hero.getBoundingClientRect();
+     heroGlow.style.left = (ev.clientX - rect.left) + 'px';
+     heroGlow.style.top = (ev.clientY - rect.top) + 'px';
+   };
+   hero.addEventListener('pointerdown', (ev) => {
+     hero.classList.add('is-touching');
+     updateHeroGlow(ev);
+     const rect = hero.getBoundingClientRect();
+     const ripple = document.createElement('span');
+     ripple.className = 'touch-ripple';
+     ripple.style.left = (ev.clientX - rect.left) + 'px';
+     ripple.style.top = (ev.clientY - rect.top) + 'px';
+     hero.appendChild(ripple);
+     window.setTimeout(() => ripple.remove(), 650);
+   }, {passive: true});
+
+   hero.addEventListener('pointermove', (ev) => {
+     updateHeroGlow(ev);
+   }, {passive: true});
+
+   const endHeroTouch = () => hero.classList.remove('is-touching');
+   hero.addEventListener('pointerup', endHeroTouch, {passive: true});
+   hero.addEventListener('pointercancel', endHeroTouch, {passive: true});
+   hero.addEventListener('pointerleave', endHeroTouch, {passive: true});
+ }
+
+ if (spiralWrap) {
+   let isDraggingSpiral = false;
+   let startX = 0;
+   let startY = 0;
+
+   const moveSpiral = (clientX, clientY) => {
+     const rect = spiralWrap.getBoundingClientRect();
+     const centerX = rect.left + rect.width / 2;
+     const centerY = rect.top + rect.height / 2;
+     const dx = Math.max(-65, Math.min(65, (clientX - startX) * 0.55 || (clientX - centerX) * 0.35));
+     const dy = Math.max(-65, Math.min(65, (clientY - startY) * 0.55 || (clientY - centerY) * 0.35));
+     const rotX = Math.max(-18, Math.min(18, -dy * 0.28));
+     const rotY = Math.max(-18, Math.min(18, dx * 0.28));
+     spiralWrap.style.transform = `translate3d(${dx}px, ${dy}px, 0) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.06)`;
+   };
+
+   spiralWrap.addEventListener('pointerdown', (ev) => {
+     isDraggingSpiral = true;
+     startX = ev.clientX;
+     startY = ev.clientY;
+     spiralWrap.classList.add('is-touched');
+     if (spiralWrap.setPointerCapture) {
+       try { spiralWrap.setPointerCapture(ev.pointerId); } catch (_) {}
+     }
+     moveSpiral(ev.clientX, ev.clientY);
+   });
+
+   spiralWrap.addEventListener('pointermove', (ev) => {
+     if (!isDraggingSpiral) return;
+     moveSpiral(ev.clientX, ev.clientY);
+   });
+
+   const releaseSpiral = () => {
+     if (!isDraggingSpiral) return;
+     isDraggingSpiral = false;
+     spiralWrap.classList.remove('is-touched');
+     spiralWrap.style.transform = '';
+   };
+
+   spiralWrap.addEventListener('pointerup', releaseSpiral);
+   spiralWrap.addEventListener('pointercancel', releaseSpiral);
+   spiralWrap.addEventListener('lostpointercapture', releaseSpiral);
+ }
+
+ // 2. "Our Belief" interactive words — turn white when tapped, dragged across, or selected
+ const beliefText = document.getElementById('beliefText');
+ if (beliefText) {
+   const wrapWords = (node) => {
+     Array.from(node.childNodes).forEach(child => {
+       if (child.nodeType === Node.TEXT_NODE) {
+         const parts = child.textContent.split(/(\s+)/);
+         const frag = document.createDocumentFragment();
+         parts.forEach(part => {
+           if (/^\s+$/.test(part) || !part) {
+             frag.appendChild(document.createTextNode(part));
+           } else {
+             const span = document.createElement('span');
+             span.className = 'belief-word';
+             span.tabIndex = 0;
+             span.textContent = part;
+             frag.appendChild(span);
+           }
+         });
+         child.replaceWith(frag);
+       } else if (child.nodeType === Node.ELEMENT_NODE) {
+         wrapWords(child);
+       }
+     });
+   };
+   wrapWords(beliefText);
+
+   let pointerSelecting = false;
+   beliefText.querySelectorAll('.belief-word').forEach(word => {
+     word.addEventListener('pointerdown', (ev) => {
+       pointerSelecting = true;
+       word.classList.toggle('is-selected');
+       ev.stopPropagation();
+     });
+     word.addEventListener('pointerenter', () => {
+       if (pointerSelecting) word.classList.add('is-selected');
+     });
+     word.addEventListener('keydown', (ev) => {
+       if (ev.key === 'Enter' || ev.key === ' ') {
+         ev.preventDefault();
+         word.classList.toggle('is-selected');
+       }
+     });
+   });
+   window.addEventListener('pointerup', () => { pointerSelecting = false; });
+ }
+
+ // 3. "01 / The Future We Seek" — Typewriter effect on touch/click for "A self-reliant..." card
+ const visionCard = document.getElementById('visionTypeCard');
+ const visionText = document.getElementById('visionTypeText');
+ if (visionCard && visionText) {
+   const fullText = visionText.getAttribute('data-full-text') || visionText.textContent.trim();
+   let typingTimer = null;
+   let charIndex = 0;
+
+   const runTypewriter = () => {
+     if (typingTimer) clearInterval(typingTimer);
+     visionCard.classList.add('is-typing');
+     charIndex = 0;
+     visionText.textContent = '';
+     const cursor = document.createElement('span');
+     cursor.className = 'typewriter-cursor';
+     cursor.setAttribute('aria-hidden', 'true');
+     visionText.appendChild(cursor);
+
+     typingTimer = setInterval(() => {
+       if (charIndex < fullText.length) {
+         cursor.before(document.createTextNode(fullText.charAt(charIndex)));
+         charIndex++;
+       } else {
+         clearInterval(typingTimer);
+         typingTimer = null;
+         setTimeout(() => {
+           visionCard.classList.remove('is-typing');
+           if (cursor.parentNode) cursor.remove();
+         }, 1200);
+       }
+     }, 24);
+   };
+
+   visionCard.addEventListener('pointerdown', (ev) => {
+     const rect = visionCard.getBoundingClientRect();
+     const ripple = document.createElement('span');
+     ripple.className = 'touch-ripple';
+     ripple.style.left = (ev.clientX - rect.left) + 'px';
+     ripple.style.top = (ev.clientY - rect.top) + 'px';
+     visionCard.appendChild(ripple);
+     setTimeout(() => ripple.remove(), 650);
+     runTypewriter();
+   });
+
+   visionCard.addEventListener('keydown', (ev) => {
+     if (ev.key === 'Enter' || ev.key === ' ') {
+       ev.preventDefault();
+       runTypewriter();
+     }
+   });
+ }
+
+ // 4. "POTENTIAL · DIGNITY · POSSIBILITY" display effect & interactive touch/hover response
+ const visionVisual = document.getElementById('visionVisual');
+ const visionCaption = document.getElementById('visionWordCaption');
+ if (visionVisual) {
+   const words = visionVisual.querySelectorAll('.v-word');
+   const lines = visionVisual.querySelectorAll('.v-line');
+
+   const activateWord = (wordEl) => {
+     const lineNum = wordEl.getAttribute('data-line');
+     const meaning = wordEl.getAttribute('data-meaning');
+     words.forEach(w => w.classList.toggle('is-active', w === wordEl));
+     lines.forEach(l => l.classList.toggle('is-active', l.getAttribute('data-line') === lineNum));
+     if (visionCaption && meaning) {
+       visionCaption.textContent = meaning;
+       visionCaption.classList.add('is-shown');
+     }
+   };
+
+   if ('IntersectionObserver' in window) {
+     const vObserver = new IntersectionObserver(entries => {
+       entries.forEach(entry => {
+         if (entry.isIntersecting) {
+           visionVisual.classList.add('is-displayed');
+           // Sequential highlight wave upon first display
+           words.forEach((w, idx) => {
+             setTimeout(() => activateWord(w), 650 + idx * 750);
+           });
+           setTimeout(() => {
+             words.forEach(w => w.classList.remove('is-active'));
+             lines.forEach(l => l.classList.remove('is-active'));
+           }, 650 + words.length * 750 + 600);
+           vObserver.unobserve(visionVisual);
+         }
+       });
+     }, { threshold: 0.35 });
+     vObserver.observe(visionVisual);
+   } else {
+     visionVisual.classList.add('is-displayed');
+   }
+
+   words.forEach(word => {
+     word.addEventListener('pointerdown', (ev) => {
+       ev.stopPropagation();
+       activateWord(word);
+     });
+     word.addEventListener('pointerenter', () => activateWord(word));
+     word.addEventListener('keydown', (ev) => {
+       if (ev.key === 'Enter' || ev.key === ' ') {
+         ev.preventDefault();
+         activateWord(word);
+       }
+     });
+   });
+ }
+
+ // 5. "02 / What We Do (Our Mission)" — Cursor movement & touch lights up CONNECT -> STRENGTHEN -> MOBILISE -> ADVANCE
+ const missionSection = document.getElementById('mission');
+ const missionGlow = document.getElementById('missionCursorGlow');
+ const missionFlow = document.getElementById('missionFlow');
+ const missionCaption = document.getElementById('missionFlowCaption');
+ const missionStatement = document.getElementById('missionStatementCard');
+
+ if (missionSection && missionFlow) {
+   const nodes = Array.from(missionFlow.querySelectorAll('.flow-node'));
+   const arrows = Array.from(missionFlow.querySelectorAll('i'));
+
+   const lightUpMissionStep = (activeIndex) => {
+     nodes.forEach((node, idx) => {
+       const isLit = idx === activeIndex;
+       const isTrail = idx < activeIndex;
+       node.classList.toggle('is-lit', isLit);
+       node.classList.toggle('is-trail', isTrail);
+     });
+     arrows.forEach((arrow, idx) => {
+       arrow.classList.toggle('is-lit', idx <= activeIndex - 1 || idx === activeIndex);
+     });
+     if (missionCaption && nodes[activeIndex]) {
+       const text = nodes[activeIndex].getAttribute('data-caption');
+       if (text) {
+         missionCaption.textContent = text;
+         missionCaption.classList.add('is-shown');
+       }
+     }
+   };
+
+   // Track cursor or finger across the entire Mission section to progressively turn on the pathway buttons
+   const handleMissionPointerMove = (ev) => {
+     const rect = missionSection.getBoundingClientRect();
+     missionSection.classList.add('is-hovered');
+     if (missionGlow) {
+       missionGlow.style.left = (ev.clientX - rect.left) + 'px';
+       missionGlow.style.top = (ev.clientY - rect.top) + 'px';
+     }
+
+     // Determine which node is closest horizontally to the cursor, or map horizontal progress across the section
+     let closestIdx = 0;
+     let minDist = Infinity;
+     nodes.forEach((node, idx) => {
+       const nRect = node.getBoundingClientRect();
+       const centerX = nRect.left + nRect.width / 2;
+       const dist = Math.abs(ev.clientX - centerX);
+       if (dist < minDist) {
+         minDist = dist;
+         closestIdx = idx;
+       }
+     });
+     lightUpMissionStep(closestIdx);
+   };
+
+   missionSection.addEventListener('pointermove', handleMissionPointerMove, { passive: true });
+   missionSection.addEventListener('pointerdown', handleMissionPointerMove, { passive: true });
+
+   missionSection.addEventListener('pointerleave', () => {
+     missionSection.classList.remove('is-hovered');
+   }, { passive: true });
+
+   // Direct interaction on individual nodes & keyboard accessibility
+   nodes.forEach((node, idx) => {
+     node.addEventListener('pointerenter', () => lightUpMissionStep(idx));
+     node.addEventListener('pointerdown', (ev) => {
+       ev.stopPropagation();
+       lightUpMissionStep(idx);
+     });
+     node.addEventListener('focus', () => lightUpMissionStep(idx));
+   });
+
+   if (missionStatement) {
+     missionStatement.addEventListener('pointerdown', () => {
+       missionStatement.classList.toggle('is-active');
+     });
+   }
+
+   // Initial sequential wave when Mission section scrolls into view
+   if ('IntersectionObserver' in window) {
+     const mObserver = new IntersectionObserver(entries => {
+       entries.forEach(entry => {
+         if (entry.isIntersecting) {
+           nodes.forEach((_, idx) => {
+             setTimeout(() => lightUpMissionStep(idx), 400 + idx * 450);
+           });
+           mObserver.unobserve(missionSection);
+         }
+       });
+     }, { threshold: 0.3 });
+     mObserver.observe(missionSection);
+   }
+ }
+})();
+</script>
+<script id="pahad-navigation-helper">
+(()=>{
+ const current=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+ document.querySelectorAll('a[href]').forEach(a=>{
+  try{
+   const u=new URL(a.getAttribute('href'),location.href);
+   const target=(u.pathname.split('/').pop()||'index.html').toLowerCase();
+   if(target===current && !u.hash){a.setAttribute('aria-current','page');a.classList.add('is-current-page');}
+   a.addEventListener('click',()=>{document.querySelectorAll('.mobile-nav[open]').forEach(m=>m.open=false);document.querySelectorAll('.mobile-panel details[open]').forEach(d=>d.open=false);});
+  }catch(e){}
+ });
+ document.querySelectorAll('.nav-dropdown,.mobile-panel details,.pahad-global-nav details').forEach(d=>{
+  d.addEventListener('toggle',()=>{if(d.open){const group=d.parentElement;group?.querySelectorAll(':scope > details[open]').forEach(other=>{if(other!==d)other.open=false;});}});
+ });
+ if(location.hash){requestAnimationFrame(()=>{const el=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(el)el.scrollIntoView({block:'start'});});}
+})();
+</script>
+</body></html>
