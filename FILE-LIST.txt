@@ -1,0 +1,28 @@
+PAHAD WEBSITE FILE INVENTORY (index.html excluded)
+
+PAGES
+- live-events.html
+- about.html
+- governance.html
+- our-work.html
+- programmes.html
+- knowledge.html
+- news.html
+- membership.html
+- contact.html
+- dashboard.html
+- get-involved.html
+- vision-mission.html
+- transparency.html
+- constitution.html
+- privacy-policy.html
+- explore.html
+
+SHARED ASSETS
+- assets/site.css
+- assets/site.js
+- assets/favicon.svg
+- pahad-app-icon.svg
+- manifest.webmanifest
+- sw.js
+- README.md
