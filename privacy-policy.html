@@ -1,10 +1,145 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#164f5b"><meta name="description" content="This page provides a general notice for website visitors. Before collecting personal information through forms or accounts, PAHAD should publish a reviewed privacy policy that reflects the actual data collected, purposes, service providers, retention and contact process."><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="pahad-app-icon.svg" type="image/svg+xml"><title>Privacy Notice | PAHAD</title><link rel="stylesheet" href="assets/site.css"></head><body>
-<header class="site-header"><a class="brand" href="index.html" aria-label="PAHAD homepage"><span class="brand-mark">P</span><span><b>PAHAD</b><small>PEOPLE · KNOWLEDGE · ACTION</small></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button><nav id="site-nav" class="site-nav"><a class="live" href="live-events.html"><i></i>Live Events</a>
-<a href="about.html">About Us</a>
-<details class="navdrop"><summary>Governance</summary><div class="drop"><a href="governance.html">Governance Overview</a><a href="vision-mission.html">Vision & Mission</a><a href="constitution.html">Constitution & Documents</a><a href="transparency.html">Transparency</a></div></details>
-<a href="our-work.html">Our Work</a><a href="programmes.html">Programmes</a><a href="knowledge.html">Knowledge & Research</a><a href="news.html">News & Media</a>
-<details class="navdrop"><summary>Join PAHAD</summary><div class="drop"><a href="membership.html">Membership</a><a href="get-involved.html">Get Involved</a></div></details>
-<a href="contact.html">Contact</a><a href="dashboard.html">My Dashboard</a><a class="cta" href="get-involved.html">Get Involved</a><button class="install-btn" id="install-app" hidden>Install PAHAD</button></nav></header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#164f5b"><meta name="description" content="This page provides a general notice for website visitors. Before collecting personal information through forms or accounts, PAHAD should publish a reviewed privacy policy that reflects the actual data collected, purposes, service providers, retention and contact process."><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="pahad-app-icon.svg" type="image/svg+xml"><title>Privacy Notice | PAHAD</title><style>
+
+:root{--teal:#164f5b;--deep:#103b45;--teal2:#286d70;--coral:#f07855;--cream:#f7d9b8;--paper:#fbf4e9;--ink:#183941;--muted:#64777a;--white:#fff;--line:#dce5df;--shadow:0 18px 55px #103b4514}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 'DM Sans',system-ui,sans-serif}a{color:inherit}.site-header{position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:10px clamp(16px,3vw,48px);min-height:82px;background:#164f5bf7;color:#fff;box-shadow:0 8px 30px #0b30332b}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}.brand-mark{width:48px;height:48px;border:2px solid var(--cream);border-radius:50%;display:grid;place-items:center;color:var(--cream);font:800 1.8rem Georgia}.brand b{display:block;letter-spacing:.2em;font-size:1.05rem}.brand small{display:block;color:var(--cream);font-size:.55rem;letter-spacing:.1em}.site-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(8px,1vw,16px)}.site-nav>a,.navdrop summary{color:#fff;text-decoration:none;text-transform:uppercase;font-size:.65rem;font-weight:800;letter-spacing:.045em;white-space:nowrap;cursor:pointer;list-style:none}.navdrop{position:relative}.navdrop summary::-webkit-details-marker{display:none}.navdrop summary:after{content:'⌄';color:var(--cream);margin-left:5px}.drop{position:absolute;top:calc(100% + 18px);left:-14px;min-width:210px;padding:8px;background:var(--deep);border:1px solid #ffffff2b;box-shadow:var(--shadow);display:grid}.drop a{padding:10px;color:#fff;text-decoration:none;font-size:.78rem}.drop a:hover{background:#ffffff17;color:var(--cream)}.site-nav>a:hover{color:var(--cream)}.site-nav .live{display:flex;align-items:center;gap:7px}.live i{width:7px;height:7px;background:#ff5148;border-radius:50%;box-shadow:0 0 0 0 #ff5148aa;animation:pulse 1.3s infinite}@keyframes pulse{70%{box-shadow:0 0 0 7px #ff514800}}.site-nav .cta,.install-btn{background:var(--coral);border:0;border-radius:2px;padding:10px 13px;color:#fff;font:800 .66rem 'DM Sans';text-decoration:none;text-transform:uppercase;cursor:pointer}.install-btn[hidden]{display:none}.menu-toggle{display:none;background:none;border:0;color:white}.menu-toggle span{display:block;width:25px;height:2px;background:#fff;margin:5px}.progress{height:3px;background:#e8ded1;position:sticky;top:82px;z-index:999}.progress span{display:block;width:0;height:100%;background:var(--coral)}.page-hero{min-height:470px;position:relative;overflow:hidden;display:flex;align-items:center;padding:clamp(55px,8vw,112px) clamp(22px,8vw,120px);background:linear-gradient(115deg,#164f5b 0%,#1c6267 65%,#286d70 100%);color:#fff}.hero-copy{max-width:800px;position:relative;z-index:2}.eyebrow{font-size:.7rem;font-weight:800;letter-spacing:.18em;color:var(--coral);text-transform:uppercase}.page-hero .eyebrow{color:var(--cream)}h1,h2{font-family:'Playfair Display',Georgia,serif;line-height:1.12;margin:15px 0}h1{font-size:clamp(2.6rem,6vw,5.2rem);max-width:900px;letter-spacing:-.035em} .page-hero p{max-width:720px;color:#e5efea;font-size:clamp(1rem,1.4vw,1.2rem)}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.button{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;padding:13px 19px;border-radius:2px;transition:transform .2s,background .2s}.button:hover{transform:translateY(-3px)}.primary{background:var(--coral);color:white}.ghost{border:1px solid #ffffff80;color:white}.hero-side{position:absolute;right:10%;top:50%;transform:translateY(-50%);text-align:center;color:#ffffff75;letter-spacing:.25em;font-size:.7rem}.side-stamp{width:180px;height:180px;border:1px solid #ffffff38;border-radius:50%;display:grid;place-content:center;color:var(--cream);font:700 5rem Georgia;line-height:.7;margin:auto auto 20px;transform:rotate(-12deg)}.side-stamp small{font-size:2rem;text-align:right}.hero-orb{position:absolute;border:1px solid #ffffff19;border-radius:50%;pointer-events:none}.orb-one{width:480px;height:480px;right:-110px;top:-180px}.orb-two{width:340px;height:340px;right:8%;bottom:-260px}.content-wrap{padding:clamp(55px,8vw,100px) clamp(20px,8vw,120px)}.section-intro{max-width:720px;margin:0 auto 42px;text-align:center}.section-intro h2{font-size:clamp(2rem,4vw,3.4rem)}.section-intro p{color:var(--muted)}.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.info-card{background:#fff;padding:30px 28px;min-height:220px;border:1px solid #e9e6dc;box-shadow:0 8px 30px #193c3810;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}.info-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.info-card:after{content:'';position:absolute;width:90px;height:90px;border-radius:50%;background:#f7d9b855;right:-38px;bottom:-38px}.info-card .num{color:var(--coral);font-weight:800;letter-spacing:.12em;font-size:.75rem}.info-card h2{font-size:1.45rem;margin:14px 0 9px}.info-card p{color:var(--muted);font-size:.94rem;margin:0}.closing{background:var(--coral);color:white;padding:55px clamp(22px,8vw,120px);display:flex;align-items:center;justify-content:space-between;gap:25px}.closing .eyebrow{color:#fff1e6}.closing h2{font-size:clamp(2rem,4vw,3.4rem)}.closing p{max-width:600px;color:#fff4ed}.light{background:var(--paper);color:var(--teal);white-space:nowrap}.footer{background:#103b45;color:#fff;padding:38px clamp(20px,6vw,80px);display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}.footbrand b{font:800 1.4rem Georgia;letter-spacing:.2em}.footbrand span{display:block;color:#d4e0dc;font-size:.7rem}.footlinks{display:flex;gap:12px 18px;flex-wrap:wrap}.footlinks a{color:#e2eae6;text-decoration:none;font-size:.76rem}.footlinks a:hover{color:var(--cream)}.footer p{width:100%;margin:0;color:var(--cream);font-weight:800;letter-spacing:.1em}.footer small{color:#b8cbc7}.to-top{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border:0;border-radius:50%;background:var(--teal);color:#fff;font-size:1.2rem;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s;cursor:pointer}.to-top.show{opacity:1;pointer-events:auto} @media(max-width:1180px){.site-nav{gap:8px}.site-nav>a,.navdrop summary{font-size:.58rem}}@media(max-width:980px){.menu-toggle{display:block;cursor:pointer}.site-nav{display:none;position:absolute;left:0;right:0;top:82px;background:var(--deep);padding:18px 22px 24px;align-items:stretch;flex-direction:column;gap:0;max-height:calc(100vh - 82px);overflow:auto}.site-nav.open{display:flex}.site-nav>a,.navdrop summary{font-size:.8rem;padding:12px 5px;display:block}.navdrop{width:100%}.drop{position:static;box-shadow:none;border:0;padding:0 0 8px 15px}.drop a{padding:9px}.install-btn{align-self:flex-start;margin-top:12px}.hero-side{right:5%;opacity:.4}.page-hero{padding-right:30px}.card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.page-hero{min-height:450px;padding:65px 22px}.hero-side{display:none}h1{font-size:2.7rem}.card-grid{grid-template-columns:1fr}.info-card{min-height:unset}.closing{align-items:flex-start;flex-direction:column}.footer{align-items:flex-start;flex-direction:column}.footlinks{gap:10px 15px}.brand-mark{width:43px;height:43px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* PAHAD homepage-matched shared shell */
+:root{--g:#123b32;--g2:#1c594b;--t:#28796d;--iv:#f5f2e8}
+.topbar{position:sticky;top:0;z-index:1000;min-height:78px;padding:10px clamp(16px,4vw,58px);display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(22,79,91,.98);color:white;box-shadow:0 7px 25px #102f3430}
+.topbar .brand{display:flex;align-items:center;gap:12px;flex:0 0 auto;text-decoration:none;min-width:190px;background:transparent}
+.topbar .brand-logo{width:68px;height:68px;object-fit:contain;object-position:center;flex:0 0 auto;display:block;background:transparent;border:0;border-radius:0;padding:0;mix-blend-mode:normal;filter:none}
+.topbar .brand-wording{font-weight:950;letter-spacing:.18em;font-size:1.15rem;line-height:1.1;color:#fff}
+.topbar .brand small{display:block;max-width:230px;margin-top:5px;color:#f7d9b8;font-size:.43rem;letter-spacing:.09em;font-weight:650;line-height:1.35}
+.main-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(5px,.72vw,11px);flex:1}
+.main-nav>a,.main-nav summary{font-size:clamp(.53rem,.61vw,.68rem);letter-spacing:.025em;text-transform:uppercase;font-weight:800;text-decoration:none;color:#fff;white-space:nowrap;padding:10px 0;cursor:pointer;list-style:none}
+.main-nav summary::-webkit-details-marker{display:none}.main-nav summary:after{content:'⌄';color:#f7d9b8;margin-left:5px}
+.main-nav>a:hover,.main-nav summary:hover{color:#f7d9b8}
+.nav-dropdown{position:relative}.nav-dropdown:not([open])>.dropdown-panel{display:none}.nav-dropdown[open]>.dropdown-panel{display:grid;z-index:100}
+.nav-dropdown>.dropdown-panel{position:absolute;top:calc(100% + 5px);left:0;min-width:225px;max-height:75vh;overflow:auto;background:#103d47;padding:9px;box-shadow:0 16px 35px #071f2b55;border:1px solid #ffffff25;border-radius:0 0 10px 10px;gap:2px}
+.dropdown-panel a{padding:9px 11px;color:white;text-decoration:none;font-size:.76rem}.dropdown-panel a:hover{background:#ffffff17;color:#f7d9b8}
+.live-events-link{display:inline-flex!important;align-items:center;gap:6px}.live-dot{width:7px;height:7px;border-radius:50%;background:#ff5148;display:inline-block;box-shadow:0 0 0 0 #ff514880;animation:livePulse 1.35s infinite}@keyframes livePulse{0%{box-shadow:0 0 0 0 #ff514880;opacity:1}70%{box-shadow:0 0 0 6px #ff514800;opacity:.8}100%{box-shadow:0 0 0 0 #ff514800;opacity:1}}
+.join-link{background:#f07855;padding:10px 14px!important;color:#fff!important;border-radius:3px}.join-link:hover{background:#e76645;color:white!important}
+.nav-install-button{display:inline-flex;align-items:center;gap:5px;border:1px solid #f7d9b8a8;background:#ffffff12;color:#fff;border-radius:999px;padding:6px 9px;font-size:.65rem;font-weight:850;white-space:nowrap;cursor:pointer}
+.mobile-nav{display:none;position:relative}.mobile-nav summary{list-style:none;cursor:pointer;border:1px solid #ffffff80;padding:8px 12px;font-size:.72rem;font-weight:800;letter-spacing:.1em;color:#fff}.mobile-nav summary::-webkit-details-marker{display:none}
+.mobile-nav .mobile-panel{position:absolute;right:0;top:calc(100% + 13px);width:min(330px,90vw);max-height:80vh;overflow:auto;background:#103d47;padding:12px;box-shadow:0 18px 35px #071f2b66;display:grid;gap:2px}
+.mobile-panel a,.mobile-panel summary{display:block;color:#fff;text-decoration:none;padding:10px 12px;font-size:.78rem;border-bottom:1px solid #ffffff20}.mobile-panel details>summary{cursor:pointer;list-style:none}.mobile-panel details>summary::-webkit-details-marker{display:none}.mobile-panel details>summary:after{content:'＋';float:right;color:#f7d9b8}.mobile-panel details[open]>summary:after{content:'−'}.mobile-panel .mobile-submenu{display:grid;background:#0c333d;padding:3px 8px 7px}.mobile-panel .mobile-submenu a{padding-left:18px;font-size:.73rem}.mobile-install-button{display:block;width:100%;margin:7px 0 10px;padding:10px 12px;border:1px solid #f7d9b8a8;border-radius:8px;background:#ffffff12;color:#fff;text-align:left;font-size:.78rem;font-weight:850;cursor:pointer}.mobile-panel .mobile-join-link{display:block;text-align:center;margin-top:9px;background:#f07855;border:0;color:white;font-weight:900;letter-spacing:.08em}
+@media(max-width:1100px){.main-nav{display:none!important}.mobile-nav{display:block!important}}
+@media(max-width:600px){.topbar .brand-logo{width:55px;height:55px}.topbar .brand{min-width:0;gap:9px}.topbar .brand small{font-size:.38rem;max-width:180px}}
+@media(min-width:1181px) and (max-width:1450px){.topbar .brand{min-width:clamp(165px,16vw,220px)}.topbar .brand-wording{font-size:1.02rem}.topbar .brand small{font-size:.39rem}}
+
+</style></head><body>
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="PAHAD home">
+    <img class="brand-logo" src="https://drive.google.com/uc?export=view&amp;id=1EVrr5ctvcM2xQMp86U2lPOkBiprrZVRK" alt="PAHAD official emblem" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://drive.google.com/thumbnail?id=1EVrr5ctvcM2xQMp86U2lPOkBiprrZVRK&amp;sz=w1000';}else{this.style.display='none';var f=document.createElement('span');f.className='brand-logo-fallback';f.textContent='P';f.setAttribute('aria-label','PAHAD emblem');this.after(f)}">
+    <span class="brand-wording">PAHAD<small>PARTICIPATORY ACTION FOR HOLISTIC ADVANCEMENT &amp; DEVELOPMENT</small></span>
+  </a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a class="live-events-link" href="live-events.html"><span class="live-dot" aria-hidden="true"></span>Live Events</a>
+    <button class="nav-install-button" id="pwaNavInstallButton" hidden type="button" aria-label="Install PAHAD app" title="Install PAHAD app">↓ <span>Install</span></button>
+    <details class="nav-dropdown"><summary>About Us</summary><div class="dropdown-panel">
+      <a href="about.html">About the Organisation</a>
+      <a href="vision-mission.html">Vision &amp; Mission</a>
+      <a href="vision-mission.html#values">Values &amp; Principles</a>
+      <a href="about.html#journey">Our Journey</a>
+    </div></details>
+    <details class="nav-dropdown"><summary>Governance</summary><div class="dropdown-panel">
+      <a href="governance.html">Governance Framework</a>
+      <a href="governance.html#governing-body">Governing Body</a>
+      <a href="governance.html#executive-administration">Executive Administration</a>
+      <a href="constitution.html">Constitution &amp; Rules</a>
+      <a href="transparency.html#policies">Policies &amp; Regulations</a>
+      <a href="transparency.html">Transparency &amp; Accountability</a>
+    </div></details>
+    <details class="nav-dropdown"><summary>Our Work</summary><div class="dropdown-panel">
+      <a href="our-work.html">Overview of Our Work</a>
+      <a href="our-work.html#human-development">Human Development</a>
+      <a href="our-work.html#livelihood-development">Livelihood Development</a>
+      <a href="our-work.html#community-development">Community Development</a>
+      <a href="our-work.html#research-innovation">Research &amp; Innovation</a>
+      <a href="our-work.html#himalayan-sustainability">Himalayan Sustainability &amp; Heritage</a>
+    </div></details>
+    <details class="nav-dropdown"><summary>Programmes</summary><div class="dropdown-panel">
+      <a href="programmes.html">Programmes Overview</a>
+      <a href="programmes.html#projects">Projects &amp; Initiatives</a>
+      <a href="programmes.html#activities">Community Activities</a>
+      <a href="programmes.html#project-status">Ongoing &amp; Completed Work</a>
+    </div></details>
+    <details class="nav-dropdown"><summary>Knowledge &amp; Research</summary><div class="dropdown-panel">
+      <a href="knowledge.html#research">Research &amp; Studies</a>
+      <a href="knowledge.html#publications">Publications &amp; Reports</a>
+      <a href="knowledge.html#resources">Knowledge Resources</a>
+      <a href="knowledge.html#documentation">Documentation</a>
+    </div></details>
+    <details class="nav-dropdown"><summary>News &amp; Media</summary><div class="dropdown-panel">
+      <a href="news.html">News &amp; Updates</a>
+      <a href="news.html#announcements">Announcements</a>
+      <a href="news.html#events">Events &amp; Activities</a>
+      <a href="news.html#gallery">Photo Gallery</a>
+      <a href="news.html#videos">Video &amp; Media</a>
+    </div></details>
+    <details class="nav-dropdown"><summary>Join PAHAD</summary><div class="dropdown-panel">
+      <a href="membership.html">Membership</a>
+      <a href="membership.html#categories">Membership Categories</a>
+      <a href="get-involved.html#volunteer">Volunteer with PAHAD</a>
+      <a href="get-involved.html#partnerships">Partnerships &amp; Collaboration</a>
+    </div></details>
+    <a href="contact.html">Contact</a>
+    <a href="dashboard.html">My Dashboard</a>
+    <a class="join-link" href="get-involved.html">Get Involved ↗</a>
+  </nav>
+  <details class="mobile-nav">
+    <summary aria-label="Open site navigation">☰ MENU</summary>
+    <div class="mobile-panel">
+      <a class="live-events-link" href="live-events.html"><span class="live-dot" aria-hidden="true"></span>Live Events</a>
+        <button class="mobile-install-button" id="pwaMobileInstallButton" hidden type="button">↓ Install PAHAD App</button>
+      <details><summary>About Us</summary><div class="mobile-submenu">
+        <a href="about.html">About the Organisation</a><a href="vision-mission.html">Vision &amp; Mission</a>
+        <a href="vision-mission.html#values">Values &amp; Principles</a><a href="about.html#journey">Our Journey</a>
+      </div></details>
+      <details><summary>Governance</summary><div class="mobile-submenu">
+        <a href="governance.html">Governance Framework</a><a href="governance.html#governing-body">Governing Body</a>
+        <a href="governance.html#executive-administration">Executive Administration</a><a href="constitution.html">Constitution &amp; Rules</a>
+        <a href="transparency.html#policies">Policies &amp; Regulations</a><a href="transparency.html">Transparency &amp; Accountability</a>
+      </div></details>
+      <details><summary>Our Work</summary><div class="mobile-submenu">
+        <a href="our-work.html">Overview of Our Work</a><a href="our-work.html#human-development">Human Development</a>
+        <a href="our-work.html#livelihood-development">Livelihood Development</a><a href="our-work.html#community-development">Community Development</a>
+        <a href="our-work.html#research-innovation">Research &amp; Innovation</a><a href="our-work.html#himalayan-sustainability">Himalayan Sustainability &amp; Heritage</a>
+      </div></details>
+      <details><summary>Programmes</summary><div class="mobile-submenu">
+        <a href="programmes.html">Programmes Overview</a><a href="programmes.html#projects">Projects &amp; Initiatives</a>
+        <a href="programmes.html#activities">Community Activities</a><a href="programmes.html#project-status">Ongoing &amp; Completed Work</a>
+      </div></details>
+      <details><summary>Knowledge &amp; Research</summary><div class="mobile-submenu">
+        <a href="knowledge.html#research">Research &amp; Studies</a><a href="knowledge.html#publications">Publications &amp; Reports</a>
+        <a href="knowledge.html#resources">Knowledge Resources</a><a href="knowledge.html#documentation">Documentation</a>
+      </div></details>
+      <details><summary>News &amp; Media</summary><div class="mobile-submenu">
+        <a href="news.html">News &amp; Updates</a><a href="news.html#announcements">Announcements</a>
+        <a href="news.html#events">Events &amp; Activities</a><a href="news.html#gallery">Photo Gallery</a><a href="news.html#videos">Video &amp; Media</a>
+      </div></details>
+      <details><summary>Join PAHAD</summary><div class="mobile-submenu">
+        <a href="membership.html">Membership</a><a href="membership.html#categories">Membership Categories</a>
+        <a href="get-involved.html#volunteer">Volunteer with PAHAD</a><a href="get-involved.html#partnerships">Partnerships &amp; Collaboration</a>
+      </div></details>
+      <a href="contact.html">Contact</a>
+      <a href="dashboard.html">My Dashboard</a>
+      <a class="mobile-join-link" href="get-involved.html">GET INVOLVED ↗</a>
+    </div>
+  </details>
+</header>
 <div class="progress"><span id="progress-bar"></span></div><main><section class="page-hero"><div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div><div class="hero-copy"><div class="eyebrow">PAHAD · PRIVACY NOTICE</div><h1>Respectful and responsible handling of information</h1><p>This page provides a general notice for website visitors. Before collecting personal information through forms or accounts, PAHAD should publish a reviewed privacy policy that reflects the actual data collected, purposes, service providers, retention and contact process.</p><div class="hero-actions"><a class="button primary" href="contact.html">Explore more</a><a class="button ghost" href="index.html">Back to homepage</a></div></div><div class="hero-side"><div class="side-stamp">P<br><small>H</small></div><p>LOCAL KNOWLEDGE<br>COLLECTIVE ACTION</p></div></section>
 <section class="content-wrap"><div class="section-intro"><span class="eyebrow">PRIVACY NOTICE</span><h2>What you need to know</h2><p>Explore the information below and follow the links for the next step.</p></div><div class="card-grid"><article class="info-card"><span class="num">01</span><h2>Information submitted</h2><p>Information entered into third-party forms is handled through the relevant form provider and according to the information shown at the point of submission.</p></article><article class="info-card"><span class="num">02</span><h2>Purpose and access</h2><p>Personal information should be used only for clearly explained institutional purposes and accessed only by authorised persons.</p></article><article class="info-card"><span class="num">03</span><h2>Third-party services</h2><p>Membership forms, social platforms and other linked services operate under their own terms and privacy practices.</p></article><article class="info-card"><span class="num">04</span><h2>Your choices</h2><p>Avoid submitting sensitive personal information unless it is necessary and the form clearly explains why it is required.</p></article><article class="info-card"><span class="num">05</span><h2>Policy review</h2><p>This notice is informational and is not a substitute for a legally reviewed privacy policy tailored to PAHAD’s actual data practices.</p></article></div></section>
-<section class="closing"><div><span class="eyebrow">BE PART OF THE JOURNEY</span><h2>Share your idea.<br><em>Shape our community.</em></h2><p>Local knowledge and collective effort can help create meaningful change.</p></div><a class="button light" href="get-involved.html">Get involved <span>↗</span></a></section></main><footer class="footer"><div class="footbrand"><b>PAHAD</b><span>Participatory Action for Holistic Advancement & Development</span></div><div class="footlinks"><a href="about.html">About</a><a href="governance.html">Governance</a><a href="our-work.html">Our Work</a><a href="programmes.html">Programmes</a><a href="knowledge.html">Knowledge</a><a href="membership.html">Membership</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy</a></div><p>People · Knowledge · Action</p><small>Stronger communities, advancing together.</small></footer><button class="to-top" id="to-top" aria-label="Back to top">↑</button><script src="assets/site.js" defer></script></body></html>
+<section class="closing"><div><span class="eyebrow">BE PART OF THE JOURNEY</span><h2>Share your idea.<br><em>Shape our community.</em></h2><p>Local knowledge and collective effort can help create meaningful change.</p></div><a class="button light" href="get-involved.html">Get involved <span>↗</span></a></section></main><footer class="footer"><div class="footbrand"><b>PAHAD</b><span>Participatory Action for Holistic Advancement & Development</span></div><div class="footlinks"><a href="about.html">About</a><a href="governance.html">Governance</a><a href="our-work.html">Our Work</a><a href="programmes.html">Programmes</a><a href="knowledge.html">Knowledge</a><a href="membership.html">Membership</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy</a></div><p>People · Knowledge · Action</p><small>Stronger communities, advancing together.</small></footer><button class="to-top" id="to-top" aria-label="Back to top">↑</button><script>
+(()=>{const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.site-nav');if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation')});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!toggle.contains(e.target)){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}})}const bar=document.getElementById('progress-bar'),top=document.getElementById('to-top');const update=()=>{const d=document.documentElement.scrollHeight-innerHeight; if(bar)bar.style.width=(d>0?scrollY/d*100:0)+'%';if(top)top.classList.toggle('show',scrollY>450)};addEventListener('scroll',update,{passive:true});update();if(top)top.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));let deferred;const install=document.getElementById('install-app');addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;if(install)install.hidden=false});if(install)install.addEventListener('click',async()=>{if(!deferred)return;deferred.prompt();await deferred.userChoice;deferred=null;install.hidden=true});if('serviceWorker'in navigator&&location.protocol.startsWith('http'))addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));})();
+</script>
+<script>
+(()=>{
+ let deferredPrompt=null;
+ const installButtons=[document.getElementById('pwaNavInstallButton'),document.getElementById('pwaMobileInstallButton')].filter(Boolean);
+ addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installButtons.forEach(b=>b.hidden=false)});
+ installButtons.forEach(b=>b.addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;}else{alert('To install PAHAD, open your browser menu and choose “Add to Home screen” or “Install app”.')}}));
+})();
+</script>
+</body></html>
