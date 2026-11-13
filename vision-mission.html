@@ -675,26 +675,22 @@ footer{row-gap:18px}
   transform:translateY(0);
 }
 
-/* 03 / Guiding Idea (PKA) — Enhanced Touch & Ripple Response */
+/* 03 / Guiding Idea (PKA) — slow, calm floating; no ripple effects */
 .pka-card{
   position:relative;
   overflow:hidden;
   user-select:none;
-  transition:transform .38s cubic-bezier(.2,.8,.2,1),box-shadow .38s ease,background-color .3s ease,border-color .3s ease;
+  translate:0 0;
+  animation:pkaSlowFloat 10s ease-in-out infinite;
+  transition:translate .35s ease,box-shadow .38s ease,background-color .3s ease,border-color .3s ease;
 }
-.pka-card.is-pressed,.pka-card:active{
-  transform:translateY(-4px) scale(0.985)!important;
-}
-.pka-card.is-neighbor-ripple{
-  animation:neighborCardWave .65s cubic-bezier(.2,.8,.2,1);
-}
-@keyframes neighborCardWave{
-  0%{transform:translateY(0) scale(1);box-shadow:0 15px 35px #264a4a0c}
-  45%{transform:translateY(-8px) scale(1.02);box-shadow:0 22px 42px rgba(240,120,85,0.28),0 0 0 2px rgba(240,120,85,0.45)}
-  100%{transform:translateY(0) scale(1);box-shadow:0 15px 35px #264a4a0c}
-}
+.pka-card:nth-child(2){animation-delay:-2.5s}
+.pka-card:nth-child(3){animation-delay:-5s}
+.pka-card.is-pressed,.pka-card:active{translate:0 -4px}
+.pka-card:hover,.pka-card:focus-visible{animation-play-state:paused;box-shadow:0 20px 42px rgba(22,79,91,.14)}
+@keyframes pkaSlowFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
 
-/* 04 / Where We Focus — 3D Flip Cards (Front Title / Back Description) + Neighbor Ripple */
+/* 04 / Where We Focus — 3D Flip Cards with gentle floating; no ripple effects */
 .dimension-grid{
   perspective:1200px;
 }
@@ -816,20 +812,16 @@ footer{row-gap:18px}
   align-items:center;
   gap:6px;
 }
-/* Neighbor ripple wave on other cards when one card is hovered/touched */
-.dimension.is-neighbor-ripple .dimension-front{
-  background:#fffaf2;
-  border-bottom-color:#28796d;
-  box-shadow:0 16px 34px rgba(240,120,85,0.22),0 0 0 2px rgba(240,120,85,0.35);
-}
-.dimension.is-neighbor-ripple .dimension-flip-inner{
-  animation:dimensionRippleWave .68s cubic-bezier(.2,.8,.2,1);
-}
-@keyframes dimensionRippleWave{
-  0%{transform:translateY(0) scale(1)}
-  40%{transform:translateY(-8px) scale(1.025)}
-  100%{transform:translateY(0) scale(1)}
-}
+/* Calm staggered floating for focus cards; the flip interaction remains intact. */
+.dimension{translate:0 0;animation:dimensionSlowFloat 11s ease-in-out infinite}
+.dimension:nth-child(2){animation-delay:-1.4s}
+.dimension:nth-child(3){animation-delay:-2.8s}
+.dimension:nth-child(4){animation-delay:-4.2s}
+.dimension:nth-child(5){animation-delay:-5.6s}
+.dimension:nth-child(6){animation-delay:-7s}
+.dimension:nth-child(7){animation-delay:-8.4s}
+.dimension:hover,.dimension:focus-visible,.dimension.is-flipped{animation-play-state:paused}
+@keyframes dimensionSlowFloat{0%,100%{translate:0 0}50%{translate:0 -7px}}
 @media(max-width:650px){
  .dimension,.dimension-flip-inner{min-height:245px}
  .cycle-wrap{height:690px;transform:none}
@@ -841,7 +833,7 @@ footer{row-gap:18px}
  .dimension:nth-child(n),.pka-card{animation-duration:9s}
 }
 @media(prefers-reduced-motion:reduce){
- .cycle-step,.cycle-orbit,.dimension,.pka-card{animation:none!important}
+ .cycle-step,.cycle-orbit,.dimension,.pka-card{animation:none!important;translate:none!important}
  .cycle-step.s1{transform:translate(-50%,-50%) translateY(-235px)}
  .cycle-step.s2{transform:translate(-50%,-50%) translate(220px,-70px)}
  .cycle-step.s3{transform:translate(-50%,-50%) translate(135px,190px)}
@@ -1180,7 +1172,7 @@ footer{row-gap:18px}
    window.setTimeout(() => ripple.remove(), 680);
  };
 
- const targets='.pka-card,.cycle-step,.vm-btn,.flow-node';
+ const targets='.cycle-step,.vm-btn,.flow-node';
  document.querySelectorAll(targets).forEach(el=>{
    el.addEventListener('pointerdown',ev=>{
      spawnRipple(el, ev.clientX, ev.clientY);
@@ -1189,40 +1181,17 @@ footer{row-gap:18px}
    },{passive:true});
  });
 
- // 03 / Guiding Idea (PKA cards) — Touch response & ripple across sibling cards
+ // 03 / Guiding Idea (PKA cards) — gentle touch lift; no ripple or neighbour wave
  const pkaCards = Array.from(document.querySelectorAll('.pka-card'));
- pkaCards.forEach((card, idx) => {
-   const triggerPkaNeighborRipple = () => {
-     pkaCards.forEach((other, oIdx) => {
-       if (other === card) return;
-       const delay = Math.abs(oIdx - idx) * 110;
-       window.setTimeout(() => {
-         other.classList.remove('is-neighbor-ripple');
-         void other.offsetWidth;
-         other.classList.add('is-neighbor-ripple');
-         spawnRipple(other, null, null, 'rgba(240,120,85,0.28)');
-         window.setTimeout(() => other.classList.remove('is-neighbor-ripple'), 680);
-       }, delay);
-     });
-   };
-
-   card.addEventListener('pointerenter', (ev) => {
-     spawnRipple(card, ev.clientX, ev.clientY, 'rgba(40,121,109,0.22)');
-     triggerPkaNeighborRipple();
-   });
-
-   card.addEventListener('pointerdown', () => {
-     card.classList.add('is-pressed');
-     triggerPkaNeighborRipple();
-   }, {passive: true});
-
-   const releasePka = () => card.classList.remove('is-pressed');
-   card.addEventListener('pointerup', releasePka, {passive: true});
-   card.addEventListener('pointerleave', releasePka, {passive: true});
-   card.addEventListener('pointercancel', releasePka, {passive: true});
+ pkaCards.forEach(card => {
+   card.addEventListener('pointerdown', () => card.classList.add('is-pressed'), {passive:true});
+   const release = () => card.classList.remove('is-pressed');
+   card.addEventListener('pointerup', release, {passive:true});
+   card.addEventListener('pointerleave', release, {passive:true});
+   card.addEventListener('pointercancel', release, {passive:true});
  });
 
- // 04 / Where We Focus — Build 3D Flip Structure (Front Title / Back Description) + Ripple on Other Cards
+ // 04 / Where We Focus — preserve accessible 3D flip; remove all ripple propagation
  const dimensionCards = Array.from(document.querySelectorAll('.dimension-grid .dimension'));
  dimensionCards.forEach((card, idx) => {
    const numEl = card.querySelector('span');
@@ -1266,62 +1235,20 @@ footer{row-gap:18px}
      </div>
    `;
 
-   const frontFace = card.querySelector('.dimension-front');
-   const backFace = card.querySelector('.dimension-back');
-
-   // Propagate a synchronized ripple wave across all OTHER cards in the grid
-   const rippleOtherDimensions = () => {
-     const sourceRect = card.getBoundingClientRect();
-     const sx = sourceRect.left + sourceRect.width / 2;
-     const sy = sourceRect.top + sourceRect.height / 2;
-
-     dimensionCards.forEach((other) => {
-       if (other === card) return;
-       const oRect = other.getBoundingClientRect();
-       const ox = oRect.left + oRect.width / 2;
-       const oy = oRect.top + oRect.height / 2;
-       const distance = Math.hypot(ox - sx, oy - sy);
-       const delay = Math.min(420, Math.round(distance * 0.45));
-
-       window.setTimeout(() => {
-         other.classList.remove('is-neighbor-ripple');
-         void other.offsetWidth;
-         other.classList.add('is-neighbor-ripple');
-         const otherFront = other.querySelector('.dimension-front');
-         if (otherFront) {
-           spawnRipple(otherFront, null, null, 'rgba(240,120,85,0.34)');
-         }
-         window.setTimeout(() => other.classList.remove('is-neighbor-ripple'), 700);
-       }, delay);
-     });
-   };
-
-   card.addEventListener('pointerenter', (ev) => {
-     if (ev.pointerType === 'mouse' || !ev.pointerType) {
-       if (backFace) spawnRipple(backFace, ev.clientX, ev.clientY, 'rgba(247,217,184,0.28)');
-       rippleOtherDimensions();
-     }
-   });
-
    card.addEventListener('pointerdown', (ev) => {
-     const activeFace = card.classList.contains('is-flipped') ? backFace : frontFace;
-     if (activeFace) spawnRipple(activeFace, ev.clientX, ev.clientY, 'rgba(240,120,85,0.42)');
      if (ev.pointerType !== 'mouse') {
-       // On touch devices, tap flips the card and unflips others
        const willFlip = !card.classList.contains('is-flipped');
        dimensionCards.forEach(c => c.classList.remove('is-flipped'));
        if (willFlip) card.classList.add('is-flipped');
      } else {
        card.classList.toggle('is-flipped');
      }
-     rippleOtherDimensions();
    });
 
    card.addEventListener('keydown', (ev) => {
      if (ev.key === 'Enter' || ev.key === ' ') {
        ev.preventDefault();
        card.classList.toggle('is-flipped');
-       rippleOtherDimensions();
      }
    });
  });
