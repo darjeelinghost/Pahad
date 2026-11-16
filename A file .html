@@ -1,0 +1,111 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Immediate fallback meta refresh after 3 seconds -->
+    <meta http-equiv="refresh" content="3;url=https://pahad.org">
+    <title>Redirecting to Pahad.org...</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center p-4 transition-colors duration-300">
+
+    <!-- Main Redirect Card -->
+    <main class="w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 p-8 text-center">
+        
+        <!-- Animated Spinner / Icon Container -->
+        <div class="mx-auto mb-6 w-16 h-16 rounded-full bg-indigo-50 dark:bg-indigo-950/60 flex items-center justify-center relative">
+            <!-- Spinning Ring -->
+            <div class="w-16 h-16 rounded-full border-4 border-indigo-200 dark:border-indigo-900 border-t-indigo-600 dark:border-t-indigo-400 animate-spin absolute inset-0"></div>
+            <!-- External Link Icon -->
+            <svg class="w-7 h-7 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+        </div>
+
+        <!-- Heading & Message -->
+        <h1 class="text-2xl font-bold tracking-tight mb-2">Redirecting you...</h1>
+        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mb-6">
+            You are being automatically forwarded to <span class="font-semibold text-slate-800 dark:text-slate-200">pahad.org</span> in <span id="countdown" class="font-bold text-indigo-600 dark:text-indigo-400">3</span> seconds.
+        </p>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 mb-8 overflow-hidden">
+            <div id="progress-bar" class="bg-indigo-600 dark:bg-indigo-500 h-2 rounded-full transition-all duration-1000 ease-linear" style="width: 100%;"></div>
+        </div>
+
+        <!-- Manual Fallback Button -->
+        <a href="https://pahad.org" id="redirect-link" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 rounded-xl shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900">
+            Continue to Pahad.org now
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+        </a>
+
+        <!-- Subtle Footer Note -->
+        <p class="mt-6 text-xs text-slate-400 dark:text-slate-500">
+            If your browser does not redirect automatically, please click the button above.
+        </p>
+    </main>
+
+    <!-- Redirect & Countdown Logic -->
+    <script>
+        (function() {
+            const targetUrl = "https://pahad.org";
+            let secondsRemaining = 3;
+            
+            const countdownEl = document.getElementById('countdown');
+            const progressBarEl = document.getElementById('progress-bar');
+
+            // Update progress bar immediately on load for smooth transition
+            requestAnimationFrame(() => {
+                if (progressBarEl) {
+                    progressBarEl.style.width = '66%';
+                }
+            });
+
+            // Countdown interval
+            const timer = setInterval(() => {
+                secondsRemaining -= 1;
+
+                if (countdownEl && secondsRemaining >= 0) {
+                    countdownEl.textContent = secondsRemaining;
+                }
+
+                if (progressBarEl) {
+                    const percentage = Math.max(0, (secondsRemaining - 1) * 33.3);
+                    progressBarEl.style.width = percentage + '%';
+                }
+
+                if (secondsRemaining <= 0) {
+                    clearInterval(timer);
+                    try {
+                        // Use replace() so the user doesn't get stuck in a back-button loop
+                        window.location.replace(targetUrl);
+                    } catch (error) {
+                        window.location.href = targetUrl;
+                    }
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>
+```
