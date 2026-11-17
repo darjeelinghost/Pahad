@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAHAD CREDENTIAL STUDIO</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for authentic certificate typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for crisp icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- html2canvas & jsPDF for high-res PNG/PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                        script: ['Great Vibes', 'cursive'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col">
+
+    <!-- Top Navigation Bar -->
+    <header class="bg-white border-b border-slate-200 px-4 sm:px-6 py-3.5 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 rounded-full overflow-hidden shadow-sm shrink-0">
+                    <!-- PAHAD Circular Brand Logo -->
+                    <svg viewBox="0 0 120 120" class="w-full h-full">
+                        <circle cx="60" cy="60" r="60" fill="#1A464E"/>
+                        <circle cx="60" cy="60" r="50" fill="#F2865E"/>
+                        <polygon points="14,88 54,28 84,74 92,62 110,88" fill="#1A464E"/>
+                        <polygon points="54,28 43,46 53,43 60,51 67,44" fill="#F7F5EE"/>
+                        <polygon points="54,28 60,51 74,72 62,74" fill="#4A777A"/>
+                        <path d="M12,78 A50,50 0 0,0 108,78 Z" fill="#1A464E"/>
+                        <text x="60" y="92" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="16" letter-spacing="1" fill="#F7F5EE">PAHAD</text>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-base sm:text-lg font-bold tracking-wide text-[#1A464E] leading-none">PAHAD CREDENTIAL STUDIO</h1>
+                    <p class="text-xs text-slate-500 mt-0.5">People. Knowledge. Action.</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button id="btnAdminRoster" type="button" class="px-3 py-2 text-xs sm:text-sm font-medium text-slate-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 rounded-lg transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-users-gear text-amber-700"></i>
+                    <span class="hidden sm:inline">Participant Roster</span>
+                </button>
+                <button id="btnLockPortal" type="button" class="px-3 py-2 text-xs sm:text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5" title="Lock & Switch Participant">
+                    <i class="fa-solid fa-lock"></i>
+                    <span class="hidden sm:inline">Verify ID</span>
+                </button>
+                <button id="btnReset" type="button" class="px-3 py-2 text-xs sm:text-sm font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span class="hidden sm:inline">Reset</span>
+                </button>
+                <button id="btnDownloadPNG" type="button" disabled class="px-3.5 py-2 text-xs sm:text-sm font-semibold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-lg transition-colors flex items-center gap-1.5 disabled:opacity-40 disabled:cursor-not-allowed">
+                    <i class="fa-solid fa-image"></i>
+                    <span>PNG</span>
+                </button>
+                <button id="btnDownloadPDF" type="button" disabled class="px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow-sm transition-colors flex items-center gap-1.5 disabled:opacity-40 disabled:cursor-not-allowed">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Download PDF</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Participant Verification Gate Modal -->
+    <div id="participantGateModal" class="fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-5">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-sm">
+                    <!-- PAHAD Circular Brand Logo -->
+                    <svg viewBox="0 0 120 120" class="w-full h-full">
+                        <circle cx="60" cy="60" r="60" fill="#1A464E"/>
+                        <circle cx="60" cy="60" r="50" fill="#F2865E"/>
+                        <polygon points="14,88 54,28 84,74 92,62 110,88" fill="#1A464E"/>
+                        <polygon points="54,28 43,46 53,43 60,51 67,44" fill="#F7F5EE"/>
+                        <polygon points="54,28 60,51 74,72 62,74" fill="#4A777A"/>
+                        <path d="M12,78 A50,50 0 0,0 108,78 Z" fill="#1A464E"/>
+                        <text x="60" y="92" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="16" letter-spacing="1" fill="#F7F5EE">PAHAD</text>
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-slate-900">Participant Access Only</h2>
+                    <p class="text-xs text-slate-500">PAHAD CREDENTIAL STUDIO Verification</p>
+                </div>
+            </div>
+
+            <p class="text-sm text-slate-600 leading-relaxed">
+                This certificate is exclusively available to registered event participants. Enter your <strong>Registration ID</strong> or <strong>Full Name</strong> to verify and claim your certificate.
+            </p>
+
+            <form id="verifyParticipantForm" class="space-y-3.5">
+                <div>
+                    <label for="gateRegIdInput" class="block text-xs font-semibold text-slate-700 mb-1">Participant Registration ID</label>
+                    <input type="text" id="gateRegIdInput" placeholder="e.g., Reg10" required class="w-full px-3.5 py-2.5 text-sm font-mono border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1A464E]">
+                </div>
+                <div>
+                    <label for="gateNameInput" class="block text-xs font-semibold text-slate-700 mb-1">Registered Full Name</label>
+                    <input type="text" id="gateNameInput" placeholder="e.g., Sibath Rai" required class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1A464E]">
+                </div>
+
+                <div id="gateErrorBox" class="hidden text-xs text-rose-700 bg-rose-50 border border-rose-200 rounded-lg px-3 py-2 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span id="gateErrorText">Participant ID and Name do not match our official roster.</span>
+                </div>
+
+                <button type="submit" class="w-full py-2.5 px-4 bg-[#1A464E] hover:bg-[#14353b] text-white text-sm font-semibold rounded-xl shadow-sm transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-shield-check"></i>
+                    <span>Verify & Unlock Certificate</span>
+                </button>
+            </form>
+
+            <!-- Sample Participant Quick-Fill for Testing -->
+            <div class="pt-3 border-t border-slate-100">
+                <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2">Sample Registered Participants (Click to Test)</p>
+                <div id="sampleParticipantPills" class="flex flex-wrap gap-1.5"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Participant Roster Modal -->
+    <div id="rosterModal" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-base font-bold text-slate-900">Approved Participant Roster</h2>
+                    <p class="text-xs text-slate-500">Only listed participants can unlock and download certificates.</p>
+                </div>
+                <button type="button" id="btnCloseRoster" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="addParticipantForm" class="grid grid-cols-1 sm:grid-cols-5 gap-2">
+                <input type="text" id="newPartRegId" placeholder="REG-PAHAD-2026-..." required class="sm:col-span-2 px-3 py-2 text-xs font-mono border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A464E]">
+                <input type="text" id="newPartName" placeholder="Participant Full Name" required class="sm:col-span-2 px-3 py-2 text-xs border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1A464E]">
+                <button type="submit" class="px-3 py-2 bg-[#1A464E] hover:bg-[#14353b] text-white text-xs font-semibold rounded-lg">Add</button>
+            </form>
+
+            <div id="rosterListContainer" class="max-h-56 overflow-y-auto divide-y divide-slate-100 border border-slate-200 rounded-xl"></div>
+        </div>
+    </div>
+
+    <!-- Admin Roster PIN Lock Modal -->
+    <div id="rosterPinModal" class="hidden fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xs w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center">
+                        <i class="fa-solid fa-key text-sm"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-900">Admin Access</h3>
+                        <p class="text-[11px] text-slate-500">Enter Roster Passcode</p>
+                    </div>
+                </div>
+                <button type="button" id="btnCloseRosterPin" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark text-xs"></i>
+                </button>
+            </div>
+
+            <form id="rosterPinForm" class="space-y-3">
+                <input type="password" id="rosterPinInput" inputmode="numeric" maxlength="12" placeholder="Enter PIN" required class="w-full px-3.5 py-2.5 text-center text-base font-mono tracking-[0.35em] border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1A464E]">
+                <div id="rosterPinError" class="hidden text-xs text-rose-700 bg-rose-50 border border-rose-200 rounded-lg px-3 py-1.5 text-center">
+                    Incorrect admin PIN.
+                </div>
+                <button type="submit" class="w-full py-2 px-4 bg-[#1A464E] hover:bg-[#14353b] text-white text-xs font-semibold rounded-xl transition-colors">
+                    Unlock Roster
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Studio Layout -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left Sidebar: Customization Controls -->
+        <aside class="lg:col-span-4 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-6">
+            
+            <!-- Template & Accent Selector -->
+            <div>
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">1. Design & Theme</h2>
+                
+                <label class="block text-sm font-medium text-slate-700 mb-1.5">Template Style</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4" id="templateSelector">
+                    <button type="button" data-template="pahad" class="template-btn active ring-2 ring-indigo-600 bg-indigo-50/50 border border-indigo-200 rounded-xl p-2 text-center transition-all">
+                        <div class="text-xs font-semibold text-slate-800">Pahad</div>
+                        <div class="text-[10px] text-slate-500 mt-0.5">Alpine Peaks</div>
+                    </button>
+                    <button type="button" data-template="classic" class="template-btn border border-slate-200 hover:border-slate-300 rounded-xl p-2 text-center transition-all">
+                        <div class="text-xs font-semibold text-slate-800">Classic Gold</div>
+                        <div class="text-[10px] text-slate-500 mt-0.5">Ornate Border</div>
+                    </button>
+                    <button type="button" data-template="modern" class="template-btn border border-slate-200 hover:border-slate-300 rounded-xl p-2 text-center transition-all">
+                        <div class="text-xs font-semibold text-slate-800">Modern</div>
+                        <div class="text-[10px] text-slate-500 mt-0.5">Clean & Bold</div>
+                    </button>
+                    <button type="button" data-template="executive" class="template-btn border border-slate-200 hover:border-slate-300 rounded-xl p-2 text-center transition-all">
+                        <div class="text-xs font-semibold text-slate-800">Executive</div>
+                        <div class="text-[10px] text-slate-500 mt-0.5">Dark Slate</div>
+                    </button>
+                </div>
+
+                <label class="block text-sm font-medium text-slate-700 mb-1.5">Accent Color</label>
+                <div class="flex items-center gap-2.5" id="colorPalette">
+                    <button type="button" data-color="#1A464E" class="color-swatch w-7 h-7 rounded-full bg-[#1A464E] ring-2 ring-offset-2 ring-[#1A464E] transition-transform scale-110" title="PAHAD Deep Teal (Primary)"></button>
+                    <button type="button" data-color="#F2865E" class="color-swatch w-7 h-7 rounded-full bg-[#F2865E] hover:scale-110 transition-transform" title="Himalayan Sunset Coral"></button>
+                    <button type="button" data-color="#4A777A" class="color-swatch w-7 h-7 rounded-full bg-[#4A777A] hover:scale-110 transition-transform" title="Glacial Ridge Teal"></button>
+                    <button type="button" data-color="#2D5A5E" class="color-swatch w-7 h-7 rounded-full bg-[#2D5A5E] hover:scale-110 transition-transform" title="Darjeeling Pine"></button>
+                    <button type="button" data-color="#D97706" class="color-swatch w-7 h-7 rounded-full bg-amber-600 hover:scale-110 transition-transform" title="Sunrise Gold"></button>
+                    <button type="button" data-color="#1E3A8A" class="color-swatch w-7 h-7 rounded-full bg-blue-900 hover:scale-110 transition-transform" title="Alpine Sky"></button>
+                </div>
+            </div>
+
+            <hr class="border-slate-100">
+
+            <!-- Certificate Details Form -->
+            <div class="space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">2. Certificate Details</h2>
+
+                <div>
+                    <label for="inputRecipient" class="block text-xs font-semibold text-slate-700 mb-1">Recipient Full Name <span class="text-[10px] text-emerald-700 font-normal">(Verified Participant)</span></label>
+                    <input type="text" id="inputRecipient" value="Sibath Rai" readonly class="w-full px-3 py-2 text-sm font-medium bg-slate-50 text-slate-600 border border-slate-200 rounded-lg cursor-not-allowed">
+                </div>
+
+                <div>
+                    <label for="inputOrg" class="block text-xs font-semibold text-slate-700 mb-1">Issuing Organization</label>
+                    <input type="text" id="inputOrg" value="PAHAD COMMUNITY ORGANISATION" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div>
+                    <label for="inputTitle" class="block text-xs font-semibold text-slate-700 mb-1">Certificate Title</label>
+                    <input type="text" id="inputTitle" value="CERTIFICATE OF APPRECIATION" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div>
+                    <label for="inputSubtitle" class="block text-xs font-semibold text-slate-700 mb-1">Introductory Line</label>
+                    <input type="text" id="inputSubtitle" value="THIS IS PROUDLY PRESENTED TO" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div>
+                    <label for="inputDescription" class="block text-xs font-semibold text-slate-700 mb-1">Achievement Description</label>
+                    <textarea id="inputDescription" rows="3" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">In recognition of meaningful contribution to Participatory Action for Holistic Advancement & Development across the Darjeeling & Kalimpong hills, the Terai, the Dooars and the wider Himalaya.</textarea>
+                </div>
+
+                <div>
+                    <label for="inputDate" class="block text-xs font-semibold text-slate-700 mb-1">Issue Date</label>
+                    <input type="text" id="inputDate" value="November 17, 2026" class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="inputRegId" class="block text-xs font-semibold text-slate-700 mb-1">Registration ID <span class="text-[10px] text-emerald-700 font-normal">(Locked)</span></label>
+                        <input type="text" id="inputRegId" value="Reg10" readonly class="w-full px-2.5 py-2 text-xs font-mono bg-slate-50 text-slate-600 border border-slate-200 rounded-lg cursor-not-allowed">
+                    </div>
+                    <div>
+                        <label for="inputDigitalId" class="block text-xs font-semibold text-slate-700 mb-1">Digital ID</label>
+                        <input type="text" id="inputDigitalId" value="DIG-9F3A-8492-BC10" readonly class="w-full px-2.5 py-2 text-xs font-mono bg-slate-50 text-slate-600 border border-slate-200 rounded-lg cursor-not-allowed">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-slate-100">
+
+            <!-- Signatories & Seal -->
+            <div class="space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">3. Signatories & Seal</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="inputSign1Name" class="block text-xs font-semibold text-slate-700 mb-1">Signatory 1 Name</label>
+                        <input type="text" id="inputSign1Name" value="Shiwath Rai" class="w-full px-3 py-1.5 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div>
+                        <label for="inputSign1Title" class="block text-xs font-semibold text-slate-700 mb-1">Signatory 1 Role</label>
+                        <input type="text" id="inputSign1Title" value="President" class="w-full px-3 py-1.5 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="inputSign2Name" class="block text-xs font-semibold text-slate-700 mb-1">Signatory 2 Name</label>
+                        <input type="text" id="inputSign2Name" value="Avineet Pradhan" class="w-full px-3 py-1.5 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div>
+                        <label for="inputSign2Title" class="block text-xs font-semibold text-slate-700 mb-1">Signatory 2 Role</label>
+                        <input type="text" id="inputSign2Title" value="General Secretary" class="w-full px-3 py-1.5 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-1">
+                    <span class="text-xs font-semibold text-slate-700">Show Official Gold Seal</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="toggleSeal" checked class="sr-only peer">
+                        <div class="w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-indigo-600"></div>
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Workspace: Live Scalable Certificate Preview -->
+        <section class="lg:col-span-8 flex flex-col items-center">
+            <div class="w-full flex items-center justify-between mb-3 px-1">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Live Landscape Preview (A4 Ratio)
+                </span>
+                <span class="text-xs text-slate-400">High-Res Print Ready (300 DPI)</span>
+            </div>
+
+            <!-- Responsive Wrapper that dynamically scales the fixed 1000x707 certificate canvas -->
+            <div id="previewContainer" class="w-full overflow-hidden rounded-2xl shadow-xl border border-slate-200/80 bg-slate-200/50 relative">
+                
+                <!-- Locked Overlay inside Preview when Unverified -->
+                <div id="previewLockOverlay" class="absolute inset-0 z-30 bg-slate-900/60 backdrop-blur-md flex flex-col items-center justify-center text-white p-6 text-center">
+                    <div class="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-lock text-2xl text-amber-300"></i>
+                    </div>
+                    <h3 class="text-lg font-bold">Participant Verification Required</h3>
+                    <p class="text-xs text-slate-200 max-w-sm mt-1 mb-4">Only verified participants from the PAHAD roster can view and download this certificate.</p>
+                    <button type="button" id="btnOpenGateFromPreview" class="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs font-bold rounded-lg shadow transition-colors">
+                        Enter Participant ID
+                    </button>
+                </div>
+
+                <!-- Actual Certificate Canvas (Fixed logical dimensions 1000x707 for consistent PDF/PNG export) -->
+                <div id="certificateCanvas" class="w-[1000px] h-[707px] bg-white absolute top-0 left-0 select-none overflow-hidden transition-colors duration-300 origin-top-left blur-sm">
+                    <!-- Dynamic Decorative Background Layer -->
+                    <div id="certBgDecor" class="absolute inset-0 pointer-events-none"></div>
+
+                    <!-- Digital Security Watermark & Cryptographic Hash Watermark -->
+                    <div id="digitalSecurityWatermark" class="absolute inset-8 pointer-events-none overflow-hidden opacity-[0.045] flex flex-col justify-between font-mono text-[8px] leading-tight tracking-widest select-none">
+                        <div class="whitespace-nowrap">PAHAD-CRYPTO-VERIFY // SHA256:8F94E2C1B7A04D39E5F128C6A90B3D74 // DIGITAL-CREDENTIAL-LEDGER // HIMALAYA-NODE-01</div>
+                        <div class="whitespace-nowrap">01010000 01000001 01001000 01000001 01000100 // VERIFIED-CREDENTIAL-TOKEN // INTEGRITY-CHECK-PASSED</div>
+                        <div class="whitespace-nowrap">PAHAD-CRYPTO-VERIFY // SHA256:8F94E2C1B7A04D39E5F128C6A90B3D74 // DIGITAL-CREDENTIAL-LEDGER // HIMALAYA-NODE-01</div>
+                    </div>
+
+                    <!-- Outer & Inner Border Frames -->
+                    <div id="certOuterFrame" class="absolute inset-5 border-[3px] border-amber-700 pointer-events-none transition-colors duration-300"></div>
+                    <div id="certInnerFrame" class="absolute inset-7 border border-amber-700/40 pointer-events-none transition-colors duration-300"></div>
+
+                    <!-- Corner Ornaments (Visible on Classic Template) -->
+                    <div id="cornerOrnaments" class="absolute inset-7 pointer-events-none text-amber-700 transition-colors duration-300">
+                        <!-- Top Left -->
+                        <svg class="w-16 h-16 absolute top-1 left-1" viewBox="0 0 100 100" fill="currentColor">
+                            <path d="M0,0 L60,0 L60,8 L8,8 L8,60 L0,60 Z M16,16 L40,16 L40,20 L20,20 L20,40 L16,40 Z"/>
+                        </svg>
+                        <!-- Top Right -->
+                        <svg class="w-16 h-16 absolute top-1 right-1 rotate-90" viewBox="0 0 100 100" fill="currentColor">
+                            <path d="M0,0 L60,0 L60,8 L8,8 L8,60 L0,60 Z M16,16 L40,16 L40,20 L20,20 L20,40 L16,40 Z"/>
+                        </svg>
+                        <!-- Bottom Right -->
+                        <svg class="w-16 h-16 absolute bottom-1 right-1 rotate-180" viewBox="0 0 100 100" fill="currentColor">
+                            <path d="M0,0 L60,0 L60,8 L8,8 L8,60 L0,60 Z M16,16 L40,16 L40,20 L20,20 L20,40 L16,40 Z"/>
+                        </svg>
+                        <!-- Bottom Left -->
+                        <svg class="w-16 h-16 absolute bottom-1 left-1 -rotate-90" viewBox="0 0 100 100" fill="currentColor">
+                            <path d="M0,0 L60,0 L60,8 L8,8 L8,60 L0,60 Z M16,16 L40,16 L40,20 L20,20 L20,40 L16,40 Z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Main Certificate Content Container -->
+                    <div class="relative z-10 w-full h-full px-16 py-10 flex flex-col items-center justify-between text-center">
+                        
+                        <!-- Digital Encoding Top Security Strip -->
+                        <div id="digitalTopRibbon" class="w-full flex items-center justify-between text-[9px] font-mono tracking-wider uppercase px-3 py-1 rounded-md border border-[#1A464E]/20 bg-[#1A464E]/[0.04] text-[#1A464E]">
+                            <span class="flex items-center gap-1.5 font-semibold">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                                DIGITALLY ENCODED CREDENTIAL
+                            </span>
+                            <span id="dispTopHash" class="opacity-80">SHA-256: 8F94E2...C7A1</span>
+                            <span class="font-semibold">PKI-VERIFIED</span>
+                        </div>
+
+                        <!-- Header: Organization & Official PAHAD Logo -->
+                        <div class="w-full flex flex-col items-center">
+                            <div id="certLogoWrapper" class="mb-2 flex items-center justify-center relative">
+                                <!-- Crisp Built-In PAHAD Circular Brand Emblem (Always renders cleanly & exports to PNG/PDF without CORS issues) -->
+                                <svg id="pahadSvgLogo" viewBox="0 0 160 160" class="w-20 h-20 drop-shadow-sm">
+                                    <defs>
+                                        <path id="pahadArcPath" d="M 22,80 A 58,58 0 1,1 138,80" />
+                                    </defs>
+                                    <!-- Outer Deep Teal Ring -->
+                                    <circle cx="80" cy="80" r="78" fill="#1A464E"/>
+                                    <!-- Coral-Orange Sunset Sky -->
+                                    <circle cx="80" cy="80" r="66" fill="#F2865E"/>
+                                    <!-- Curved Motto Text along Top Arc -->
+                                    <text font-family="Montserrat, sans-serif" font-size="5.3" font-weight="700" fill="#F7F5EE" letter-spacing="0.45">
+                                        <textPath href="#pahadArcPath" startOffset="50%" text-anchor="middle">PARTICIPATORY ACTION FOR HOLISTIC ADVANCEMENT &amp; DEVELOPMENT</textPath>
+                                    </text>
+                                    <!-- Secondary Right Peak -->
+                                    <polygon points="78,108 112,62 144,108" fill="#1A464E"/>
+                                    <polygon points="112,62 117,84 128,96 113,98" fill="#4A777A"/>
+                                    <!-- Main Himalayan Peak -->
+                                    <polygon points="18,112 72,38 118,112" fill="#1A464E"/>
+                                    <!-- Snow-Capped Summit -->
+                                    <polygon points="72,38 56,62 68,58 77,68 87,60" fill="#F7F5EE"/>
+                                    <!-- Mountain Ridge Highlight -->
+                                    <polygon points="72,38 77,68 96,98 81,100" fill="#4A777A"/>
+                                    <!-- Lower Deep Teal Base -->
+                                    <path d="M 16,102 A 66,66 0 0,0 144,102 Z" fill="#1A464E"/>
+                                    <!-- PAHAD Wordmark -->
+                                    <text x="80" y="117" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="21" letter-spacing="1.5" fill="#F7F5EE">PAHAD</text>
+                                    <text x="80" y="128" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="600" font-size="6.2" letter-spacing="1.1" fill="#A2BAB7">COMMUNITY ORGANISATION</text>
+                                </svg>
+                                <img id="certLogoImg" src="https://lh3.googleusercontent.com/d/1EVrr5ctvcM2xQMp86U2lPOkBiprrZVRK" alt="PAHAD Logo" crossorigin="anonymous" class="hidden h-20 w-20 object-contain rounded-full">
+                            </div>
+                            <div id="certEmblem" style="display: none;" class="w-12 h-12 rounded-full items-center justify-center mb-2 text-[#1A464E] border-2 border-[#1A464E]/40">
+                                <i id="certEmblemIcon" class="fa-solid fa-mountain-sun text-xl"></i>
+                            </div>
+                            <p id="dispOrg" class="font-montserrat text-xs font-bold tracking-[0.28em] uppercase text-[#1A464E]">
+                                PAHAD COMMUNITY ORGANISATION
+                            </p>
+                            <p id="dispTagline" class="font-serif italic text-[11px] text-[#4A777A] mt-0.5">
+                                People. Knowledge. Action.
+                            </p>
+                        </div>
+
+                        <!-- Title Block -->
+                        <div class="w-full flex flex-col items-center">
+                            <h1 id="dispTitle" class="font-cinzel text-[34px] leading-tight font-bold tracking-wider uppercase text-amber-700">
+                                CERTIFICATE OF APPRECIATION
+                            </h1>
+                            <div id="titleDivider" class="w-32 h-0.5 bg-amber-700/50 mx-auto my-2.5"></div>
+                            <p id="dispSubtitle" class="font-montserrat text-xs font-semibold tracking-[0.2em] uppercase text-slate-500">
+                                THIS IS PROUDLY PRESENTED TO
+                            </p>
+                        </div>
+
+                        <!-- Recipient Name -->
+                        <div class="w-full max-w-2xl flex flex-col items-center">
+                            <h2 id="dispRecipient" class="font-script text-[58px] text-slate-900 py-0.5 px-4 leading-none">
+                                Sibath Rai
+                            </h2>
+                            <div class="w-3/4 h-[1px] bg-slate-300 mx-auto my-2"></div>
+                            <p id="dispDescription" class="font-sans text-xs leading-relaxed text-slate-600 max-w-xl mx-auto">
+                                In recognition of meaningful contribution to Participatory Action for Holistic Advancement &amp; Development across the Darjeeling &amp; Kalimpong hills, the Terai, the Dooars and the wider Himalaya.
+                            </p>
+                        </div>
+
+                        <!-- Footer: Signatures, Seal, QR Matrix & Credential Metadata -->
+                        <div class="w-full flex flex-col items-center gap-2.5 pt-1">
+                            <div class="w-full grid grid-cols-3 items-end gap-4 px-2">
+                                
+                                <!-- Left Signature -->
+                                <div class="flex flex-col items-center">
+                                    <div id="dispSign1Script" class="font-script text-[28px] text-slate-800 leading-none mb-1">Shiwath Rai</div>
+                                    <div class="w-48 h-[1px] bg-slate-400 mb-1.5"></div>
+                                    <p id="dispSign1Name" class="font-montserrat text-xs font-bold text-slate-800 uppercase tracking-wider">Shiwath Rai</p>
+                                    <p id="dispSign1Title" class="text-[11px] text-slate-500 mt-0.5">President</p>
+                                    <p class="font-mono text-[8px] text-emerald-700 mt-0.5 tracking-tight">e-Signed • Key #A41F</p>
+                                </div>
+
+                                <!-- Center Official Seal + Cryptographic QR Verification Matrix -->
+                                <div class="flex items-center justify-center gap-3">
+                                    <div id="officialSeal" class="relative w-20 h-20 flex items-center justify-center shrink-0">
+                                        <!-- SVG Rosette Gold Seal -->
+                                        <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md">
+                                            <defs>
+                                                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#fde68a"/>
+                                                    <stop offset="50%" stop-color="#d97706"/>
+                                                    <stop offset="100%" stop-color="#92400e"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <!-- Starburst outer seal -->
+                                            <polygon fill="url(#goldGrad)" points="60,2 68,12 80,6 84,18 97,16 97,29 110,32 105,44 116,51 107,61 115,72 103,79 107,92 94,94 93,107 80,104 75,116 64,109 56,116 45,109 40,116 27,104 26,94 13,92 17,79 5,72 13,61 4,51 15,44 10,32 23,29 23,16 36,18 40,6 52,12"/>
+                                            <circle cx="60" cy="60" r="42" fill="#fffbeb" stroke="#b45309" stroke-width="2"/>
+                                            <circle cx="60" cy="60" r="36" fill="none" stroke="#d97706" stroke-width="1" stroke-dasharray="3,2"/>
+                                            <text x="60" y="55" text-anchor="middle" font-family="Cinzel, serif" font-weight="bold" font-size="11" fill="#92400e">OFFICIAL</text>
+                                            <text x="60" y="69" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="bold" font-size="8" fill="#b45309">VERIFIED</text>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Deterministic Digital Verification QR Matrix -->
+                                    <div id="digitalQrBox" class="p-1.5 bg-white/90 border border-[#1A464E]/30 rounded-lg shadow-xs flex flex-col items-center shrink-0">
+                                        <svg id="digitalQrSvg" viewBox="0 0 21 21" class="w-14 h-14 text-[#1A464E]" shape-rendering="crispEdges"></svg>
+                                        <span class="font-mono text-[6.5px] font-bold tracking-widest text-[#1A464E] mt-0.5 uppercase">SCAN VERIFY</span>
+                                    </div>
+                                </div>
+
+                                <!-- Right Signature -->
+                                <div class="flex flex-col items-center">
+                                    <div id="dispSign2Script" class="font-script text-[28px] text-slate-800 leading-none mb-1">Avineet Pradhan</div>
+                                    <div class="w-48 h-[1px] bg-slate-400 mb-1.5"></div>
+                                    <p id="dispSign2Name" class="font-montserrat text-xs font-bold text-slate-800 uppercase tracking-wider">Avineet Pradhan</p>
+                                    <p id="dispSign2Title" class="text-[11px] text-slate-500 mt-0.5">General Secretary</p>
+                                    <p class="font-mono text-[8px] text-emerald-700 mt-0.5 tracking-tight">e-Signed • Key #B90C</p>
+                                </div>
+
+                            </div>
+
+                            <!-- Clean Aligned Digital Ledger Metadata Bar -->
+                            <div id="certMetaBar" class="w-full pt-2 border-t border-slate-300/60 flex items-center justify-between text-[9.5px] font-mono text-slate-600 px-2">
+                                <div>Issued: <span id="dispDate" class="font-sans font-semibold text-slate-800">November 17, 2026</span></div>
+                                <div>Reg. ID: <span id="dispRegId" class="font-semibold text-slate-800">Reg10</span></div>
+                                <div>Digital ID: <span id="dispDigitalId" class="font-semibold text-slate-800">DIG-9F3A-8492-BC10</span></div>
+                                <div>Checksum: <span id="dispChecksum" class="font-semibold text-emerald-800">0x9F3A84BC</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Helper tip -->
+            <p class="text-xs text-slate-500 mt-3 text-center">
+                Tip: All changes update automatically. Click <strong>Download PDF</strong> for a print-ready document or <strong>PNG</strong> for social sharing.
+            </p>
+        </section>
+    </main>
+
+    <!-- Toast Notification Banner -->
+    <div id="toastBanner" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-slate-900 text-white text-xs font-medium px-4 py-3 rounded-xl shadow-lg flex items-center gap-2.5">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toastMessage">Certificate exported!</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Approved Participant Roster (Only listed participants can access certificates) ---
+            const approvedParticipants = [
+                { regId: 'Reg10', name: 'Sibath Rai', digitalId: 'DIG-9F3A-8492-BC10' },
+                { regId: 'REG-PAHAD-2026-0420', name: 'Tenzing Sherpa', digitalId: 'DIG-4C81-209A-EF34' },
+                { regId: 'REG-PAHAD-2026-0421', name: 'Ananya Rai', digitalId: 'DIG-7B12-654D-91A8' }
+            ];
+
+            // --- Application State ---
+            const state = {
+                isVerified: false,
+                template: 'pahad',
+                accentColor: '#1A464E',
+                logoUrl: 'https://lh3.googleusercontent.com/d/1EVrr5ctvcM2xQMp86U2lPOkBiprrZVRK',
+                org: 'PAHAD COMMUNITY ORGANISATION',
+                title: 'CERTIFICATE OF APPRECIATION',
+                subtitle: 'THIS IS PROUDLY PRESENTED TO',
+                recipient: 'Sibath Rai',
+                description: 'In recognition of meaningful contribution to Participatory Action for Holistic Advancement & Development across the Darjeeling & Kalimpong hills, the Terai, the Dooars and the wider Himalaya.',
+                date: 'November 17, 2026',
+                regId: 'Reg10',
+                digitalId: 'DIG-9F3A-8492-BC10',
+                sign1Name: 'Shiwath Rai',
+                sign1Title: 'President',
+                sign2Name: 'Avineet Pradhan',
+                sign2Title: 'General Secretary',
+                showSeal: true
+            };
+
+            // --- DOM References ---
+            const previewContainer = document.getElementById('previewContainer');
+            const canvas = document.getElementById('certificateCanvas');
+            const toastBanner = document.getElementById('toastBanner');
+            const toastMessage = document.getElementById('toastMessage');
+
+            const inputMap = {
+                inputOrg: 'org',
+                inputTitle: 'title',
+                inputSubtitle: 'subtitle',
+                inputDescription: 'description',
+                inputDate: 'date',
+                inputSign1Name: 'sign1Name',
+                inputSign1Title: 'sign1Title',
+                inputSign2Name: 'sign2Name',
+                inputSign2Title: 'sign2Title'
+            };
+
+            // --- Responsive Preview Scaling ---
+            function updatePreviewScale() {
+                const containerWidth = previewContainer.clientWidth;
+                const scale = containerWidth / 1000;
+                canvas.style.transform = `scale(${scale})`;
+                previewContainer.style.height = `${707 * scale}px`;
+            }
+
+            window.addEventListener('resize', updatePreviewScale);
+            updatePreviewScale();
+
+            // --- Toast Notification Helper ---
+            let toastTimeout;
+            function showToast(msg) {
+                toastMessage.textContent = msg;
+                toastBanner.classList.remove('translate-y-20', 'opacity-0');
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    toastBanner.classList.add('translate-y-20', 'opacity-0');
+                }, 3000);
+            }
+
+            // --- Normalize Google Drive Sharing Links to Direct Image URLs ---
+            function normalizeLogoUrl(url) {
+                const trimmed = (url || '').trim();
+                if (!trimmed) return '';
+                const driveMatch = trimmed.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || trimmed.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+                if (driveMatch && driveMatch[1]) {
+                    return `https://lh3.googleusercontent.com/d/${driveMatch[1]}`;
+                }
+                return trimmed;
+            }
+
+            // --- Extract Dominant Brand Color from Logo Image ---
+            function extractBrandColors(imgEl, autoApply = true) {
+                try {
+                    const tempCanvas = document.createElement('canvas');
+                    const ctx = tempCanvas.getContext('2d');
+                    const w = 64, h = 64;
+                    tempCanvas.width = w;
+                    tempCanvas.height = h;
+                    ctx.drawImage(imgEl, 0, 0, w, h);
+                    const data = ctx.getImageData(0, 0, w, h).data;
+
+                    const buckets = {};
+                    for (let i = 0; i < data.length; i += 4) {
+                        const r = data[i], g = data[i + 1], b = data[i + 2], a = data[i + 3];
+                        if (a < 128) continue;
+                        const max = Math.max(r, g, b), min = Math.min(r, g, b);
+                        if (max > 240 && min > 235) continue;
+                        if (max < 25) continue;
+
+                        const qr = Math.round(r / 24) * 24;
+                        const qg = Math.round(g / 24) * 24;
+                        const qb = Math.round(b / 24) * 24;
+                        const sat = max === 0 ? 0 : (max - min) / max;
+                        const key = `${qr},${qg},${qb}`;
+                        buckets[key] = (buckets[key] || 0) + (1 + sat * 3);
+                    }
+
+                    const sorted = Object.entries(buckets).sort((a, b) => b[1] - a[1]);
+                    if (sorted.length > 0) {
+                        const [r, g, b] = sorted[0][0].split(',').map(Number);
+                        const hex = '#' + [r, g, b].map(v => Math.min(255, v).toString(16).padStart(2, '0')).join('');
+
+                        const palette = document.getElementById('colorPalette');
+                        let brandSwatch = document.getElementById('brandDetectedSwatch');
+                        if (!brandSwatch) {
+                            brandSwatch = document.createElement('button');
+                            brandSwatch.id = 'brandDetectedSwatch';
+                            brandSwatch.type = 'button';
+                            brandSwatch.className = 'color-swatch w-7 h-7 rounded-full transition-transform hover:scale-110 border border-slate-300';
+                            brandSwatch.title = 'Detected Logo Brand Color';
+                            brandSwatch.addEventListener('click', () => {
+                                document.querySelectorAll('.color-swatch').forEach(s => {
+                                    s.classList.remove('ring-2', 'ring-offset-2', 'scale-110');
+                                    s.style.removeProperty('--tw-ring-color');
+                                });
+                                brandSwatch.classList.add('ring-2', 'ring-offset-2', 'scale-110');
+                                brandSwatch.style.setProperty('--tw-ring-color', brandSwatch.dataset.color);
+                                state.accentColor = brandSwatch.dataset.color;
+                                renderCertificate();
+                            });
+                            palette.prepend(brandSwatch);
+                        }
+                        brandSwatch.dataset.color = hex;
+                        brandSwatch.style.backgroundColor = hex;
+
+                        if (autoApply) {
+                            brandSwatch.click();
+                            showToast(`Adapted theme to logo brand color (${hex.toUpperCase()})`);
+                        }
+                    }
+                } catch (e) {
+                    // Cross-origin fallback handled gracefully
+                }
+            }
+
+            // --- Participant Verification & Roster Logic ---
+            const gateModal = document.getElementById('participantGateModal');
+            const previewLockOverlay = document.getElementById('previewLockOverlay');
+            const btnDownloadPNG = document.getElementById('btnDownloadPNG');
+            const btnDownloadPDF = document.getElementById('btnDownloadPDF');
+
+            function setVerificationState(verified, participant = null) {
+                state.isVerified = verified;
+                if (verified && participant) {
+                    state.recipient = participant.name;
+                    state.regId = participant.regId;
+                    state.digitalId = participant.digitalId;
+
+                    document.getElementById('inputRecipient').value = participant.name;
+                    document.getElementById('inputRegId').value = participant.regId;
+                    document.getElementById('inputDigitalId').value = participant.digitalId;
+
+                    gateModal.classList.add('hidden');
+                    previewLockOverlay.classList.add('hidden');
+                    canvas.classList.remove('blur-sm');
+                    btnDownloadPNG.disabled = false;
+                    btnDownloadPDF.disabled = false;
+                    renderCertificate();
+                    showToast(`Verified participant: ${participant.name}`);
+                } else {
+                    gateModal.classList.remove('hidden');
+                    previewLockOverlay.classList.remove('hidden');
+                    canvas.classList.add('blur-sm');
+                    btnDownloadPNG.disabled = true;
+                    btnDownloadPDF.disabled = true;
+                }
+            }
+
+            function renderRosterUI() {
+                const pillsContainer = document.getElementById('sampleParticipantPills');
+                const rosterList = document.getElementById('rosterListContainer');
+                pillsContainer.innerHTML = '';
+                rosterList.innerHTML = '';
+
+                approvedParticipants.forEach((p, idx) => {
+                    // Quick-fill pill on verification gate
+                    const pill = document.createElement('button');
+                    pill.type = 'button';
+                    pill.className = 'text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-[#1A464E] hover:text-white text-slate-700 font-medium transition-colors';
+                    pill.textContent = `${p.name} (${p.regId})`;
+                    pill.addEventListener('click', () => {
+                        document.getElementById('gateRegIdInput').value = p.regId;
+                        document.getElementById('gateNameInput').value = p.name;
+                        document.getElementById('gateErrorBox').classList.add('hidden');
+                    });
+                    pillsContainer.appendChild(pill);
+
+                    // Admin Roster row
+                    const row = document.createElement('div');
+                    row.className = 'flex items-center justify-between px-3.5 py-2.5 text-xs';
+                    row.innerHTML = `
+                        <div>
+                            <div class="font-semibold text-slate-800">${p.name}</div>
+                            <div class="font-mono text-[11px] text-slate-500">${p.regId} • ${p.digitalId}</div>
+                        </div>
+                        <button type="button" data-idx="${idx}" class="remove-part-btn text-rose-600 hover:text-rose-800 px-2 py-1 rounded hover:bg-rose-50" title="Remove Participant">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    `;
+                    rosterList.appendChild(row);
+                });
+
+                document.querySelectorAll('.remove-part-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const index = parseInt(btn.dataset.idx, 10);
+                        if (approvedParticipants.length <= 1) {
+                            showToast('At least one participant must remain in the roster.');
+                            return;
+                        }
+                        approvedParticipants.splice(index, 1);
+                        renderRosterUI();
+                        showToast('Participant removed from roster.');
+                    });
+                });
+            }
+
+            document.getElementById('verifyParticipantForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const enteredId = document.getElementById('gateRegIdInput').value.trim().toUpperCase();
+                const enteredName = document.getElementById('gateNameInput').value.trim().toLowerCase();
+                const errorBox = document.getElementById('gateErrorBox');
+
+                const matched = approvedParticipants.find(p =>
+                    p.regId.toUpperCase() === enteredId && p.name.toLowerCase() === enteredName
+                );
+
+                if (matched) {
+                    errorBox.classList.add('hidden');
+                    setVerificationState(true, matched);
+                } else {
+                    errorBox.classList.remove('hidden');
+                }
+            });
+
+            document.getElementById('btnLockPortal').addEventListener('click', () => {
+                setVerificationState(false);
+            });
+
+            document.getElementById('btnOpenGateFromPreview').addEventListener('click', () => {
+                setVerificationState(false);
+            });
+
+            // Admin Roster Modal Controls (PIN Protected: 9582)
+            const ROSTER_ADMIN_PIN = '9582';
+            const rosterModal = document.getElementById('rosterModal');
+            const rosterPinModal = document.getElementById('rosterPinModal');
+            const rosterPinInput = document.getElementById('rosterPinInput');
+            const rosterPinError = document.getElementById('rosterPinError');
+
+            document.getElementById('btnAdminRoster').addEventListener('click', () => {
+                rosterPinInput.value = '';
+                rosterPinError.classList.add('hidden');
+                rosterPinModal.classList.remove('hidden');
+                setTimeout(() => rosterPinInput.focus(), 50);
+            });
+
+            document.getElementById('btnCloseRosterPin').addEventListener('click', () => {
+                rosterPinModal.classList.add('hidden');
+            });
+
+            document.getElementById('rosterPinForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (rosterPinInput.value.trim() === ROSTER_ADMIN_PIN) {
+                    rosterPinModal.classList.add('hidden');
+                    renderRosterUI();
+                    rosterModal.classList.remove('hidden');
+                } else {
+                    rosterPinError.classList.remove('hidden');
+                    rosterPinInput.value = '';
+                    rosterPinInput.focus();
+                }
+            });
+
+            document.getElementById('btnCloseRoster').addEventListener('click', () => {
+                rosterModal.classList.add('hidden');
+            });
+
+            document.getElementById('addParticipantForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const regId = document.getElementById('newPartRegId').value.trim();
+                const name = document.getElementById('newPartName').value.trim();
+                if (!regId || !name) return;
+
+                const hexBlock = () => Math.floor(0x1000 + Math.random() * 0xEFFF).toString(16).toUpperCase();
+                const digitalId = `DIG-${hexBlock()}-${hexBlock()}-${hexBlock()}`;
+
+                approvedParticipants.push({ regId, name, digitalId });
+                document.getElementById('newPartRegId').value = '';
+                document.getElementById('newPartName').value = '';
+                renderRosterUI();
+                showToast(`Added ${name} (${regId}) to participant roster.`);
+            });
+
+            renderRosterUI();
+
+            // --- Deterministic Hash & QR Matrix Generator for Digital Encoding Look ---
+            function computeDigitalHash(seedStr) {
+                let h1 = 0xdeadbeef, h2 = 0x41c6ce57;
+                for (let i = 0; i < seedStr.length; i++) {
+                    const ch = seedStr.charCodeAt(i);
+                    h1 = Math.imul(h1 ^ ch, 2654435761);
+                    h2 = Math.imul(h2 ^ ch, 1597334677);
+                }
+                h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+                h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+                const hex1 = (h1 >>> 0).toString(16).toUpperCase().padStart(8, '0');
+                const hex2 = (h2 >>> 0).toString(16).toUpperCase().padStart(8, '0');
+                return `${hex1}${hex2}${hex1.split('').reverse().join('')}`;
+            }
+
+            function renderDigitalQrMatrix(seedStr, fillColor) {
+                const svg = document.getElementById('digitalQrSvg');
+                if (!svg) return;
+                const size = 21;
+                let rects = '';
+
+                const isFinder = (r, c) => {
+                    const inBox = (tr, tc) => r >= tr && r < tr + 7 && c >= tc && c < tc + 7;
+                    return inBox(0, 0) || inBox(0, size - 7) || inBox(size - 7, 0);
+                };
+
+                const drawFinder = (tr, tc) => {
+                    rects += `<rect x="${tc}" y="${tr}" width="7" height="7" fill="none" stroke="${fillColor}" stroke-width="1"/>`;
+                    rects += `<rect x="${tc + 2}" y="${tr + 2}" width="3" height="3" fill="${fillColor}"/>`;
+                };
+
+                drawFinder(0.5, 0.5);
+                drawFinder(0.5, size - 6.5);
+                drawFinder(size - 6.5, 0.5);
+
+                let hash = 2166136261;
+                for (let i = 0; i < seedStr.length; i++) {
+                    hash ^= seedStr.charCodeAt(i);
+                    hash = Math.imul(hash, 16777619);
+                }
+
+                for (let r = 0; r < size; r++) {
+                    for (let c = 0; c < size; c++) {
+                        if (isFinder(r, c)) continue;
+                        if (r === 6 || c === 6) {
+                            if ((r + c) % 2 === 0) {
+                                rects += `<rect x="${c}" y="${r}" width="1" height="1" fill="${fillColor}"/>`;
+                            }
+                            continue;
+                        }
+                        hash = (Math.imul(hash ^ (r * 31 + c), 1664525) + 1013904223) >>> 0;
+                        if ((hash & 1) === 1) {
+                            rects += `<rect x="${c}" y="${r}" width="1" height="1" fill="${fillColor}"/>`;
+                        }
+                    }
+                }
+                svg.innerHTML = rects;
+            }
+
+            // --- Render Certificate Live ---
+            function renderCertificate() {
+                document.getElementById('dispOrg').textContent = state.org || '';
+                document.getElementById('dispTitle').textContent = state.title || '';
+                document.getElementById('dispSubtitle').textContent = state.subtitle || '';
+                document.getElementById('dispRecipient').textContent = state.recipient || '';
+                document.getElementById('dispDescription').textContent = state.description || '';
+                document.getElementById('dispDate').textContent = state.date || '';
+                document.getElementById('dispRegId').textContent = state.regId || '';
+                document.getElementById('dispDigitalId').textContent = state.digitalId || '';
+
+                // Update Cryptographic Hash, Checksum & QR Matrix
+                const fullHash = computeDigitalHash(`${state.recipient}|${state.regId}|${state.digitalId}|${state.date}`);
+                document.getElementById('dispTopHash').textContent = `SHA-256: ${fullHash.slice(0, 8)}...${fullHash.slice(-6)}`;
+                document.getElementById('dispChecksum').textContent = `0x${fullHash.slice(0, 8)}`;
+                renderDigitalQrMatrix(`${state.regId}-${state.digitalId}-${state.recipient}`, state.template === 'executive' ? '#fbbf24' : state.accentColor);
+
+                document.getElementById('dispSign1Name').textContent = state.sign1Name || '';
+                document.getElementById('dispSign1Script').textContent = state.sign1Name || '';
+                document.getElementById('dispSign1Title').textContent = state.sign1Title || '';
+                document.getElementById('dispSign2Name').textContent = state.sign2Name || '';
+                document.getElementById('dispSign2Script').textContent = state.sign2Name || '';
+                document.getElementById('dispSign2Title').textContent = state.sign2Title || '';
+
+                const sealEl = document.getElementById('officialSeal');
+                sealEl.style.display = state.showSeal ? 'flex' : 'none';
+
+                const bgDecor = document.getElementById('certBgDecor');
+                const outerFrame = document.getElementById('certOuterFrame');
+                const innerFrame = document.getElementById('certInnerFrame');
+                const corners = document.getElementById('cornerOrnaments');
+                const titleEl = document.getElementById('dispTitle');
+                const dividerEl = document.getElementById('titleDivider');
+                const orgEl = document.getElementById('dispOrg');
+                const taglineEl = document.getElementById('dispTagline');
+                const subtitleEl = document.getElementById('dispSubtitle');
+                const recipientEl = document.getElementById('dispRecipient');
+                const descEl = document.getElementById('dispDescription');
+                const sign1ScriptEl = document.getElementById('dispSign1Script');
+                const sign1NameEl = document.getElementById('dispSign1Name');
+                const sign1TitleEl = document.getElementById('dispSign1Title');
+                const sign2ScriptEl = document.getElementById('dispSign2Script');
+                const sign2NameEl = document.getElementById('dispSign2Name');
+                const sign2TitleEl = document.getElementById('dispSign2Title');
+                const dateEl = document.getElementById('dispDate');
+                const metaBar = document.getElementById('certMetaBar');
+                const regIdEl = document.getElementById('dispRegId');
+                const digitalIdEl = document.getElementById('dispDigitalId');
+                const topRibbon = document.getElementById('digitalTopRibbon');
+                const qrBox = document.getElementById('digitalQrBox');
+                const checksumEl = document.getElementById('dispChecksum');
+
+                // Reset default light theme styles
+                canvas.style.backgroundColor = '#F7F5EE';
+                outerFrame.style.borderColor = state.accentColor;
+                innerFrame.style.borderColor = `${state.accentColor}55`;
+                corners.style.color = state.accentColor;
+                corners.style.display = 'none';
+                bgDecor.innerHTML = '';
+
+                topRibbon.style.backgroundColor = 'rgba(26, 70, 78, 0.05)';
+                topRibbon.style.borderColor = 'rgba(26, 70, 78, 0.22)';
+                topRibbon.style.color = state.accentColor;
+                qrBox.style.backgroundColor = 'rgba(255, 255, 255, 0.92)';
+                qrBox.style.borderColor = state.accentColor;
+                checksumEl.style.color = '#065f46';
+
+                orgEl.style.color = state.accentColor;
+                taglineEl.style.color = '#4A777A';
+                titleEl.style.color = state.accentColor;
+                dividerEl.style.backgroundColor = '#F2865E';
+                subtitleEl.style.color = '#64748b';
+                recipientEl.style.color = '#0f172a';
+                descEl.style.color = '#334155';
+                sign1ScriptEl.style.color = '#1e293b';
+                sign1NameEl.style.color = '#1e293b';
+                sign1TitleEl.style.color = '#64748b';
+                sign2ScriptEl.style.color = '#1e293b';
+                sign2NameEl.style.color = '#1e293b';
+                sign2TitleEl.style.color = '#64748b';
+                dateEl.style.color = '#1e293b';
+                regIdEl.style.color = '#1e293b';
+                digitalIdEl.style.color = '#1e293b';
+                metaBar.style.color = '#475569';
+                metaBar.style.borderColor = 'rgba(100, 116, 139, 0.25)';
+
+                if (state.template === 'pahad') {
+                    bgDecor.innerHTML = `
+                        <svg viewBox="0 0 1000 707" class="w-full h-full preserve-3d" preserveAspectRatio="none">
+                            <polygon points="0,635 190,545 365,610 530,520 740,605 1000,535 1000,707 0,707" fill="#A2BAB7" opacity="0.45"/>
+                            <polygon points="0,665 165,585 335,645 495,570 695,645 860,575 1000,635 1000,707 0,707" fill="${state.accentColor}" opacity="0.16"/>
+                        </svg>
+                    `;
+                } else if (state.template === 'classic') {
+                    canvas.style.backgroundColor = '#fffdf7';
+                    corners.style.display = 'block';
+                    dividerEl.style.backgroundColor = state.accentColor;
+                } else if (state.template === 'modern') {
+                    canvas.style.backgroundColor = '#ffffff';
+                    outerFrame.style.borderWidth = '2px';
+                    innerFrame.style.borderColor = 'transparent';
+                    bgDecor.innerHTML = `
+                        <div style="background-color: ${state.accentColor};" class="absolute top-0 left-0 w-3 h-full"></div>
+                        <div style="background-color: ${state.accentColor};" class="absolute top-0 right-0 w-3 h-full opacity-20"></div>
+                    `;
+                } else if (state.template === 'executive') {
+                    canvas.style.backgroundColor = '#0f172a';
+                    outerFrame.style.borderColor = '#fbbf24';
+                    innerFrame.style.borderColor = 'rgba(251, 191, 36, 0.35)';
+                    corners.style.display = 'block';
+                    corners.style.color = '#fbbf24';
+                    orgEl.style.color = '#fbbf24';
+                    taglineEl.style.color = '#94a3b8';
+                    titleEl.style.color = '#fde68a';
+                    dividerEl.style.backgroundColor = '#fbbf24';
+                    subtitleEl.style.color = '#94a3b8';
+                    recipientEl.style.color = '#ffffff';
+                    descEl.style.color = '#cbd5e1';
+                    sign1ScriptEl.style.color = '#f8fafc';
+                    sign1NameEl.style.color = '#f8fafc';
+                    sign1TitleEl.style.color = '#94a3b8';
+                    sign2ScriptEl.style.color = '#f8fafc';
+                    sign2NameEl.style.color = '#f8fafc';
+                    sign2TitleEl.style.color = '#94a3b8';
+                    dateEl.style.color = '#f1f5f9';
+                    regIdEl.style.color = '#f1f5f9';
+                    digitalIdEl.style.color = '#f1f5f9';
+                    checksumEl.style.color = '#34d399';
+                    topRibbon.style.backgroundColor = 'rgba(255, 255, 255, 0.06)';
+                    topRibbon.style.borderColor = 'rgba(251, 191, 36, 0.35)';
+                    topRibbon.style.color = '#fbbf24';
+                    qrBox.style.backgroundColor = 'rgba(15, 23, 42, 0.9)';
+                    qrBox.style.borderColor = 'rgba(251, 191, 36, 0.45)';
+                    metaBar.style.color = '#94a3b8';
+                    metaBar.style.borderColor = 'rgba(148, 163, 184, 0.25)';
+                }
+            }
+
+            // --- Event Listeners for Inputs ---
+            Object.entries(inputMap).forEach(([inputId, stateKey]) => {
+                const el = document.getElementById(inputId);
+                if (el) {
+                    el.addEventListener('input', (e) => {
+                        state[stateKey] = e.target.value;
+                        renderCertificate();
+                    });
+                }
+            });
+
+            // Seal Toggle
+            document.getElementById('toggleSeal').addEventListener('change', (e) => {
+                state.showSeal = e.target.checked;
+                renderCertificate();
+            });
+
+            // Template Selector Buttons
+            document.querySelectorAll('.template-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.template-btn').forEach(b => {
+                        b.classList.remove('active', 'ring-2', 'ring-indigo-600', 'bg-indigo-50/50', 'border-indigo-200');
+                        b.classList.add('border-slate-200');
+                    });
+                    btn.classList.add('active', 'ring-2', 'ring-indigo-600', 'bg-indigo-50/50', 'border-indigo-200');
+                    btn.classList.remove('border-slate-200');
+
+                    state.template = btn.dataset.template;
+                    renderCertificate();
+                });
+            });
+
+            // Accent Color Swatches
+            document.querySelectorAll('.color-swatch').forEach(swatch => {
+                swatch.addEventListener('click', () => {
+                    document.querySelectorAll('.color-swatch').forEach(s => {
+                        s.classList.remove('ring-2', 'ring-offset-2', 'scale-110');
+                        s.style.removeProperty('--tw-ring-color');
+                    });
+                    swatch.classList.add('ring-2', 'ring-offset-2', 'scale-110');
+                    swatch.style.setProperty('--tw-ring-color', swatch.dataset.color);
+
+                    state.accentColor = swatch.dataset.color;
+                    renderCertificate();
+                });
+            });
+
+            // Reset Button
+            document.getElementById('btnReset').addEventListener('click', () => {
+                const defaults = {
+                    inputOrg: 'PAHAD COMMUNITY ORGANISATION',
+                    inputTitle: 'CERTIFICATE OF APPRECIATION',
+                    inputSubtitle: 'THIS IS PROUDLY PRESENTED TO',
+                    inputDescription: 'In recognition of meaningful contribution to Participatory Action for Holistic Advancement & Development across the Darjeeling & Kalimpong hills, the Terai, the Dooars and the wider Himalaya.',
+                    inputDate: 'November 17, 2026',
+                    inputSign1Name: 'Shiwath Rai',
+                    inputSign1Title: 'President',
+                    inputSign2Name: 'Avineet Pradhan',
+                    inputSign2Title: 'General Secretary'
+                };
+                Object.entries(defaults).forEach(([id, val]) => {
+                    const el = document.getElementById(id);
+                    if (el) el.value = val;
+                    state[inputMap[id]] = val;
+                });
+                state.showSeal = true;
+                document.getElementById('toggleSeal').checked = true;
+                renderCertificate();
+                showToast('Certificate reset to default values.');
+            });
+
+            // --- High-Resolution Export Logic (PNG & PDF) ---
+            async function captureHighResCanvas() {
+                // Temporarily remove CSS scale transform so html2canvas captures exact 1000x707 dimensions cleanly
+                const prevTransform = canvas.style.transform;
+                canvas.style.transform = 'none';
+
+                try {
+                    const renderedCanvas = await html2canvas(canvas, {
+                        scale: 2.5, // High resolution for crisp printing
+                        useCORS: true,
+                        backgroundColor: null,
+                        width: 1000,
+                        height: 707
+                    });
+                    return renderedCanvas;
+                } finally {
+                    // Restore responsive preview scale immediately
+                    canvas.style.transform = prevTransform;
+                }
+            }
+
+            // Export as PNG
+            document.getElementById('btnDownloadPNG').addEventListener('click', async () => {
+                if (!state.isVerified) {
+                    showToast('Access denied: Participant verification required.');
+                    return;
+                }
+                showToast('Generating high-resolution PNG...');
+                try {
+                    const renderedCanvas = await captureHighResCanvas();
+                    const link = document.createElement('a');
+                    const safeName = (state.recipient || 'Certificate').replace(/[^a-z0-9]/gi, '_');
+                    link.download = `${safeName}_Certificate.png`;
+                    link.href = renderedCanvas.toDataURL('image/png');
+                    link.click();
+                    showToast('PNG downloaded successfully!');
+                } catch (err) {
+                    console.error(err);
+                    showToast('Error exporting PNG. Please try again.');
+                }
+            });
+
+            // Export as Landscape PDF
+            document.getElementById('btnDownloadPDF').addEventListener('click', async () => {
+                if (!state.isVerified) {
+                    showToast('Access denied: Participant verification required.');
+                    return;
+                }
+                showToast('Generating print-ready PDF...');
+                try {
+                    const renderedCanvas = await captureHighResCanvas();
+                    const imgData = renderedCanvas.toDataURL('image/png');
+                    const { jsPDF } = window.jspdf;
+                    
+                    // A4 Landscape dimensions in mm: 297 x 210
+                    const pdf = new jsPDF({
+                        orientation: 'landscape',
+                        unit: 'mm',
+                        format: 'a4'
+                    });
+
+                    pdf.addImage(imgData, 'PNG', 0, 0, 297, 210);
+                    const safeName = (state.recipient || 'Certificate').replace(/[^a-z0-9]/gi, '_');
+                    pdf.save(`${safeName}_Certificate.pdf`);
+                    showToast('PDF downloaded successfully!');
+                } catch (err) {
+                    console.error(err);
+                    showToast('Error exporting PDF. Please try again.');
+                }
+            });
+
+            // Initial render
+            renderCertificate();
+        });
+    </script>
+</body>
+</html>
+```
